@@ -1,0 +1,1 @@
+PODS_ITELLAFRIEND_OTHER_LDFLAGS = -framework MessageUI

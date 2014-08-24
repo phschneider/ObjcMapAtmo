@@ -1,0 +1,66 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+
+    #define API_ENABLED     YES
+    #import "GoogleAnalytics-iOS-SDK/GAI.h"
+
+    #import "PSMapAtmoNotifications.h"
+
+    #define PSNETATMO_MAPATMO_APP_ID  @"id783111887"
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+
+
+#define THREAD_LOG                      (([NSThread isMainThread]) ? @"" : @"[THREAD NOT MAINTHREAD]")
+
+#ifdef DEBUG
+    #define DLogFuncName()                  NSLog((@"[FUNCNAME] %@ %s [Line %d] "), THREAD_LOG, __PRETTY_FUNCTION__, __LINE__);
+    #define DLog(fmt, ...)                  NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__,  ##__VA_ARGS__);
+#else
+    #define DLogFuncName()
+    #define DLog(fmt, ...)
+#endif
+
+#ifdef DEBUG_REQUEST_REPONSE
+    #define DEBUG_REQUEST_REPONSE_Log(fmt, ...)         NSLog((@"[REQUEST RESPONSE] %@ %s [Line %d] " fmt), THREAD_LOG, __PRETTY_FUNCTION__, __LINE__,  ##__VA_ARGS__);
+    #define DEBUG_REQUEST_REPONSE_LogName()             NSLog((@"[REQUEST RESPONSE] %@ %s [Line %d] "), THREAD_LOG, __PRETTY_FUNCTION__, __LINE__);
+#else
+    #define DEBUG_REQUEST_REPONSE_Log(fmt, ...)
+    #define DEBUG_REQUEST_REPONSE_LogName()
+#endif
+
+#ifdef TARGET_MAPATMO
+    #define TARGET_IS_MAPATMO   true
+#else
+    #define TARGET_IS_MAPATMO   false
+#endif
+
+#ifdef TARGET_DASHATMO
+    #define TARGET_IS_DASHATMO   true
+#else
+    #define TARGET_IS_DASHATMO   false
+#endif
+
+//#ifdef TARGET_MAPATMO
+//    #import "Analytics/Analytics.h"
+//#endif
+
+
+
+#endif

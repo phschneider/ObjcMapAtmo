@@ -1,0 +1,5 @@
+#include "Pods-Fingertips.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/Fingertips" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/EDSemver" "${PODS_ROOT}/Headers/Fingertips" "${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/HexColors" "${PODS_ROOT}/Headers/NXOAuth2Client" "${PODS_ROOT}/Headers/Reachability" "${PODS_ROOT}/Headers/SVProgressHUD" "${PODS_ROOT}/Headers/TDBadgedCell" "${PODS_ROOT}/Headers/TSMessages" "${PODS_ROOT}/Headers/TestFlightSDK" "${PODS_ROOT}/Headers/UIDevice-Hardware" "${PODS_ROOT}/Headers/iRate" "${PODS_ROOT}/Headers/iTellAFriend"
+OTHER_LDFLAGS = -ObjC ${PODS_FINGERTIPS_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}

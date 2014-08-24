@@ -1,0 +1,48 @@
+What is iTellAFriend?
+==============================
+
+![](http://cocoapod-badges.herokuapp.com/v/iTellAFriend/badge.png) &nbsp; ![](http://cocoapod-badges.herokuapp.com/p/iTellAFriend/badge.png)
+
+
+iTellAFriend is an iOS toolkit for displaying a preconfigued mail composer with a "Tell a Friend" template in ios apps.
+
+Installation
+==============================
+To install iTellAFriend into your app, drag the iTellAFriend.h, .m into your project. 
+
+iTellAFriend requires no configuration at all and will use the application's bundle ID to look the app ID up on the App Store.
+
+
+To present the Tell A Friend email controller, use:
+
+```
+    if ([[iTellAFriend sharedInstance] canTellAFriend]) {
+      UINavigationController* tellAFriendController = [[iTellAFriend sharedInstance] tellAFriendController];
+      [self presentModalViewController:tellAFriendController animated:YES];
+    }
+```
+
+
+To present the gift this app dialog:
+
+```
+ [[iTellAFriend sharedInstance] giftThisAppWithAlertView:YES];
+```
+
+To present the rate this app dialog:
+
+```
+    [[iTellAFriend sharedInstance] rateThisAppWithAlertView:YES];
+```
+
+
+![](https://github.com/aporat/iTellAFriend/raw/master/screenshots/iphone-1.png) 
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+![](https://github.com/aporat/iTellAFriend/raw/master/screenshots/ipad-1.png) 
+
+
+Terms of Use
+==============================
+
+- Provided under the Apache 2.0 License

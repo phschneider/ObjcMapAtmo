@@ -1,0 +1,2 @@
+PODS_ANALYTICS_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Analytics"
+PODS_ANALYTICS_OTHER_LDFLAGS = -ObjC -lsqlite3 -lz -framework AdSupport -framework Analytics -framework CFNetwork -framework CoreData -framework CoreGraphics -framework CoreTelephony -framework Foundation -framework QuartzCore -framework Security -framework SystemConfiguration -framework UIKit
