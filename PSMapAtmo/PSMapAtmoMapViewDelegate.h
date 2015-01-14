@@ -21,4 +21,6 @@
 
 @interface PSMapAtmoMapViewDelegate : NSObject <PSMapAtmoMapViewDelegate>
 
+- (BOOL)userIsDraggingMapView:(MKMapView*)mapView;
+
 @end

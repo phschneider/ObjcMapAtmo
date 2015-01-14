@@ -126,7 +126,7 @@ static PSMapAtmoMapViewController* instance = nil;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDevice:) name:PSMAPATMO_PUBLIC_DEVICE_ADDED_NOTIFICATION object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedData:) name:PSMAPATMO_API_DATA_RECEIVED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mapChanged:) name:PSMAPATMO_PUBLIC_MAP_CHANGED_NOTIFICATION object:nil];
-
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mapFinishedDragging:) name:PSMAPATMO_PUBLIC_MAP_FINISHED_DRAGGING object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mapUpdateUserLocation:) name:PSMAPATMO_PUBLIC_MAP_UPDATED_USER_LOCATION object:nil];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearMap:) name:PSMAPATMO_PUBLIC_CLEAR_MAP object:nil];
@@ -143,6 +143,17 @@ static PSMapAtmoMapViewController* instance = nil;
     }
     instance = self;
     return self;
+}
+
+
+- (void)mapFinishedDragging:(NSNotification *)notification
+{
+    DLogFuncName();
+
+    if ( ![((PSMapAtmoMapViewDelegate *) self.mapViewDelegate) userIsDraggingMapView:self.mapView])
+    {
+        NSLog(@"Updating map ...");
+    }
 }
 
 
@@ -950,7 +961,7 @@ static PSMapAtmoMapViewController* instance = nil;
         });
         return;
     }
-    
+
     
     int bytes = [[note.userInfo objectForKey:@"size"] integerValue];
     self.bytesReceived += bytes;
@@ -967,10 +978,18 @@ static PSMapAtmoMapViewController* instance = nil;
     PSMapAtmoPublicDeviceDict * device = [notification.userInfo objectForKey:@"device"];
     if (device)
     {
-        dispatch_sync(dispatch_get_main_queue(),^{
-            [self.mapView addAnnotation:device];
-            [self updateToolBarCountItem];
-        });
+        if ( ![((PSMapAtmoMapViewDelegate *) self.mapViewDelegate) userIsDraggingMapView:self.mapView])
+        {
+            #warning todo - threads
+            dispatch_sync(dispatch_get_main_queue(),^{
+                [self.mapView addAnnotation:device];
+                [self updateToolBarCountItem];
+            });
+        }
+        else
+        {
+            NSLog(@"add device to store ...");
+        }
     }
 }
 

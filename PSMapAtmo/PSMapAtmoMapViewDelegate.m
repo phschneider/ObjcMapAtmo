@@ -21,6 +21,7 @@
 
 @interface PSMapAtmoMapViewDelegate()
 @property (nonatomic) float mapZoomLevel;
+@property(nonatomic) BOOL nextRegionChangeIsFromUserInteraction;
 @end
 
 @implementation PSMapAtmoMapViewDelegate
@@ -129,6 +130,25 @@
     {
 //        [self highlightToolBarLocateItem:NO];
     }
+
+    [self checkGestureRecognizersForMapView:mapView];
+}
+
+
+- (void)checkGestureRecognizersForMapView:(MKMapView *)mapView
+{
+    UIView* view = mapView.subviews.firstObject;
+    //	Look through gesture recognizers to determine
+    //	whether this region change is from user interaction
+    for(UIGestureRecognizer* recognizer in view.gestureRecognizers)
+    {
+        //	The user caused of this...
+        if(recognizer.state == UIGestureRecognizerStateBegan || recognizer.state == UIGestureRecognizerStateEnded)
+        {
+            self.nextRegionChangeIsFromUserInteraction = YES;
+            break;
+        }
+    }
 }
 
 
@@ -146,10 +166,36 @@
         self.mapZoomLevel = [(PSMapAtmoMapView*)mapView zoomLevel];
         [[PSMapAtmoMapAnalytics sharedInstance] trackMapSize:[(PSMapAtmoMapView*)mapView mapSize]];
     }
+
+    if(self.nextRegionChangeIsFromUserInteraction)
+    {
+        self.nextRegionChangeIsFromUserInteraction = NO;
+        //	Perform code here
+        [[NSNotificationCenter defaultCenter] postNotificationName:PSMAPATMO_PUBLIC_MAP_FINISHED_DRAGGING object:nil];
+    }
+}
+
+
+- (void)setNextRegionChangeIsFromUserInteraction:(BOOL)nextRegionChangeIsFromUserInteraction
+{
+    DLogFuncName();
+
+    if (_nextRegionChangeIsFromUserInteraction != nextRegionChangeIsFromUserInteraction)
+    {
+        NSLog(@"setNextRegionChangeIsFromUserInteraction FROM %@ to %@" , _nextRegionChangeIsFromUserInteraction ? @"YES" : @"NO" , nextRegionChangeIsFromUserInteraction ? @"YES" : @"NO" );
+        _nextRegionChangeIsFromUserInteraction = nextRegionChangeIsFromUserInteraction;
+    }
+}
+
+
+- (BOOL)userIsDraggingMapView:(MKMapView*)mapView
+{
+    DLogFuncName();
+
+    return (self.nextRegionChangeIsFromUserInteraction);
 }
 
 #warning wenn karte bewegt wird muss geprüft werden ob  map shows user location && userlocation is center, dann button aktivieren oder deaktivieren ...
-
 
 #pragma mark - Annotations
 //- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation
