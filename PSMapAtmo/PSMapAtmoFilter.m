@@ -165,6 +165,7 @@
     DLogFuncName();
     if ([object isKindOfClass:[self class]])
     {
+        #warning
         [((PSMapAtmoFilter*)object).value isEqualToNumber:self.value];
     }
     return NO;

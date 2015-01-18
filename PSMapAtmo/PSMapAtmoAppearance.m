@@ -7,10 +7,8 @@
 //
 
 #import "PSMapAtmoAppearance.h"
-#import "PSMapAtmoViewController.h"
 #import "PSMapAtmoNavigationController.h"
 
-#import <MessageUI/MessageUI.h>
 
 @implementation PSMapAtmoAppearance
 static PSMapAtmoAppearance* instance = nil;

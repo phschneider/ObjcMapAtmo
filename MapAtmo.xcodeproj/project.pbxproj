@@ -14,9 +14,11 @@
 		221B3FAE185E3FAE00071CA7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F16DF9805DEBF65B31140E /* CoreGraphics.framework */; };
 		221B3FAF185E3FAE00071CA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F167A68081E66EF1474BEB /* UIKit.framework */; };
 		221B3FB0185E3FAE00071CA7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C982F87DB214900A3CE3C08 /* libPods.a */; };
-		223AFA45185E64F200B888A1 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 223AFA41185E64F200B888A1 /* libGoogleAnalytics.a */; };
 		2242D59418B2B71500C693C9 /* PSMapAtmoSettingsLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2242D59318B2B71500C693C9 /* PSMapAtmoSettingsLocationViewController.m */; };
 		2253377C190182C50058A5D9 /* PSMapAtmoUserLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253377B190182C50058A5D9 /* PSMapAtmoUserLocationManager.m */; };
+		227692ED1A6BEC410012851A /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 223AFA41185E64F200B888A1 /* libGoogleAnalytics.a */; };
+		227692EE1A6BED490012851A /* Debug-Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BE218B136CE00E61658 /* Debug-Default-Landscape.png */; };
+		227692EF1A6BED490012851A /* Debug-Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BE318B136CE00E61658 /* Debug-Default-Landscape@2x.png */; };
 		2276D1B718F87F3E0086966B /* PSMapAtmoFeedbackTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2276D1B618F87F3E0086966B /* PSMapAtmoFeedbackTextFieldCell.m */; };
 		2276D1BA18F882960086966B /* PSMapAtmoFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2276D1B918F882960086966B /* PSMapAtmoFeedbackCell.m */; };
 		229BB7831879D61B00770924 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229BB7821879D61B00770924 /* Crashlytics.framework */; };
@@ -25,25 +27,20 @@
 		22CC8C3518B136CE00E61658 /* PSMapAtmoMapAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B3A18B136CD00E61658 /* PSMapAtmoMapAnalytics.m */; };
 		22CC8C3618B136CE00E61658 /* NSMutableURLRequest+CurlDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B3D18B136CD00E61658 /* NSMutableURLRequest+CurlDescription.m */; };
 		22CC8C3718B136CE00E61658 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B3F18B136CD00E61658 /* NSObject+Runtime.m */; };
-		22CC8C3818B136CE00E61658 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B4118B136CD00E61658 /* UIColor+Random.m */; };
 		22CC8C4218B136CE00E61658 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B5818B136CD00E61658 /* main.m */; };
 		22CC8C4318B136CE00E61658 /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B5A18B136CD00E61658 /* PSAppDelegate.m */; };
-		22CC8C4518B136CE00E61658 /* PSMapAtmoAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B5F18B136CD00E61658 /* PSMapAtmoAccount.m */; };
-		22CC8C4718B136CE00E61658 /* PSMapAtmoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6318B136CD00E61658 /* PSMapAtmoApi.m */; };
 		22CC8C4818B136CE00E61658 /* PSMapAtmoAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6518B136CD00E61658 /* PSMapAtmoAppearance.m */; };
 		22CC8C4918B136CE00E61658 /* PSMapAtmoAppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6718B136CD00E61658 /* PSMapAtmoAppVersion.m */; };
 		22CC8C4A18B136CE00E61658 /* PSMapAtmoBetaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6918B136CD00E61658 /* PSMapAtmoBetaViewController.m */; };
 		22CC8C4B18B136CE00E61658 /* PSMapAtmoConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6B18B136CD00E61658 /* PSMapAtmoConverter.m */; };
 		22CC8C4C18B136CE00E61658 /* PSMapAtmoDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6D18B136CD00E61658 /* PSMapAtmoDateFormatter.m */; };
 		22CC8C4D18B136CE00E61658 /* PSMapAtmoDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6F18B136CD00E61658 /* PSMapAtmoDebugViewController.m */; };
-		22CC8C5218B136CE00E61658 /* PSMapAtmoError.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B7918B136CD00E61658 /* PSMapAtmoError.m */; };
 		22CC8C5318B136CE00E61658 /* PSMapAtmoFeedbackTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B7B18B136CD00E61658 /* PSMapAtmoFeedbackTextViewCell.m */; };
 		22CC8C5518B136CE00E61658 /* PSMapAtmoLocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B7F18B136CD00E61658 /* PSMapAtmoLocalStorage.m */; };
 		22CC8C5B18B136CE00E61658 /* PSMapAtmoMapViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B8B18B136CD00E61658 /* PSMapAtmoMapViewDataSource.m */; };
 		22CC8C5C18B136CE00E61658 /* PSMapAtmoMapViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B8D18B136CD00E61658 /* PSMapAtmoMapViewDelegate.m */; };
 		22CC8C6418B136CE00E61658 /* PSMapAtmoPublicApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B9D18B136CD00E61658 /* PSMapAtmoPublicApi.m */; };
 		22CC8C6618B136CE00E61658 /* PSMapAtmoPublicDeviceDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8BA118B136CD00E61658 /* PSMapAtmoPublicDeviceDict.m */; };
-		22CC8C6718B136CE00E61658 /* PSMapAtmoPublicDevicePlaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8BA318B136CD00E61658 /* PSMapAtmoPublicDevicePlaceView.m */; };
 		22CC8C6818B136CE00E61658 /* PSMapAtmoReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8BA518B136CD00E61658 /* PSMapAtmoReachability.m */; };
 		22CC8C6C18B136CE00E61658 /* PSMapAtmoUnitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8BAD18B136CD00E61658 /* PSMapAtmoUnitsViewController.m */; };
 		22CC8C6E18B136CE00E61658 /* PSMapAtmoUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8BB118B136CD00E61658 /* PSMapAtmoUserDefaults.m */; };
@@ -65,7 +62,6 @@
 		22CC8C8118B136CE00E61658 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BC918B136CD00E61658 /* Icon@2x.png */; };
 		22CC8C8218B136CE00E61658 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BCA18B136CD00E61658 /* iTunesArtwork */; };
 		22CC8C8318B136CE00E61658 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BCB18B136CD00E61658 /* iTunesArtwork@2x */; };
-		22CC8C8418B136CE00E61658 /* MapAtmo-AppStore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BCC18B136CD00E61658 /* MapAtmo-AppStore-Info.plist */; };
 		22CC8C8518B136CE00E61658 /* Beta-Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BCE18B136CD00E61658 /* Beta-Default-Landscape.png */; };
 		22CC8C8618B136CE00E61658 /* Beta-Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BCF18B136CD00E61658 /* Beta-Default-Landscape@2x.png */; };
 		22CC8C8718B136CE00E61658 /* Beta-Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BD018B136CD00E61658 /* Beta-Icon-60.png */; };
@@ -84,9 +80,6 @@
 		22CC8C9418B136CE00E61658 /* Beta-Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BDD18B136CD00E61658 /* Beta-Icon@2x.png */; };
 		22CC8C9518B136CE00E61658 /* Beta-iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BDE18B136CD00E61658 /* Beta-iTunesArtwork */; };
 		22CC8C9618B136CE00E61658 /* Beta-iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BDF18B136CD00E61658 /* Beta-iTunesArtwork@2x */; };
-		22CC8C9718B136CE00E61658 /* MapAtmo-Beta-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BE018B136CE00E61658 /* MapAtmo-Beta-Info.plist */; };
-		22CC8C9818B136CE00E61658 /* Debug-Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BE218B136CE00E61658 /* Debug-Default-Landscape.png */; };
-		22CC8C9918B136CE00E61658 /* Debug-Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BE318B136CE00E61658 /* Debug-Default-Landscape@2x.png */; };
 		22CC8C9A18B136CE00E61658 /* Debug-Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BE418B136CE00E61658 /* Debug-Icon-60.png */; };
 		22CC8C9B18B136CE00E61658 /* Debug-Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BE518B136CE00E61658 /* Debug-Icon-60@2x.png */; };
 		22CC8C9C18B136CE00E61658 /* Debug-Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BE618B136CE00E61658 /* Debug-Icon-72.png */; };
@@ -103,7 +96,6 @@
 		22CC8CA718B136CE00E61658 /* Debug-Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BF118B136CE00E61658 /* Debug-Icon@2x.png */; };
 		22CC8CA818B136CE00E61658 /* Debug-iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BF218B136CE00E61658 /* Debug-iTunesArtwork */; };
 		22CC8CA918B136CE00E61658 /* Debug-iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BF318B136CE00E61658 /* Debug-iTunesArtwork@2x */; };
-		22CC8CAA18B136CE00E61658 /* MapAtmo-Debug-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BF418B136CE00E61658 /* MapAtmo-Debug-Info.plist */; };
 		22CC8CAB18B136CE00E61658 /* 3DMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BF618B136CE00E61658 /* 3DMask.png */; };
 		22CC8CAC18B136CE00E61658 /* 3DMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BF718B136CE00E61658 /* 3DMask@2x.png */; };
 		22CC8CAD18B136CE00E61658 /* blue-193-location-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BF818B136CE00E61658 /* blue-193-location-arrow.png */; };
@@ -171,9 +163,7 @@
 		22CC8D0918B13A9600E61658 /* PSMapAtmoModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8CF818B13A9600E61658 /* PSMapAtmoModalViewController.m */; };
 		22CC8D0A18B13A9600E61658 /* PSMapAtmoNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8CFA18B13A9600E61658 /* PSMapAtmoNavigationController.m */; };
 		22CC8D0B18B13A9600E61658 /* PSMapAtmoSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8CFC18B13A9600E61658 /* PSMapAtmoSettingsViewController.m */; };
-		22CC8D0C18B13A9600E61658 /* PSMapAtmoSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8CFE18B13A9600E61658 /* PSMapAtmoSupportViewController.m */; };
 		22CC8D0D18B13A9600E61658 /* PSMapAtmoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8D0018B13A9600E61658 /* PSMapAtmoViewController.m */; };
-		22CC8D0E18B13A9600E61658 /* PSMapAtmoWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8D0218B13A9600E61658 /* PSMapAtmoWebViewController.m */; };
 		22CC8D0F18B13A9600E61658 /* PSMapAtmoMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8D0518B13A9600E61658 /* PSMapAtmoMapView.m */; };
 		22CC8D1218B166E300E61658 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CC8D1118B166E300E61658 /* Crashlytics.framework */; };
 		22CC8D1518B1698700E61658 /* PSMapAtmoSettingsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8D1418B1698700E61658 /* PSMapAtmoSettingsMapViewController.m */; };
@@ -215,18 +205,12 @@
 		22CC8B3D18B136CD00E61658 /* NSMutableURLRequest+CurlDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+CurlDescription.m"; sourceTree = "<group>"; };
 		22CC8B3E18B136CD00E61658 /* NSObject+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
 		22CC8B3F18B136CD00E61658 /* NSObject+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
-		22CC8B4018B136CD00E61658 /* UIColor+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Random.h"; sourceTree = "<group>"; };
-		22CC8B4118B136CD00E61658 /* UIColor+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Random.m"; sourceTree = "<group>"; };
 		22CC8B5618B136CD00E61658 /* PSMapAtmo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmo.h; sourceTree = "<group>"; };
 		22CC8B5718B136CD00E61658 /* PSMapAtmoNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoNotifications.h; sourceTree = "<group>"; };
 		22CC8B5818B136CD00E61658 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22CC8B5918B136CD00E61658 /* PSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
 		22CC8B5A18B136CD00E61658 /* PSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
 		22CC8B5B18B136CD00E61658 /* PSMapAtmo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSMapAtmo-Prefix.pch"; sourceTree = "<group>"; };
-		22CC8B5E18B136CD00E61658 /* PSMapAtmoAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoAccount.h; sourceTree = "<group>"; };
-		22CC8B5F18B136CD00E61658 /* PSMapAtmoAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoAccount.m; sourceTree = "<group>"; };
-		22CC8B6218B136CD00E61658 /* PSMapAtmoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoApi.h; sourceTree = "<group>"; };
-		22CC8B6318B136CD00E61658 /* PSMapAtmoApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoApi.m; sourceTree = "<group>"; };
 		22CC8B6418B136CD00E61658 /* PSMapAtmoAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoAppearance.h; sourceTree = "<group>"; };
 		22CC8B6518B136CD00E61658 /* PSMapAtmoAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoAppearance.m; sourceTree = "<group>"; };
 		22CC8B6618B136CD00E61658 /* PSMapAtmoAppVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoAppVersion.h; sourceTree = "<group>"; };
@@ -239,8 +223,6 @@
 		22CC8B6D18B136CD00E61658 /* PSMapAtmoDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoDateFormatter.m; sourceTree = "<group>"; };
 		22CC8B6E18B136CD00E61658 /* PSMapAtmoDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMapAtmoDebugViewController.h; path = ../PSMapAtmoDebugViewController.h; sourceTree = "<group>"; };
 		22CC8B6F18B136CD00E61658 /* PSMapAtmoDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSMapAtmoDebugViewController.m; path = ../PSMapAtmoDebugViewController.m; sourceTree = "<group>"; };
-		22CC8B7818B136CD00E61658 /* PSMapAtmoError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoError.h; sourceTree = "<group>"; };
-		22CC8B7918B136CD00E61658 /* PSMapAtmoError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoError.m; sourceTree = "<group>"; };
 		22CC8B7A18B136CD00E61658 /* PSMapAtmoFeedbackTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoFeedbackTextViewCell.h; sourceTree = "<group>"; };
 		22CC8B7B18B136CD00E61658 /* PSMapAtmoFeedbackTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoFeedbackTextViewCell.m; sourceTree = "<group>"; };
 		22CC8B7E18B136CD00E61658 /* PSMapAtmoLocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoLocalStorage.h; sourceTree = "<group>"; };
@@ -253,8 +235,6 @@
 		22CC8B9D18B136CD00E61658 /* PSMapAtmoPublicApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoPublicApi.m; sourceTree = "<group>"; };
 		22CC8BA018B136CD00E61658 /* PSMapAtmoPublicDeviceDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoPublicDeviceDict.h; sourceTree = "<group>"; };
 		22CC8BA118B136CD00E61658 /* PSMapAtmoPublicDeviceDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoPublicDeviceDict.m; sourceTree = "<group>"; };
-		22CC8BA218B136CD00E61658 /* PSMapAtmoPublicDevicePlaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoPublicDevicePlaceView.h; sourceTree = "<group>"; };
-		22CC8BA318B136CD00E61658 /* PSMapAtmoPublicDevicePlaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoPublicDevicePlaceView.m; sourceTree = "<group>"; };
 		22CC8BA418B136CD00E61658 /* PSMapAtmoReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoReachability.h; sourceTree = "<group>"; };
 		22CC8BA518B136CD00E61658 /* PSMapAtmoReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoReachability.m; sourceTree = "<group>"; };
 		22CC8BAC18B136CD00E61658 /* PSMapAtmoUnitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMapAtmoUnitsViewController.h; path = ../PSMapAtmoUnitsViewController.h; sourceTree = "<group>"; };
@@ -391,12 +371,8 @@
 		22CC8CFA18B13A9600E61658 /* PSMapAtmoNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoNavigationController.m; sourceTree = "<group>"; };
 		22CC8CFB18B13A9600E61658 /* PSMapAtmoSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoSettingsViewController.h; sourceTree = "<group>"; };
 		22CC8CFC18B13A9600E61658 /* PSMapAtmoSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoSettingsViewController.m; sourceTree = "<group>"; };
-		22CC8CFD18B13A9600E61658 /* PSMapAtmoSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoSupportViewController.h; sourceTree = "<group>"; };
-		22CC8CFE18B13A9600E61658 /* PSMapAtmoSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoSupportViewController.m; sourceTree = "<group>"; };
 		22CC8CFF18B13A9600E61658 /* PSMapAtmoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoViewController.h; sourceTree = "<group>"; };
 		22CC8D0018B13A9600E61658 /* PSMapAtmoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoViewController.m; sourceTree = "<group>"; };
-		22CC8D0118B13A9600E61658 /* PSMapAtmoWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoWebViewController.h; sourceTree = "<group>"; };
-		22CC8D0218B13A9600E61658 /* PSMapAtmoWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoWebViewController.m; sourceTree = "<group>"; };
 		22CC8D0418B13A9600E61658 /* PSMapAtmoMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoMapView.h; sourceTree = "<group>"; };
 		22CC8D0518B13A9600E61658 /* PSMapAtmoMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoMapView.m; sourceTree = "<group>"; };
 		22CC8D1118B166E300E61658 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -440,7 +416,7 @@
 				221B3FAF185E3FAE00071CA7 /* UIKit.framework in Frameworks */,
 				221B3FB0185E3FAE00071CA7 /* libPods.a in Frameworks */,
 				22CC8D1218B166E300E61658 /* Crashlytics.framework in Frameworks */,
-				223AFA45185E64F200B888A1 /* libGoogleAnalytics.a in Frameworks */,
+				227692ED1A6BEC410012851A /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,8 +440,6 @@
 				22CC8B6718B136CD00E61658 /* PSMapAtmoAppVersion.m */,
 				22CC8BA018B136CD00E61658 /* PSMapAtmoPublicDeviceDict.h */,
 				22CC8BA118B136CD00E61658 /* PSMapAtmoPublicDeviceDict.m */,
-				22CC8BA218B136CD00E61658 /* PSMapAtmoPublicDevicePlaceView.h */,
-				22CC8BA318B136CD00E61658 /* PSMapAtmoPublicDevicePlaceView.m */,
 				22DDFD8218F84E2F00AA91DC /* Model */,
 				22CC8CF018B13A9600E61658 /* ViewControllers */,
 				22CC8D0318B13A9600E61658 /* Views */,
@@ -494,8 +468,6 @@
 				22CC8B3D18B136CD00E61658 /* NSMutableURLRequest+CurlDescription.m */,
 				22CC8B3E18B136CD00E61658 /* NSObject+Runtime.h */,
 				22CC8B3F18B136CD00E61658 /* NSObject+Runtime.m */,
-				22CC8B4018B136CD00E61658 /* UIColor+Random.h */,
-				22CC8B4118B136CD00E61658 /* UIColor+Random.m */,
 				22E3D37518C262A900281AB5 /* NSString+MKCoordinateRegion.h */,
 				22E3D37618C262A900281AB5 /* NSString+MKCoordinateRegion.m */,
 			);
@@ -686,8 +658,6 @@
 				22CC8CF718B13A9600E61658 /* PSMapAtmoModalViewController.h */,
 				22CC8CF818B13A9600E61658 /* PSMapAtmoModalViewController.m */,
 				22DDFD8118F84E0400AA91DC /* MapView */,
-				22CC8D0118B13A9600E61658 /* PSMapAtmoWebViewController.h */,
-				22CC8D0218B13A9600E61658 /* PSMapAtmoWebViewController.m */,
 				22DDFD8018F84DF500AA91DC /* Settings */,
 			);
 			path = ViewControllers;
@@ -706,10 +676,6 @@
 		22CC8D1018B15C2F00E61658 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				22CC8B6218B136CD00E61658 /* PSMapAtmoApi.h */,
-				22CC8B6318B136CD00E61658 /* PSMapAtmoApi.m */,
-				22CC8B5E18B136CD00E61658 /* PSMapAtmoAccount.h */,
-				22CC8B5F18B136CD00E61658 /* PSMapAtmoAccount.m */,
 				22CC8B9C18B136CD00E61658 /* PSMapAtmoPublicApi.h */,
 				22CC8B9D18B136CD00E61658 /* PSMapAtmoPublicApi.m */,
 			);
@@ -741,8 +707,6 @@
 				22CC8BAD18B136CD00E61658 /* PSMapAtmoUnitsViewController.m */,
 				22CC8CFB18B13A9600E61658 /* PSMapAtmoSettingsViewController.h */,
 				22CC8CFC18B13A9600E61658 /* PSMapAtmoSettingsViewController.m */,
-				22CC8CFD18B13A9600E61658 /* PSMapAtmoSupportViewController.h */,
-				22CC8CFE18B13A9600E61658 /* PSMapAtmoSupportViewController.m */,
 				22CC8CF118B13A9600E61658 /* PSMapAtmoFilterViewController.h */,
 				22CC8CF218B13A9600E61658 /* PSMapAtmoFilterViewController.m */,
 				22CC8CF318B13A9600E61658 /* PSMapAtmoMapImprintViewController.h */,
@@ -783,8 +747,6 @@
 				22CC8B6B18B136CD00E61658 /* PSMapAtmoConverter.m */,
 				22CC8B6C18B136CD00E61658 /* PSMapAtmoDateFormatter.h */,
 				22CC8B6D18B136CD00E61658 /* PSMapAtmoDateFormatter.m */,
-				22CC8B7818B136CD00E61658 /* PSMapAtmoError.h */,
-				22CC8B7918B136CD00E61658 /* PSMapAtmoError.m */,
 				22ABB5EC18D60DCF0008922B /* PSMapAtmoFilter.h */,
 				22ABB5ED18D60DCF0008922B /* PSMapAtmoFilter.m */,
 				22CC8B7E18B136CD00E61658 /* PSMapAtmoLocalStorage.h */,
@@ -906,14 +868,12 @@
 				22CC8CE718B136CE00E61658 /* 1387054760_Map-Marker-Drawing-Pin-Left-Pink.png in Resources */,
 				22CC8CDC18B136CE00E61658 /* 1387054645_Map-Marker-Marker-Inside-Pink.png in Resources */,
 				22CC8CC918B136CE00E61658 /* TrackingLocationOffMaskLandscape@2x.png in Resources */,
-				22CC8C9918B136CE00E61658 /* Debug-Default-Landscape@2x.png in Resources */,
 				22CC8C7918B136CE00E61658 /* Icon-76@2x.png in Resources */,
 				22CC8CB018B136CE00E61658 /* gray-1067-enter-fullscreen@2x.png in Resources */,
 				22CC8C9D18B136CE00E61658 /* Debug-Icon-72@2x.png in Resources */,
 				22CC8CA618B136CE00E61658 /* Debug-Icon.png in Resources */,
 				22CC8CB618B136CE00E61658 /* gray-338-enter-fullscreen@2x.png in Resources */,
 				22CC8C9418B136CE00E61658 /* Beta-Icon@2x.png in Resources */,
-				22CC8CAA18B136CE00E61658 /* MapAtmo-Debug-Info.plist in Resources */,
 				22CC8C8918B136CE00E61658 /* Beta-Icon-72.png in Resources */,
 				22CC8CBF18B136CE00E61658 /* Midnight-1536x2048.jpg in Resources */,
 				22CC8C7A18B136CE00E61658 /* Icon-Small-40.png in Resources */,
@@ -941,13 +901,13 @@
 				22CC8CA218B136CE00E61658 /* Debug-Icon-Small-50.png in Resources */,
 				22CC8C7B18B136CE00E61658 /* Icon-Small-40@2x.png in Resources */,
 				22CC8CD918B136CE00E61658 /* 1387054481_Map-Marker-Marker-Inside-Azure.png in Resources */,
+				227692EF1A6BED490012851A /* Debug-Default-Landscape@2x.png in Resources */,
 				22CC8CD518B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink@2x.png in Resources */,
 				22CC8C8B18B136CE00E61658 /* Beta-Icon-76.png in Resources */,
 				22CC8CD018B136CE00E61658 /* white-339-exit-fullscreen.png in Resources */,
 				22CC8CC418B136CE00E61658 /* TrackingLocationMaskLandscape.png in Resources */,
 				22CC8CB318B136CE00E61658 /* gray-193-location-arrow.png in Resources */,
 				22CC8CB218B136CE00E61658 /* gray-1068-exit-fullscreen@2x.png in Resources */,
-				22CC8C8418B136CE00E61658 /* MapAtmo-AppStore-Info.plist in Resources */,
 				22CC8CD118B136CE00E61658 /* white-339-exit-fullscreen@2x.png in Resources */,
 				22CC8C7518B136CE00E61658 /* Icon-60@2x.png in Resources */,
 				22CC8CAB18B136CE00E61658 /* 3DMask.png in Resources */,
@@ -987,6 +947,7 @@
 				22CC8CCA18B136CE00E61658 /* TrackingOff.png in Resources */,
 				22CC8CE418B136CE00E61658 /* 1387054724_Map-Marker-Drawing-Pin-Right-Azure.png in Resources */,
 				22CC8CA518B136CE00E61658 /* Debug-Icon-Small@2x.png in Resources */,
+				227692EE1A6BED490012851A /* Debug-Default-Landscape.png in Resources */,
 				22CC8CCD18B136CE00E61658 /* white-193-location-arrow@2x.png in Resources */,
 				22CC8CE118B136CE00E61658 /* 1387054690_Map-Marker-Push-Pin--Right-Azure.png in Resources */,
 				22CC8CCF18B136CE00E61658 /* white-338-enter-fullscreen@2x.png in Resources */,
@@ -1001,7 +962,6 @@
 				22CC8CDE18B136CE00E61658 /* 1387054653_Map-Marker-Push-Pin--Right-Pink.png in Resources */,
 				22CC8C7C18B136CE00E61658 /* Icon-Small-50.png in Resources */,
 				22CC8C8718B136CE00E61658 /* Beta-Icon-60.png in Resources */,
-				22CC8C9718B136CE00E61658 /* MapAtmo-Beta-Info.plist in Resources */,
 				22CC8C9318B136CE00E61658 /* Beta-Icon.png in Resources */,
 				22CC8C7218B136CE00E61658 /* Default-Landscape.png in Resources */,
 				22CC8CC218B136CE00E61658 /* TrackingLocationMask.png in Resources */,
@@ -1015,7 +975,6 @@
 				22CC8CC818B136CE00E61658 /* TrackingLocationOffMaskLandscape.png in Resources */,
 				22CC8CA118B136CE00E61658 /* Debug-Icon-Small-40@2x.png in Resources */,
 				22CC8CCB18B136CE00E61658 /* TrackingOff@2x.png in Resources */,
-				22CC8C9818B136CE00E61658 /* Debug-Default-Landscape.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1062,7 +1021,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "./Crashlytics.framework/run c13fd4d9aee54009fd4750058c84e02db744864d";
+			shellPath = "./Crashlytics.framework/run c13fd4d9aee54009fd4750058c84e02db744864d c7563ea40e182f91eb64c3a6232f046eba831eefe3e04be35dd44ee6ee82f0c1";
 			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1072,14 +1031,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22CC8C6718B136CE00E61658 /* PSMapAtmoPublicDevicePlaceView.m in Sources */,
 				2242D59418B2B71500C693C9 /* PSMapAtmoSettingsLocationViewController.m in Sources */,
 				22CC8C4D18B136CE00E61658 /* PSMapAtmoDebugViewController.m in Sources */,
 				22CC8D0618B13A9600E61658 /* PSMapAtmoFilterViewController.m in Sources */,
 				22CC8C6418B136CE00E61658 /* PSMapAtmoPublicApi.m in Sources */,
-				22CC8D0C18B13A9600E61658 /* PSMapAtmoSupportViewController.m in Sources */,
 				22CC8C4818B136CE00E61658 /* PSMapAtmoAppearance.m in Sources */,
-				22CC8C3818B136CE00E61658 /* UIColor+Random.m in Sources */,
 				22CC8D0B18B13A9600E61658 /* PSMapAtmoSettingsViewController.m in Sources */,
 				22CC8D0F18B13A9600E61658 /* PSMapAtmoMapView.m in Sources */,
 				22CC8C3718B136CE00E61658 /* NSObject+Runtime.m in Sources */,
@@ -1090,7 +1046,6 @@
 				22CC8C6818B136CE00E61658 /* PSMapAtmoReachability.m in Sources */,
 				22CC8C6C18B136CE00E61658 /* PSMapAtmoUnitsViewController.m in Sources */,
 				22CC8C5B18B136CE00E61658 /* PSMapAtmoMapViewDataSource.m in Sources */,
-				22CC8C4518B136CE00E61658 /* PSMapAtmoAccount.m in Sources */,
 				22CC8C4918B136CE00E61658 /* PSMapAtmoAppVersion.m in Sources */,
 				22DDFD8518F84E6B00AA91DC /* PSMapAtmoFeedbackTextField.m in Sources */,
 				22CC8D0A18B13A9600E61658 /* PSMapAtmoNavigationController.m in Sources */,
@@ -1104,7 +1059,6 @@
 				22CC8C4C18B136CE00E61658 /* PSMapAtmoDateFormatter.m in Sources */,
 				22CC8C6618B136CE00E61658 /* PSMapAtmoPublicDeviceDict.m in Sources */,
 				22CC8C4218B136CE00E61658 /* main.m in Sources */,
-				22CC8C4718B136CE00E61658 /* PSMapAtmoApi.m in Sources */,
 				22CC8C4B18B136CE00E61658 /* PSMapAtmoConverter.m in Sources */,
 				22CC8C4A18B136CE00E61658 /* PSMapAtmoBetaViewController.m in Sources */,
 				22CC8C3418B136CE00E61658 /* PSMapAtmoAnalytics.m in Sources */,
@@ -1112,9 +1066,7 @@
 				2276D1B718F87F3E0086966B /* PSMapAtmoFeedbackTextFieldCell.m in Sources */,
 				22CC8C6E18B136CE00E61658 /* PSMapAtmoUserDefaults.m in Sources */,
 				22CC8C3618B136CE00E61658 /* NSMutableURLRequest+CurlDescription.m in Sources */,
-				22CC8C5218B136CE00E61658 /* PSMapAtmoError.m in Sources */,
 				22CC8D0D18B13A9600E61658 /* PSMapAtmoViewController.m in Sources */,
-				22CC8D0E18B13A9600E61658 /* PSMapAtmoWebViewController.m in Sources */,
 				22DDFD7E18F84DC300AA91DC /* PSMapAtmoFeedbackTextView.m in Sources */,
 				22ABB5EE18D60DCF0008922B /* PSMapAtmoFilter.m in Sources */,
 				E5F16D014F5C0EA6E9E45FC3 /* PSMapAtmoRatingDelegate.m in Sources */,
@@ -1130,9 +1082,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12F25DACE93543278A477C52 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Philip Schneider (723AP2V5VG)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1149,7 +1102,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pschneider/Documents/Workspace/Xcode/Projects/PS/DashAtmo/Pods/GoogleAnalytics-iOS-SDK/GoogleAnalytics-iOS-SDK/Library",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK/GoogleAnalytics-iOS-SDK/Library",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1163,9 +1116,10 @@
 					SystemConfiguration,
 				);
 				PRODUCT_NAME = MapAtmo;
-				PROVISIONING_PROFILE = "DE360189-0D20-495B-B5C5-401D9ADC2457";
+				PROVISIONING_PROFILE = "ba41c1d3-21e6-4b30-8b8e-031be407cd97";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AppStore;
@@ -1174,9 +1128,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12F25DACE93543278A477C52 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: Philip Schneider (JDL4TRB26V)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1195,7 +1150,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pschneider/Documents/Workspace/Xcode/Projects/PS/DashAtmo/Pods/GoogleAnalytics-iOS-SDK/GoogleAnalytics-iOS-SDK/Library",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK/GoogleAnalytics-iOS-SDK/Library",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1216,9 +1171,10 @@
 					UIKit,
 				);
 				PRODUCT_NAME = "MapAtmo-$(CONFIGURATION)";
-				PROVISIONING_PROFILE = "3BBC520B-1883-4CD4-BC95-6F648A196680";
+				PROVISIONING_PROFILE = "30220702-08e1-433d-a252-e9c20b7c9963";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1227,7 +1183,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1249,10 +1208,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7s armv7";
 			};
 			name = Beta;
 		};
@@ -1260,9 +1220,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12F25DACE93543278A477C52 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Philip Schneider (723AP2V5VG)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1279,7 +1240,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pschneider/Documents/Workspace/Xcode/Projects/PS/DashAtmo/Pods/GoogleAnalytics-iOS-SDK/GoogleAnalytics-iOS-SDK/Library",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics-iOS-SDK/GoogleAnalytics-iOS-SDK/Library",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1300,9 +1261,10 @@
 					UIKit,
 				);
 				PRODUCT_NAME = "MapAtmo-$(CONFIGURATION)";
-				PROVISIONING_PROFILE = "2F57692C-6145-4DB9-AFE8-E5A6FC1AAB42";
+				PROVISIONING_PROFILE = "ba41c1d3-21e6-4b30-8b8e-031be407cd97";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Beta;
@@ -1311,7 +1273,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1339,10 +1304,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "armv7s armv7";
 			};
 			name = Debug;
 		};
@@ -1350,7 +1316,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1372,10 +1341,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7s armv7";
 			};
 			name = AppStore;
 		};

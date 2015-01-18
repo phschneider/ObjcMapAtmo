@@ -7,8 +7,7 @@
 #import "PSMapAtmoPublicApi.h"
 #import "PSMapAtmoMapViewDataSource.h"
 #import "PSMapAtmoPublicDeviceDict.h"
-#import "PSMapAtmoNotifications.h"
-#import "PSMapAtmoMapAnalytics.h"
+
 
 @implementation PSMapAtmoMapViewDataSource
 
@@ -39,7 +38,7 @@
 
     NSDictionary * dict = notification.userInfo;
     
-    for (NSDictionary * subDict in [dict objectForKey:PSMAPATMO_PUBLIC_MEASURES_UPDATE_NOTIFICATION_USERINFO_KEY])
+    for (NSDictionary * subDict in dict[PSMAPATMO_PUBLIC_MEASURES_UPDATE_NOTIFICATION_USERINFO_KEY])
     {
         [PSMapAtmoPublicDeviceDict createDeviceWithDict:subDict];
     }

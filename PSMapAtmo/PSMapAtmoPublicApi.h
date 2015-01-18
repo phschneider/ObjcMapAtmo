@@ -10,12 +10,8 @@
 #import <Foundation/Foundation.h>
 
 @interface PSMapAtmoPublicApi : NSObject
-@property (nonatomic) BOOL useFilter;
 
 + (PSMapAtmoPublicApi*) sharedInstance;
 - (void) meassuresForSw:(CLLocationCoordinate2D)sw andNe:(CLLocationCoordinate2D)ne;
 
-- (void)getMeasure;
-- (void)getMeasureForImprint;
-- (void)getToken;
 @end

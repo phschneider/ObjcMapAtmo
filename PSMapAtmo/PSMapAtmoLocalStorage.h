@@ -8,18 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class PSMapAtmoPublicDevice;
+@class PSMapAtmoPublicDeviceDict;
+
+
 @interface PSMapAtmoLocalStorage : NSObject
 
 + (PSMapAtmoLocalStorage *) sharedInstance;
 
-- (PSMapAtmoPublicDevice*)publicDeviceWithID:(NSString*)deviceID;
+- (PSMapAtmoPublicDeviceDict*)publicDeviceWithID:(NSString*)deviceID;
 - (BOOL) hasPublicDeviceWithID:(NSString*)deviceID;
-- (void) addPublicDevice:(PSMapAtmoPublicDevice*)publicDevice;
+- (void) addPublicDevice:(PSMapAtmoPublicDeviceDict*)publicDevice;
 - (int) numberOfPublicDevices;
 - (int) storageSize;
-
-- (void) archive;
-- (void) load;
 
 @end

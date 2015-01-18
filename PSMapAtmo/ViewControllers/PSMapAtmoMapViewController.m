@@ -8,8 +8,6 @@
 
 #import "PSMapAtmoPublicApi.h"
 
-#import "PSMapAtmoNotifications.h"
-
 #import "PSMapAtmoMapView.h"
 #import "PSMapAtmoMapViewController.h"
 #import "PSMapAtmoAppearance.h"
@@ -21,18 +19,15 @@
 #import "TSMessage.h"
 
 #import "PSMapAtmoMapViewDelegate.h"
-#import "PSMapAtmoPublicDevicePlaceView.h"
 #import "PSMapAtmoMapAnalytics.h"
 #import "PSMapAtmoMapImprintViewController.h"
 
-#import <QuartzCore/QuartzCore.h>
 #define kNavBarDefaultPosition CGPointMake(160,22)
 
 
 #define FULLSCREE_HINT_ANIMATION_DURATION   1.0
 
 #import "PSMapAtmoSettingsViewController.h"
-#import "NSObject+Runtime.h"
 #import "PSMapAtmoLocation.h"
 #import "NSString+MKCoordinateRegion.h"
 #import "PSMapAtmoAppVersion.h"
@@ -49,8 +44,6 @@
 @property (nonatomic) UIToolbar * toolBar;
 @property (nonatomic) int bytesReceived;
 @property (nonatomic) NSTimeInterval lastCheck;
-@property (nonatomic) NSTimeInterval mapStartLoading;
-@property (nonatomic) NSMutableArray * annotations;
 
 @property (nonatomic) UIView * statusBarView;
 @property (nonatomic) id<PSMapAtmoMapViewDelegate> mapViewDelegate;
@@ -58,7 +51,6 @@
 
 @property (nonatomic) UILongPressGestureRecognizer * longPressRecognizer;
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end
 
 @implementation PSMapAtmoMapViewController
@@ -87,7 +79,7 @@ static PSMapAtmoMapViewController* instance = nil;
     {
         [[PSMapAtmoAppearance sharedInstance] applyGlobalInterfaceAppearance];
 
-        self.annotations = [[NSMutableArray alloc] initWithCapacity:5000];
+        [[NSMutableArray alloc] initWithCapacity:5000];
         
         self.mapViewDelegate =  [[PSMapAtmoMapViewDelegate alloc] init];
         self.mapViewDataSource = [[PSMapAtmoMapViewDataSource alloc] init];
@@ -121,7 +113,7 @@ static PSMapAtmoMapViewController* instance = nil;
         self.warningAlreadyShown = NO;
         self.lastCheck = [[NSDate date] timeIntervalSince1970];
 
-        self.mapStartLoading = CFAbsoluteTimeGetCurrent();
+        CFAbsoluteTimeGetCurrent();
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDevice:) name:PSMAPATMO_PUBLIC_DEVICE_ADDED_NOTIFICATION object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedData:) name:PSMAPATMO_API_DATA_RECEIVED object:nil];
@@ -459,7 +451,7 @@ static PSMapAtmoMapViewController* instance = nil;
     {
         [self.view removeGestureRecognizer:recognizer];
         [self.view removeGestureRecognizer:self.longPressRecognizer];
-        [self exitFullScreen:recognizer];
+        [self exitFullScreen];
     }
 //
 //    if (recognizer.state == UIGestureRecognizerStateChanged) {
@@ -583,10 +575,9 @@ static PSMapAtmoMapViewController* instance = nil;
                         options:UIViewAnimationCurveEaseIn
                      animations:^{
                          UIView * view = [self.view viewWithTag:444];
-                         CGRect frame = CGRectZero;
+                         CGRect frame;
                          if (view)
                          {
-                             frame = CGRectZero;
                              frame = view.frame;
                              
                              // TooLBar
@@ -597,7 +588,6 @@ static PSMapAtmoMapViewController* instance = nil;
                          view = [self.view viewWithTag:445];
                          if (view)
                          {
-                             frame = CGRectZero;
                              frame = view.frame;
                              
                              // NavBar
@@ -608,7 +598,6 @@ static PSMapAtmoMapViewController* instance = nil;
                          view = [self.view viewWithTag:446];
                          if (view)
                          {
-                             frame = CGRectZero;
                              frame = view.frame;
                              
                              // Right
@@ -619,7 +608,6 @@ static PSMapAtmoMapViewController* instance = nil;
                          view = [self.view viewWithTag:447];
                          if (view)
                          {
-                             frame = CGRectZero;
                              frame = view.frame;
                              
                              // Left
@@ -683,7 +671,7 @@ static PSMapAtmoMapViewController* instance = nil;
 }
 
 
-- (void) exitFullScreen:(id)sender
+- (void) exitFullScreen
 {
     DLogFuncName();
     
@@ -770,10 +758,11 @@ static PSMapAtmoMapViewController* instance = nil;
 //                                              CGRect frame = self.toolBar.frame;
 //                                              frame.origin.y -= frame.size.height;
 //                                              self.toolBar.frame = frame;
-                         CGRect frame = CGRectZero;
+
                                               if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
                                               {
-                                                  frame = self.mapView.frame;
+
+                                                  CGRect frame = self.mapView.frame;
                                                   frame.origin.y = 0;
                                                   frame.size.height = 768-44-20;
                                                   self.mapView.frame = frame;
@@ -850,7 +839,7 @@ static PSMapAtmoMapViewController* instance = nil;
 {
     DLogFuncName();
     int intSize = sizeInInt;
-    float floatSize = sizeInInt*1.0;
+    float floatSize = (float) (sizeInInt*1.0);
     
     NSString *formatted = nil;
     
@@ -917,9 +906,9 @@ static PSMapAtmoMapViewController* instance = nil;
         return;
     }
 
-    if ([[notification userInfo] objectForKey:@"mapType"])
+    if ([notification userInfo][@"mapType"])
     {
-        MKMapType mapType= [[[notification userInfo] objectForKey:@"mapType"] intValue];
+        MKMapType mapType= (MKMapType) [[notification userInfo][@"mapType"] intValue];
         self.mapView.mapType = mapType;
     }
 }
@@ -952,7 +941,7 @@ static PSMapAtmoMapViewController* instance = nil;
     }
     
     
-    int bytes = [[note.userInfo objectForKey:@"size"] integerValue];
+    int bytes = [note.userInfo[@"size"] integerValue];
     self.bytesReceived += bytes;
     DLog(@"Size = %d",self.bytesReceived);
 
@@ -964,7 +953,7 @@ static PSMapAtmoMapViewController* instance = nil;
 - (void) addDevice:(NSNotification*)notification
 {
     DLogFuncName();
-    PSMapAtmoPublicDeviceDict * device = [notification.userInfo objectForKey:@"device"];
+    PSMapAtmoPublicDeviceDict * device = notification.userInfo[@"device"];
     if (device)
     {
         dispatch_sync(dispatch_get_main_queue(),^{
@@ -1064,7 +1053,7 @@ static PSMapAtmoMapViewController* instance = nil;
         return;
     }
     
-    UIBarButtonItem * sizeItem = [self.toolBar.items objectAtIndex:TABBAR_SIZE_ITEM_INDEX];
+    UIBarButtonItem * sizeItem = self.toolBar.items[TABBAR_SIZE_ITEM_INDEX];
     sizeItem.title = [NSString stringWithFormat:@"%@ received", [self humanReadableSizeFromInt:self.bytesReceived]];
 }
 
@@ -1118,7 +1107,7 @@ static PSMapAtmoMapViewController* instance = nil;
         [[PSMapAtmoMapAnalytics sharedInstance] trackVisibleCounterAfter60Seconds:visibleCount];
     }
     
-    UIBarButtonItem * sizeItem = [self.toolBar.items objectAtIndex:TABBAR_COUNT_ITEM_INDEX];
+    UIBarButtonItem * sizeItem = self.toolBar.items[TABBAR_COUNT_ITEM_INDEX];
     sizeItem.title = [NSString stringWithFormat:@"%d Weatherstations found (%d presented)", overallCount , visibleCount];
 }
 
@@ -1136,7 +1125,7 @@ static PSMapAtmoMapViewController* instance = nil;
         return;
     }
     
-    UIBarButtonItem * sizeItem = [self.toolBar.items objectAtIndex:TABBAR_LOCATE_ITEM_INDEX];
+    UIBarButtonItem * sizeItem = self.toolBar.items[TABBAR_LOCATE_ITEM_INDEX];
     sizeItem.title = [NSString stringWithFormat:@"%@ cached", [self humanReadableSizeFromInt:[[PSMapAtmoLocalStorage sharedInstance] storageSize] ]];
 }
 
@@ -1153,7 +1142,7 @@ static PSMapAtmoMapViewController* instance = nil;
 {
     DLogFuncName();
     
-    UIBarButtonItem * locateItem = [self.toolBar.items objectAtIndex:TABBAR_LOCATE_ITEM_INDEX];
+    UIBarButtonItem * locateItem = self.toolBar.items[TABBAR_LOCATE_ITEM_INDEX];
     if (highlight)
     {
         DLog(@"HIGHLIHGT");
@@ -1208,9 +1197,6 @@ static PSMapAtmoMapViewController* instance = nil;
 - (void) infoButtonTouched:(id)sender
 {
     DLogFuncName();
-// Nur ein Test ...
-//    [[PSMapAtmoPublicApi sharedInstance] getToken];
-
     PSMapAtmoNavigationController * navigationController = [[PSMapAtmoNavigationController alloc] initWithRootViewController: [[PSMapAtmoSettingsViewController alloc]init] ];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     

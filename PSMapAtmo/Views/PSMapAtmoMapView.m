@@ -36,12 +36,13 @@
     
     double vmrArea = (hDist * vDist) / 1000.0;
     double rounded  = vmrArea;
+    #warning unused valued
     if (vmrArea > 0){
-        rounded = roundf (vmrArea * 10) / 10.0;
+        rounded = roundf ((float) (vmrArea * 10)) / 10.0;
     }
 
     DLog(@"Size in QuadratKilometers = %f", vmrArea);
-    return vmrArea;
+    return (float) vmrArea;
 }
 
 
@@ -50,11 +51,12 @@
 {
     DLogFuncName();
     
-    MKZoomScale currentZoomScale = self.visibleMapRect.size.width / self.bounds.size.width;
+    MKZoomScale currentZoomScale = (MKZoomScale) (self.visibleMapRect.size.width / self.bounds.size.width);
     DLog(@"ZoomScale = %f", currentZoomScale);
-    
+
+    #warning unused value
     float zoomLevel = MAXIMUM_ZOOM; // MAXIMUM_ZOOM is 20 with MapKit
-    float zoomExponent = log2(currentZoomScale);
+    float zoomExponent = (float) log2(currentZoomScale);
     zoomLevel = (MAXIMUM_ZOOM - zoomExponent);
     DLog(@"ZoomLevel = %f", zoomLevel);
 

@@ -20,13 +20,12 @@
 #import "PSMapAtmoUserDefaults.h"
 #import "PSMapAtmoRatingDelegate.h"
 #import "PSMapAtmoLocation.h"
-#import <MBFingerTipWindow.h>
-#import <AdSupport/AdSupport.h>
 
 #ifdef CONFIGURATION_AppStore
     #import <Crashlytics/Crashlytics.h>
 #else
     #import "TestFlight.h"
+    #import "Fingertips/MBFingerTipWindow.h"
 //      #import <LookBack/LookBack.h>
 #endif
 
@@ -93,7 +92,7 @@
         
         #ifdef CONFIGURATION_Beta
              self.window = [[MBFingerTipWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-            [TestFlight setDeviceIdentifier:[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
+//            [TestFlight setDeviceIdentifier:[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
             [TestFlight takeOff:@"a80cb978-8484-437b-ac86-7e6ca5a389e4"];
         
              //[LookBack setupWithAppToken:@"XZ3uBLwSsheXvux88"];
@@ -102,7 +101,7 @@
 
         #ifdef CONFIGURATION_Debug
             self.window = [[MBFingerTipWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-            [TestFlight setDeviceIdentifier:[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
+//            [TestFlight setDeviceIdentifier:[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
             [TestFlight takeOff:@"6c75b978-51f3-404d-bc95-cabad88de7a5"];
         #endif
 
@@ -168,16 +167,8 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     DLogFuncName();
-//    [[PSNetAtmoLocalStorage sharedInstance] archive];
 }
 
 #pragma mark - Application's Documents directory
-
-// Returns the URL to the application's Documents directory.
-- (NSURL *)applicationDocumentsDirectory
-{
-    DLogFuncName();
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
 
 @end

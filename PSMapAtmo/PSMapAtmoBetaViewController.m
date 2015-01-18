@@ -9,8 +9,6 @@
 #import "PSMapAtmoBetaViewController.h"
 #import "PSMapAtmoFeedbackCell.h"
 #import "PSMapAtmoFeedbackTextViewCell.h"
-#import "PSMapAtmoFeedbackTextView.h"
-#import "PSMapAtmoFeedbackTextField.h"
 #import "PSMapAtmoFeedbackTextFieldCell.h"
 #import "PSMapAtmoUserDefaults.h"
 #import "SVProgressHUD.h"
@@ -97,19 +95,15 @@
     switch (section) {
         case 0:
             return [NSString stringWithFormat:@"%@",[NSLocalizedString(@"name", nil) capitalizedString]];
-            break;
             
         case 1:
             return [NSString stringWithFormat:@"%@",[NSLocalizedString(@"e-mail", nil) capitalizedString]];
-            break;
             
         case 2:
             return [NSString stringWithFormat:@"%@",[NSLocalizedString(@"message", nil) capitalizedString]];
-            break;
             
         default:
             return @"";
-            break;
     }
 }
 
@@ -134,7 +128,7 @@
         if (!self.clearButton)
         {
             self.clearButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            self.clearButton.frame = CGRectMake(20,40, ceil((tableView.bounds.size.width-40)/2)-10, 40);
+            self.clearButton.frame = CGRectMake(20,40, (CGFloat) (ceil((tableView.bounds.size.width-40)/2)-10), 40);
             [self.clearButton setTitle:[NSLocalizedString(@"clear", nil) capitalizedString] forState:UIControlStateNormal];
             [self.clearButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
@@ -149,7 +143,7 @@
         if (!self.sendButton)
         {
             self.sendButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            self.sendButton.frame = CGRectMake(20+ceil((tableView.bounds.size.width-40)/2)+10,40, ceil((tableView.bounds.size.width-40)/2)-10, 40);
+            self.sendButton.frame = CGRectMake((CGFloat) (20+ceil((tableView.bounds.size.width-40)/2)+10),40, (CGFloat) (ceil((tableView.bounds.size.width-40)/2)-10), 40);
             [self.sendButton setTitle:[NSLocalizedString(@"send", nil) capitalizedString] forState:UIControlStateNormal];
             [self.sendButton addTarget:self action:@selector(sendButtonTouched) forControlEvents:UIControlEventTouchUpInside];
             [self.sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -213,14 +207,17 @@
             break;
     }
         
-        
-    if ([self.cellArray count] < indexPath.section+1 || ![self.cellArray objectAtIndex:indexPath.section])
+
+    if (cell && self.cellArray)
     {
-        [self.cellArray insertObject:cell atIndex:indexPath.section];
-    }
-    else
-    {
-        [self.cellArray replaceObjectAtIndex:indexPath.section withObject:cell];
+        if ([self.cellArray count] < indexPath.section + 1 || !self.cellArray[(NSUInteger) indexPath.section])
+        {
+            [self.cellArray insertObject:cell atIndex:(NSUInteger) indexPath.section];
+        }
+        else
+        {
+            self.cellArray[(NSUInteger) indexPath.section] = cell;
+        }
     }
     return cell;
 }
@@ -232,16 +229,16 @@
     
     if (self.editingCell)
     {
-        [(PSMapAtmoFeedbackCell*)self.editingCell textFieldResignResponder];
-        [(PSMapAtmoFeedbackCell*)self.editingCell setDelegate:nil];
+        [self.editingCell textFieldResignResponder];
+        [self.editingCell setDelegate:nil];
     }
     
-    PSMapAtmoFeedbackCell *cell = [self.cellArray objectAtIndex:indexPath.section];
+    PSMapAtmoFeedbackCell *cell = self.cellArray[(NSUInteger) indexPath.section];
     self.editingCell = cell;
     self.selectedIndexPath = indexPath;
     
-    [(PSMapAtmoFeedbackCell*)self.editingCell setDelegate:self];
-    [(PSMapAtmoFeedbackCell*)self.editingCell textFieldBecomeFirstResponder];
+    [self.editingCell setDelegate:self];
+    [self.editingCell textFieldBecomeFirstResponder];
 
     if (indexPath.section == 2)
     {
@@ -424,7 +421,7 @@
     DLogFuncName();
     if ([self.cellArray count] == 3)
     {
-        [(PSMapAtmoFeedbackTextViewCell*)[self.cellArray objectAtIndex:2] clear];
+        [(PSMapAtmoFeedbackTextViewCell*) self.cellArray[2] clear];
     }
     
     [self.tableView reloadData];
@@ -442,14 +439,14 @@
         NSIndexPath *path = [self.tableView indexPathForCell:cell];
         if (path.section == 0)
         {
-            [[PSMapAtmoUserDefaults sharedInstance] setBetaName:[(PSMapAtmoFeedbackCell*)cell message]];
+            [[PSMapAtmoUserDefaults sharedInstance] setBetaName:[cell message]];
         }
         else if ( path.section == 1)
         {
-            [[PSMapAtmoUserDefaults sharedInstance] setBetaMail:[(PSMapAtmoFeedbackCell*)cell message]];
+            [[PSMapAtmoUserDefaults sharedInstance] setBetaMail:[cell message]];
         }
-        [feedBackString appendFormat:@"%@\n\n",[(PSMapAtmoFeedbackCell*)cell message]];
-        [(PSMapAtmoFeedbackCell*)cell textFieldResignResponder];
+        [feedBackString appendFormat:@"%@\n\n",[cell message]];
+        [cell textFieldResignResponder];
     }
 
 #warning todo - anlytics
@@ -467,7 +464,7 @@
 
 - (void) enableButton:(UIButton*)button enabled:(BOOL) enabled
 {
-    button.alpha = (enabled) ? 1 : 0.1;
+    button.alpha = (CGFloat) ((enabled) ? 1 : 0.1);
     button.enabled = enabled;
 }
 

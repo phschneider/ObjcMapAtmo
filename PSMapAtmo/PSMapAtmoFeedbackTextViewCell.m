@@ -23,8 +23,7 @@
         // Initialization code
         self.textView = [[PSMapAtmoFeedbackTextView alloc] initWithFrame:self.bounds];
         self.textView.userInteractionEnabled = NO;
-        [self.textView setParentCell:self];
-        
+
         [self.contentView addSubview: self.textView];
         [self.contentView bringSubviewToFront:self.textView];
         self.selectionStyle = UITableViewCellSelectionStyleNone;

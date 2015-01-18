@@ -24,7 +24,6 @@
         self.textField = [[PSMapAtmoFeedbackTextField alloc] initWithFrame:self.bounds];
         self.textField.userInteractionEnabled = NO;
         self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
-        [self.textField setParentCell:self];
         self.textField.backgroundColor = [UIColor redColor];
         [self.contentView addSubview: self.textField];
         [self.contentView bringSubviewToFront:self.textField];

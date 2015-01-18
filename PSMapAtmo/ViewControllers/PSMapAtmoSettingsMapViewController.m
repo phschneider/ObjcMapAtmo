@@ -10,7 +10,7 @@
 #import "PSMapAtmoUserDefaults.h"
 #import "PSMapAtmoMapAnalytics.h"
 
-@interface PSMapAtmoSettingsMapViewController ()
+@interface PSMapAtmoSettingsMapViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) UITableView * tableView;
 @property (nonatomic) NSArray * tableData;
@@ -59,9 +59,9 @@
                            @"subtitle" : @"",
                            @"rows" :
                                @[
-                                   @{ @"title" : @"Standard" , @"selected" : [NSNumber numberWithBool:(mapType == MKMapTypeStandard)], @"selector" : NSStringFromSelector(@selector(setMapType:)) },
-                                   @{ @"title" : @"Satellite", @"selected" : [NSNumber numberWithBool:(mapType == MKMapTypeSatellite)] , @"selector" : NSStringFromSelector(@selector(setMapType:))},
-                                   @{ @"title" : @"Hybrid", @"selected" : [NSNumber numberWithBool:(mapType == MKMapTypeHybrid)] , @"selector" : NSStringFromSelector(@selector(setMapType:))}
+                                   @{ @"title" : @"Standard" , @"selected" : @(mapType == MKMapTypeStandard), @"selector" : NSStringFromSelector(@selector(setMapType:)) },
+                                   @{ @"title" : @"Satellite", @"selected" : @(mapType == MKMapTypeSatellite), @"selector" : NSStringFromSelector(@selector(setMapType:))},
+                                   @{ @"title" : @"Hybrid", @"selected" : @(mapType == MKMapTypeHybrid), @"selector" : NSStringFromSelector(@selector(setMapType:))}
                                    ]
                            }
                        ];
@@ -74,73 +74,96 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     DLogFuncName();
-    NSDictionary * dict = [self.tableData objectAtIndex:section];
-    return [dict objectForKey:@"title"];
+    if (tableView == self.tableView)
+    {
+        NSDictionary * dict = self.tableData[(NSUInteger) section];
+        return dict[@"title"];
+    }
+    return nil;
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     DLogFuncName();
-    NSDictionary * dict = [self.tableData objectAtIndex:section];
-    return [dict objectForKey:@"subtitle"];
+    if (tableView== self.tableView)
+    {
+        NSDictionary *dict = self.tableData[(NSUInteger) section];
+        return dict[@"subtitle"];
+    }
+    return nil;
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     DLogFuncName();
-    return 1;
+    if (tableView == self.tableView)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     DLogFuncName();
-    return 3;
+    if (tableView == self.tableView)
+    {
+        return 3;
+    }
+    return 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DLogFuncName();
-    NSString * cellIdentifier = @"MapCell";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell)
+    if (tableView == self.tableView)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        NSString *cellIdentifier = @"MapCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+
+        NSDictionary *section = self.tableData[(NSUInteger) indexPath.section];
+        NSDictionary *row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
+
+        cell.textLabel.text = row[@"title"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = (UITableViewCellAccessoryType) (([row[@"selected"] boolValue]) ? UITableViewCellAccessoryCheckmark : nil);
+        cell.userInteractionEnabled = (![row[@"selected"] boolValue]);
+
+        return cell;
     }
-    
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [row objectForKey:@"title"];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.accessoryType = ([[row objectForKey:@"selected"] boolValue]) ? UITableViewCellAccessoryCheckmark : nil;
-    cell.userInteractionEnabled = (![[row objectForKey:@"selected"] boolValue]);
-    
-    return cell;
+    return nil;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DLogFuncName();
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
-    NSString * selectorName = [row objectForKey:@"selector"];
-    
-    BOOL selectionChanged = (![[row objectForKey:@"selected"] boolValue]);
-    if (selectionChanged)
+    if (tableView == self.tableView)
     {
-        SEL selector = NSSelectorFromString(selectorName);
-        if ([[PSMapAtmoUserDefaults sharedInstance] respondsToSelector:selector])
-        {
-            [self trackAnalyticsEventForSelectorName:selectorName andObject:indexPath];
+        NSDictionary *section = self.tableData[(NSUInteger) indexPath.section];
+        NSDictionary *row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
+        NSString *selectorName = row[@"selector"];
 
-            [[PSMapAtmoUserDefaults sharedInstance] performSelector:selector withObject:[NSNumber numberWithInt:indexPath.row]];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"PSMAPATMO_CHANGE_MAP_TYPE"  object:nil userInfo:@{@"mapType" : [NSNumber numberWithInt:indexPath.row]}];
-            [self reload];
+        BOOL selectionChanged = (![row[@"selected"] boolValue]);
+        if (selectionChanged)
+        {
+            SEL selector = NSSelectorFromString(selectorName);
+            if ([[PSMapAtmoUserDefaults sharedInstance] respondsToSelector:selector])
+            {
+                [self trackAnalyticsEventForSelectorName:selectorName andObject:indexPath];
+
+                [[PSMapAtmoUserDefaults sharedInstance] performSelector:selector withObject:@(indexPath.row)];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"PSMAPATMO_CHANGE_MAP_TYPE" object:nil userInfo:@{@"mapType" : @(indexPath.row)}];
+                [self reload];
+            }
         }
     }
 }
@@ -150,9 +173,9 @@
 {
     DLogFuncName();
 
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
-    NSString * title = [row objectForKey:@"title"];
+//    NSDictionary * section = self.tableData[(NSUInteger) indexPath.section];
+//    NSDictionary * row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
+//    NSString * title = row[@"title"];
 
     [[PSMapAtmoMapAnalytics sharedInstance] trackEventSystemMapChange];
 

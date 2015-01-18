@@ -37,7 +37,7 @@ static PSMapAtmoReachability* instance = nil;
     {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkReachabilityChanged:) name:kReachabilityChangedNotification object:nil];
 
-        _currentNetworkStatus = -1; // Absicht damit initial ein Netzwerkwechsel erkannt wird
+        _currentNetworkStatus = (NetworkStatus) -1; // Absicht damit initial ein Netzwerkwechsel erkannt wird
 
         self.internetReachability = [Reachability reachabilityForInternetConnection];
         [self.internetReachability startNotifier];
@@ -60,9 +60,9 @@ static PSMapAtmoReachability* instance = nil;
 - (NSString*)currentReachabilityAsString
 {
     DLogFuncName();
-    NSString * status = @"";
+    NSString * status;
     switch (_currentNetworkStatus) {
-        case -1:
+        case (NetworkStatus) -1:
             status = @"NotSet";
             break;
         case ReachableViaWiFi:

@@ -76,43 +76,10 @@
 }
 
 
-+ (PSMapAtmoPublicDeviceDict*) publicDeviceFromDict:(NSDictionary*)dict
-{
-    DLogFuncName();
-    PSMapAtmoPublicDeviceDict * device = [[PSMapAtmoLocalStorage sharedInstance] publicDeviceWithID:[dict objectForKey:@"_id"]];
-    BOOL addDevice = (!device);
-    if (addDevice)
-    {
-        device = [[PSMapAtmoPublicDeviceDict alloc] initWithDict:dict];
-        [[PSMapAtmoLocalStorage sharedInstance] addPublicDevice:device];
-        
-//        [PSNetAtmoPublicDeviceDict resolveAdressForDevice:device];
-    }
-    
-    return device;
-}
-
-
-+ (void) resolveAdressForDevice:(PSMapAtmoPublicDeviceDict*)device
-{
-    if (!device.address)
-    {
-        CLGeocoder *gc = [[CLGeocoder alloc] init];
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:[[device latitude]doubleValue] longitude:[[device longitude]doubleValue] ];
-        [gc reverseGeocodeLocation:location completionHandler:^(NSArray *placemark, NSError *error) {
-            device.placeMark = [placemark objectAtIndex:0];
-            device.address = device.placeMark.addressDictionary;
-            // do something with the address, see keys in the remark below
-            
-        }];
-    }
-}
-
-
 + (void) createDeviceWithDict:(NSDictionary*)dict
 {
     DLogFuncName();
-    PSMapAtmoPublicDeviceDict * device = [[PSMapAtmoLocalStorage sharedInstance] publicDeviceWithID:[dict objectForKey:@"_id"]];
+    PSMapAtmoPublicDeviceDict * device = [[PSMapAtmoLocalStorage sharedInstance] publicDeviceWithID:dict[@"_id"]];
     BOOL addDevice = (!device);
     if (addDevice)
     {
@@ -125,32 +92,32 @@
 
 - (NSString*) deviceID
 {
-    return [self.dict objectForKey:@"_id"];
+    return self.dict[@"_id"];
 }
 
 - (NSDictionary*)place
 {
 //    DLogFuncName();
-    return [self.dict objectForKey:@"place"];
+    return self.dict[@"place"];
 }
 
 - (NSDictionary*)measures
 {
 //    DLogFuncName();
-    return [self.dict objectForKey:@"measures"];
+    return self.dict[@"measures"];
 }
 
 
 - (NSNumber*) latitude
 {
 //    DLogFuncName();
-    return [[[self place] objectForKey:@"location"] objectAtIndex:1];
+    return [[self place][@"location"] objectAtIndex:1];
 }
 
 - (NSNumber*) longitude
 {
 //    DLogFuncName();
-    return [[[self place] objectForKey:@"location"] objectAtIndex:0];
+    return [[self place][@"location"] objectAtIndex:0];
 }
 
 - (CLLocationCoordinate2D)coordinate
@@ -161,22 +128,6 @@
     coord.longitude = [self.longitude doubleValue];
     return coord;
 }
-
-
-- (MKMapItem*)mapItem {
-//    DLogFuncName();
-//    NSDictionary *addressDict = @{(NSString*)kABPersonAddressStreetKey : _address};
-    
-    MKPlacemark *placemark = [[MKPlacemark alloc]
-                              initWithCoordinate:self.coordinate
-                              addressDictionary:nil];
-    
-    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-    mapItem.name = [self deviceID];
-    
-    return mapItem;
-}
-
 
 
 // Für Annotation
@@ -192,7 +143,7 @@
         CLLocationDistance distance = [publicLocation distanceFromLocation:self.userLocation];
         if (distance)
         {
-            float distanceInKm = distance/1000.0;
+            float distanceInKm = (float) (distance/1000.0);
             if ([[PSMapAtmoUserDefaults sharedInstance] useMiles])
             {
                 distanceString = [NSString stringWithFormat:@" (Distance: %.2f mi)",[[PSMapAtmoConverter sharedInstance] convertMeteresToMiles:distanceInKm]];
@@ -284,10 +235,10 @@
 - (NSDictionary*)meassures
 {
     DLogFuncName();
-    if ([[self.dict objectForKey:@"measures"] isKindOfClass:[NSDictionary class]])
+    if ([self.dict[@"measures"] isKindOfClass:[NSDictionary class]])
     {
 //        NSLog(@"Meassures = %@", [self.dict objectForKey:@"measures"]);
-        return [self.dict objectForKey:@"measures"];
+        return self.dict[@"measures"];
     }
     return nil;
 }
@@ -331,7 +282,7 @@
     DLogFuncName();
  
     NSDictionary *meassure = [self meassures];
-    CGFloat value = VALUE_NOT_FOUND;
+    CGFloat value = (CGFloat) VALUE_NOT_FOUND;
  
     if (meassure)
     {
@@ -339,15 +290,15 @@
         {
             if ([[key allKeys] containsObject:@"type"])
             {
-                NSArray *types = [key objectForKey:@"type"];
+                NSArray *types = key[@"type"];
                 if ([types containsObject:TEMPERATURE_KEY])
                 {
 //                    NSLog(@"TEMPERATURE_KEY Found in %@", key);
                     if ([[key allKeys] containsObject:@"res"])
                     {
-                        if ([[key objectForKey:@"res"] isKindOfClass:[NSDictionary class]] )
+                        if ([key[@"res"] isKindOfClass:[NSDictionary class]] )
                         {
-                            NSDictionary *res = [key objectForKey:@"res"];
+                            NSDictionary *res = key[@"res"];
                             int index = [types indexOfObject:TEMPERATURE_KEY];
                             NSString *timeInterval = nil;
                             if (!res)
@@ -363,7 +314,7 @@
                                 if (resKey > timeInterval)
                                 {
                                     timeInterval = resKey;
-                                    value = [[[res objectForKey:resKey] objectAtIndex:index] floatValue];
+                                    value = [[res[resKey] objectAtIndex:(NSUInteger) index] floatValue];
                                 }
                             }
                         }
@@ -371,7 +322,7 @@
                         {
                             // => Res besteht nur aus begin time !!! beg_time" = 0;
                             NSLog(@"Meassures = %@", meassure);
-                            NSLog(@"RES = %@", [key objectForKey:@"res"]);
+                            NSLog(@"RES = %@", key[@"res"]);
                             
 //                            dispatch_async(dispatch_get_main_queue(),^{
 //                                [[[UIAlertView alloc] initWithTitle:@"Res = " message:[NSString stringWithFormat:@"%@",[key objectForKey:@"res"]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
@@ -385,98 +336,6 @@
         }
     }
     return value;
-}
-
-
-- (float)pressure
-{
-    DLogFuncName();
-
-    NSDictionary *meassure = [self meassures];
-    CGFloat value = VALUE_NOT_FOUND;
-    
-    if (meassure)
-    {
-        for (NSDictionary *key in [meassure allValues] )
-        {
-            if ([[key allKeys] containsObject:@"type"])
-            {
-                NSArray *types = [key objectForKey:@"type"];
-                if ([types containsObject:PRESSURE_KEY])
-                {
-//                    NSLog(@"PRESSURE_KEY Found in %@", key);
-                    if ([[key allKeys] containsObject:@"res"])
-                    {
-                        NSDictionary *res = [key objectForKey:@"res"];
-                        int index = [types indexOfObject:PRESSURE_KEY];
-                        NSString *timeInterval = nil;
-                        for (NSString *resKey in [res allKeys])
-                        {
-                            if (resKey > timeInterval)
-                            {
-                                timeInterval = resKey;
-                                value = [[[res objectForKey:resKey] objectAtIndex:index] floatValue];
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return value;
-}
-
-
-- (float)humidity
-{
-    DLogFuncName();
-    
-    NSDictionary *meassure = [self meassures];
-    CGFloat value = VALUE_NOT_FOUND;
-    
-    if (meassure)
-    {
-        for (NSDictionary *key in [meassure allValues] )
-        {
-            if ([[key allKeys] containsObject:@"type"])
-            {
-                NSArray *types = [key objectForKey:@"type"];
-                if ([types containsObject:HUMIDITY_KEY])
-                {
-//                    NSLog(@"HUMIDITY_KEY Found in %@", key);
-                    if ([[key allKeys] containsObject:@"res"])
-                    {
-                        NSDictionary *res = [key objectForKey:@"res"];
-                        int index = [types indexOfObject:HUMIDITY_KEY];
-                        NSString *timeInterval = nil;
-                        for (NSString *resKey in [res allKeys])
-                        {
-                            if (resKey > timeInterval)
-                            {
-                                timeInterval = resKey;
-                                value = [[[res objectForKey:resKey] objectAtIndex:index] floatValue];
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return value;
-}
-
-
-- (void)encodeWithCoder:(NSCoder *) coder
-{
-//    [coder encodeInt:noteIndex forKey:@"noteIndex"];
-//    [coder encodeCGRect:cellRect forKey:@"cellRect"];
-//    [coder encodeBool:noteOn forKey: @"noteOn"];
-//    [coder encodeInt:note forKey:@"note"];
-//    [coder encodeInt:velocity forKey:@"velocity"];
-//    [coder encodeInt:channel forKey:@"channel"];
-//    [coder encodeInt:releaseVelocity forKey:@"releaseVelocity"];
-//    [coder encodeFloat:duration forKey:@"duration"];
-    [coder encodeObject:self.dict forKey:@"dict"];
 }
 
 

@@ -9,7 +9,6 @@
 #import "PSMapAtmoUserDefaults.h"
 #import "PSMapAtmoAlertViewDelegate.h"
 #import "PSMapAtmoMapAnalytics.h"
-#import "PSMapAtmoNotifications.h"
 #import "PSMapAtmoFilter.h"
 
 #ifndef CONFIGURATION_AppStore

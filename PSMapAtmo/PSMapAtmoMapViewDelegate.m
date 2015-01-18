@@ -33,9 +33,6 @@
 {
     if (enabled)
     {
-        
-//        CLLocationCoordinate2D coordsGarage = CLLocationCoordinate2DMake(39.287546, -76.619355);
-//        CLLocationCoordinate2D blimpCoord = CLLocationCoordinate2DMake(39.253095, -76.6657);
         MKMapCamera *camera = mapView.camera;
         if (camera)
         {
@@ -96,7 +93,7 @@
     float rounded  = _mapZoomLevel;
     if (mapZoomLevel > 0)
     {
-        rounded = roundf (_mapZoomLevel * 10) / 10.0;
+        rounded = (float) (roundf (_mapZoomLevel * 10) / 10.0);
     }
 
     if (abs > 0.25)
@@ -151,43 +148,6 @@
 #warning wenn karte bewegt wird muss geprüft werden ob  map shows user location && userlocation is center, dann button aktivieren oder deaktivieren ...
 
 
-#pragma mark - Annotations
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation
-//{
-//    DLogFuncName();
-//    return nil;
-//}
-
-
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
-//{
-//    DLogFuncName();
-////    return nil;
-//
-//    static NSString *identifier = @"MyLocation";
-//    if ([annotation isKindOfClass:[PSMapAtmoPublicDeviceDict class]]) {
-//
-//
-//        PSMapAtmoPublicDevicePlaceView *annotationView = (PSMapAtmoPublicDevicePlaceView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-//        if (annotationView == nil) {
-//            annotationView = [[PSMapAtmoPublicDevicePlaceView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-//            annotationView.enabled = YES;
-//            annotationView.canShowCallout = YES;
-////            annotationView.image = [UIImage imageNamed:@"1387054453_Map-Marker-Marker-Outside-Pink-Smaller"];//here we use a nice image instead of the default pins
-//        } else {
-//            annotationView.annotation = annotation;
-//        }
-//
-//        PSMapAtmoPublicDeviceDict * dict = annotation;
-//        [annotationView setMeassure:[dict meassure]];
-//        [annotationView setNeedsDisplay];
-//        return annotationView;
-//    }
-//
-//    return nil;
-//}
-
-
 #pragma mark - Managing Annotation Views
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -197,33 +157,9 @@
     }
     
     MKPinAnnotationView *view=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"parkingloc"];
-//    PSMapAtmoPublicDeviceDict * dict = annotation;
-    
-    //    float meassure = [dict meassure];
-    
-    //    PSMapAtmoPublicDevicePlaceView *annotationView = (PSMapAtmoPublicDevicePlaceView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:@"mapAtmoAnnotationReuseIdentifier"];
-    //    if (annotationView == nil) {
-    //        annotationView = [[PSMapAtmoPublicDevicePlaceView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-    //        annotationView.enabled = YES;
-    //        annotationView.canShowCallout = YES;
-    ////            annotationView.image = [UIImage imageNamed:@"1387054453_Map-Marker-Marker-Outside-Pink-Smaller"];//here we use a nice image instead of the default pins
-    //    } else {
-    //        annotationView.annotation = annotation;
-    //    }
     view.canShowCallout = YES;
-    
-    //    if(meassure > 20)
-    //    {
     [view setPinColor:MKPinAnnotationColorRed];
-    //    }
-    //    else if(meassure > 10)
-    //    {
-    //        [test setPinColor:MKPinAnnotationColorGreen];
-    //    }
-    //    else
-    //    {
-    //        [test setPinColor:MKPinAnnotationColorPurple];
-    //    }
+
     return view;
 }
 
@@ -252,19 +188,12 @@
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView
 {
     DLogFuncName();
-    
-//    [self highlightToolBarLocateItem:YES];
-    //    [self updateToolBarLocateItem];
 }
 
 
 - (void)mapViewDidStopLocatingUser:(MKMapView *)mapView
 {
     DLogFuncName();
-    
-//    [self highlightToolBarLocateItem:NO];
-    
-    //    [self updateToolBarLocateItem];
 }
 
 
@@ -286,8 +215,8 @@
                             lastUserlocation.location.verticalAccuracy != userLocation.location.verticalAccuracy );
     NSLog(@"accuracyChanged = %d", accuracyChanged);
 
-    float diffLat = ABS(lastUserlocation.location.coordinate.latitude - userLocation.coordinate.latitude);
-    float diffLong = ABS(lastUserlocation.location.coordinate.longitude - userLocation.coordinate.longitude);
+    float diffLat = (float) ABS(lastUserlocation.location.coordinate.latitude - userLocation.coordinate.latitude);
+    float diffLong = (float) ABS(lastUserlocation.location.coordinate.longitude - userLocation.coordinate.longitude);
     float delta = 0.000005;
 
     NSLog(@"Diff Lat = %f",diffLat );

@@ -10,6 +10,4 @@
 
 @interface PSMapAtmoFeedbackTextView : UITextView
 
-@property (nonatomic) UITableViewCell *parentCell;
-
 @end

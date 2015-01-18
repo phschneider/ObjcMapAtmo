@@ -10,6 +10,4 @@
 
 @interface PSMapAtmoFeedbackTextField : UITextField
 
-@property (nonatomic) UITableViewCell *parentCell;
-
 @end

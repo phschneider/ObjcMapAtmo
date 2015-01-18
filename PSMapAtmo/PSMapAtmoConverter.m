@@ -41,7 +41,7 @@ static PSMapAtmoConverter* instance = nil;
 - (CGFloat)convertCelsiusToFahrenheit:(CGFloat)celsius
 {
     DLogFuncName();
-    float fahrenheit = (celsius * 1.8 + 32);
+    float fahrenheit = (float) (celsius * 1.8 + 32);
     return fahrenheit;
 }
 
@@ -50,7 +50,7 @@ static PSMapAtmoConverter* instance = nil;
 - (CGFloat)convertMeteresToMiles:(CGFloat)km
 {
     DLogFuncName();
-    float mi = km / 1.609344;
+    float mi = (float) (km / 1.609344);
     return mi;
 }
 

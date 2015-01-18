@@ -55,14 +55,14 @@ static PSMapAtmoLocalStorage * instance = nil;
 - (PSMapAtmoPublicDeviceDict*)publicDeviceWithID:(NSString*)deviceID
 {
     DLogFuncName();
-    return [self.storage objectForKey:deviceID];
+    return self.storage[deviceID];
 }
 
 
 - (BOOL) hasPublicDeviceWithID:(NSString*)deviceID
 {
     DLogFuncName();
-    return ([self.storage objectForKey:deviceID] != nil);
+    return (self.storage[deviceID] != nil);
 }
 
 
@@ -72,7 +72,7 @@ static PSMapAtmoLocalStorage * instance = nil;
     if (![self hasPublicDeviceWithID:publicDevice.deviceID] && publicDevice.deviceID != nil)
     {
         __numberOfPublicDevices++;
-        [self.storage setObject:publicDevice forKey:publicDevice.deviceID];
+        self.storage[publicDevice.deviceID] = publicDevice;
 //        NSLog(@"DeviceID = %@", publicDevice.deviceID);
         [[NSNotificationCenter defaultCenter] postNotificationName:PSMAPATMO_PUBLIC_DEVICE_ADDED_NOTIFICATION object:nil userInfo:@{@"device" : publicDevice}];
     }
@@ -102,13 +102,6 @@ static PSMapAtmoLocalStorage * instance = nil;
 }
 
 
-- (NSDictionary*) fromData:(NSData*)data
-{
-    DLogFuncName();
-    return (NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:data];
-}
-
-
 #warning - lesen des caches macht das ganze langsam ...
 - (int) storageSize
 {
@@ -116,20 +109,6 @@ static PSMapAtmoLocalStorage * instance = nil;
     NSData * toData = [self toDdata];
     DLog(@"StorageSize = %d", [toData length]);
     return [toData length];
-}
-
-
-- (void) archive
-{
-    DLogFuncName();
-    NSString *savePath = [[PSMapAtmoLocalStorage applicationDocumentsDirectory] stringByAppendingPathComponent:@"NetAtmoCachedData"];
-    [self.storage writeToFile: savePath atomically: YES];
-}
-
-
-- (void) load
-{
-    DLogFuncName();
 }
 
 
@@ -145,7 +124,7 @@ static PSMapAtmoLocalStorage * instance = nil;
 {
     DLogFuncName();
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *basePath = ([paths count] > 0) ? paths[0] : nil;
     return basePath;
 }
 @end

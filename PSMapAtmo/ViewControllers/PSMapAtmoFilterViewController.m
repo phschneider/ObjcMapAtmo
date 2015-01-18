@@ -7,7 +7,6 @@
 #import "PSMapAtmoUserDefaults.h"
 #import "PSMapAtmoAlertViewDelegate.h"
 #import "PSMapAtmoMapAnalytics.h"
-#import "NSObject+Runtime.h"
 #import "PSMapAtmoConverter.h"
 #import "TDBadgedCell.h"
 #import "PSMapAtmoFilter.h"
@@ -70,11 +69,11 @@
     NSLog(@"UseFilter = %@", (useFilter) ? @"YES" : @"NO");
     NSLog(@"useDefaultFilter = %@", (useDefaultFilter) ? @"YES" : @"NO");
     
-    NSDictionary *filterEnabled = @{ @"title" : @"Filter enabled" , @"selected" : [NSNumber numberWithBool:useFilter], @"selector" : NSStringFromSelector(@selector(setFilter:)) };
-    NSDictionary *filterDefault = @{ @"title" : @"Use default value" , @"selected" : [NSNumber numberWithBool:useDefaultFilter] , @"selector" : NSStringFromSelector(@selector(setFilter:)), @"level" : @1 };
-    NSDictionary *filterDisabled = @{ @"title" : @"Filter disabled", @"selected" : [NSNumber numberWithBool:!useFilter] , @"selector" : NSStringFromSelector(@selector(setFilter:))};
-    NSMutableDictionary *filterCustom = [NSMutableDictionary dictionaryWithDictionary:@{ @"title" : @"Use custom value (pro)" , @"selected" : [NSNumber numberWithBool:!useDefaultFilter] , @"selector" : NSStringFromSelector(@selector(setFilter:)), @"canSelect" : [NSNumber numberWithBool:NO], @"level" : @1 }];
-    NSDictionary *filterSlider = @{ @"title" : @"Slider" , @"selected" : [NSNumber numberWithBool:NO] , @"canSelect" : [NSNumber numberWithBool:NO], @"level" : @1 };
+    NSDictionary *filterEnabled = @{ @"title" : @"Filter enabled" , @"selected" : @(useFilter), @"selector" : NSStringFromSelector(@selector(setFilter:)) };
+    NSDictionary *filterDefault = @{ @"title" : @"Use default value" , @"selected" : @(useDefaultFilter), @"selector" : NSStringFromSelector(@selector(setFilter:)), @"level" : @1 };
+    NSDictionary *filterDisabled = @{ @"title" : @"Filter disabled", @"selected" : @(!useFilter), @"selector" : NSStringFromSelector(@selector(setFilter:))};
+    NSMutableDictionary *filterCustom = [NSMutableDictionary dictionaryWithDictionary:@{ @"title" : @"Use custom value (pro)" , @"selected" : @(!useDefaultFilter), @"selector" : NSStringFromSelector(@selector(setFilter:)), @"canSelect" : @NO, @"level" : @1 }];
+    NSDictionary *filterSlider = @{ @"title" : @"Slider" , @"selected" : @NO, @"canSelect" : @NO, @"level" : @1 };
 
     
     if (useFilter)
@@ -96,7 +95,7 @@
         }
         else
         {
-            [filterCustom setObject:@"wird über den filtervalue as string gesetzt" forKey:@"badge"];
+            filterCustom[@"badge"] = @"wird über den filtervalue as string gesetzt";
             self.tableData = @[
                                @{
                                    @"title" : @"",
@@ -162,16 +161,16 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     DLogFuncName();
-    NSDictionary * dict = [self.tableData objectAtIndex:section];
-    return [dict objectForKey:@"title"];
+    NSDictionary * dict = self.tableData[(NSUInteger) section];
+    return dict[@"title"];
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     DLogFuncName();
-    NSDictionary * dict = [self.tableData objectAtIndex:section];
-    return [dict objectForKey:@"subtitle"];
+    NSDictionary * dict = self.tableData[(NSUInteger) section];
+    return dict[@"subtitle"];
 }
 
 
@@ -185,7 +184,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     DLogFuncName();
-    return [[[self.tableData objectAtIndex:section] objectForKey:@"rows"] count];
+    return [[self.tableData[(NSUInteger) section] objectForKey:@"rows"] count];
 }
 
 
@@ -200,12 +199,12 @@
         cell.indentationWidth = 20.0;
     }
 
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
+    NSDictionary * section = self.tableData[(NSUInteger) indexPath.section];
+    NSDictionary * row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
 
     if ([[row allKeys] containsObject:@"level"])
     {
-        cell.indentationLevel = [[row objectForKey:@"level"] integerValue];
+        cell.indentationLevel = [row[@"level"] integerValue];
     }
     else
     {
@@ -213,12 +212,12 @@
     }
 
     
-    cell.textLabel.text = [row objectForKey:@"title"];
-    cell.accessoryType = ([[row objectForKey:@"selected"] boolValue]) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-    cell.userInteractionEnabled = (![[row objectForKey:@"selected"] boolValue]);
+    cell.textLabel.text = row[@"title"];
+    cell.accessoryType = ([row[@"selected"] boolValue]) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    cell.userInteractionEnabled = (![row[@"selected"] boolValue]);
 
     
-    if ([[[row objectForKey:@"title"] lowercaseString] isEqualToString:@"slider"])
+    if ([[row[@"title"] lowercaseString] isEqualToString:@"slider"])
     {
         NSLog(@"Show Slider!!!");
         cell.textLabel.text = @"";
@@ -242,14 +241,14 @@
             //        minView.backgroundColor = [UIColor blueColor];
             minView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
             
-            UILabel *minCelsiusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,40,ceil(cellBounds.size.height/2))];
-            minCelsiusLabel.textAlignment = UITextAlignmentLeft;
+            UILabel *minCelsiusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,40, (CGFloat) ceil(cellBounds.size.height/2))];
+            minCelsiusLabel.textAlignment = NSTextAlignmentLeft;
             minCelsiusLabel.font = [UIFont systemFontOfSize:fontSize];
             minCelsiusLabel.text = [NSString stringWithFormat:@"%.1f°C", min];
             [minView addSubview:minCelsiusLabel];
             
-            UILabel *minFahrenheitLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,ceil(cellBounds.size.height/2),40,ceil(cellBounds.size.height/2))];
-            minFahrenheitLabel.textAlignment = UITextAlignmentLeft;
+            UILabel *minFahrenheitLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (CGFloat) ceil(cellBounds.size.height/2),40, (CGFloat) ceil(cellBounds.size.height/2))];
+            minFahrenheitLabel.textAlignment = NSTextAlignmentLeft;
             minFahrenheitLabel.font = [UIFont systemFontOfSize:fontSize];
             minFahrenheitLabel.text = [NSString stringWithFormat:@"%.1f°F", [[PSMapAtmoConverter sharedInstance] convertCelsiusToFahrenheit:min] ];
             [minView addSubview:minFahrenheitLabel ];
@@ -266,15 +265,15 @@
             maxView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
             //        maxView.backgroundColor = [UIColor redColor];
             
-            UILabel *maxCelsiusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,40,ceil(cellBounds.size.height/2))];
+            UILabel *maxCelsiusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,40, (CGFloat) ceil(cellBounds.size.height/2))];
             maxCelsiusLabel.font = [UIFont systemFontOfSize:fontSize];
-            maxCelsiusLabel.textAlignment = UITextAlignmentRight;
+            maxCelsiusLabel.textAlignment = NSTextAlignmentRight;
             maxCelsiusLabel.text = [NSString stringWithFormat:@"%.1f°C", max];
             [maxView addSubview:maxCelsiusLabel];
             
-            UILabel *maxFahrenheitLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,ceil(cellBounds.size.height/2),40,ceil(cellBounds.size.height/2))];
+            UILabel *maxFahrenheitLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (CGFloat) ceil(cellBounds.size.height/2),40, (CGFloat) ceil(cellBounds.size.height/2))];
             maxFahrenheitLabel.font = [UIFont systemFontOfSize:fontSize];
-            maxFahrenheitLabel.textAlignment = UITextAlignmentRight;
+            maxFahrenheitLabel.textAlignment = NSTextAlignmentRight;
             maxFahrenheitLabel.text = [NSString stringWithFormat:@"%.1f°F", [[PSMapAtmoConverter sharedInstance] convertCelsiusToFahrenheit:max]];
             [maxView addSubview:maxFahrenheitLabel];
             
@@ -294,7 +293,7 @@
         
         if (!slider)
         {
-            int paddingX = cell.indentationLevel * cell.indentationWidth + cellContentSpacing + viewWidth + cellContentSpacing;
+            int paddingX = (int) (cell.indentationLevel * cell.indentationWidth + cellContentSpacing + viewWidth + cellContentSpacing);
             CGRect sliderFrame = CGRectMake(paddingX, 0, cellBounds.size.width - paddingX - paddingX, cellBounds.size.height);
             slider = [[UISlider alloc] initWithFrame:sliderFrame];
             [slider addTarget:self action:@selector(sliderUpdate:) forControlEvents:UIControlEventValueChanged];
@@ -316,7 +315,7 @@
         [[cell.contentView viewWithTag:666] removeFromSuperview];
     }
 
-    if ([[row allKeys] containsObject:@"badge"] && ![[row objectForKey:@"badge"] isEqualToString:@""])
+    if ([[row allKeys] containsObject:@"badge"] && ![row[@"badge"] isEqualToString:@""])
     {
         cell.badgeString = [self.filter stringValue];
         cell.badge.radius = 9;
@@ -328,7 +327,7 @@
     }
     
     
-    if ([[row allKeys] containsObject:@"canSelect"] && ![[row objectForKey:@"canSelect"] boolValue])
+    if ([[row allKeys] containsObject:@"canSelect"] && ![row[@"canSelect"] boolValue])
     {
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
@@ -354,7 +353,7 @@
     // Convert "steps" back to the context of the sliders values.
     slider.value = newStep;
  
-    self.filter.value = [NSNumber numberWithFloat:slider.value];
+    self.filter.value = @(slider.value);
     
     [self updateDataSource];
     [self.tableView reloadRowsAtIndexPaths:@[ [NSIndexPath indexPathForRow:2 inSection:0] ] withRowAnimation:UITableViewRowAnimationNone];
@@ -364,11 +363,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DLogFuncName();
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
-    NSString * selectorName = [row objectForKey:@"selector"];
+    NSDictionary * section = self.tableData[(NSUInteger) indexPath.section];
+    NSDictionary * row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
+    NSString * selectorName = row[@"selector"];
 
-    BOOL selectionChanged = (![[row objectForKey:@"selected"] boolValue]);
+    BOOL selectionChanged = (![row[@"selected"] boolValue]);
     if (selectionChanged)
     {
         SEL selector = NSSelectorFromString(selectorName);
@@ -434,8 +433,8 @@
 {
     DLogFuncName();
     
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
+//    NSDictionary * section = self.tableData[(NSUInteger) indexPath.section];
+//    NSDictionary * row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
     
     [[PSMapAtmoMapAnalytics sharedInstance] trackEventSystemFilterChange];
     switch (indexPath.row)

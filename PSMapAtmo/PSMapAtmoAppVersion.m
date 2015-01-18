@@ -10,7 +10,7 @@
 #import "PSMapAtmoDateFormatter.h"
 #import "PSMapAtmoAppVersion.h"
 #import "PSMapAtmoAnalytics.h"
-#import "PSMapAtmoNotifications.h"
+
 
 @interface PSMapAtmoAppVersion()
 
@@ -180,7 +180,7 @@ static PSMapAtmoAppVersion* instance = nil;
 - (NSString*)currentAppVersion
 {
     DLogFuncName();
-    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    return [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
 }
 
 

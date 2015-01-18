@@ -143,19 +143,19 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"user-interaction"
-                                                     withAction:@"pin"
-                                                      withLabel:@"callout"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"pin"
+                      withLabel:@"callout"
+                      withValue:@1];
 }
 
 
 - (void)trackPinCallOutWithUnitInFahrenheit
 {
     DLogFuncName();
-    [self  sendEventWithCategory:@"user-interaction"
-                                                     withAction:@"pin"
-                                                      withLabel:@"calloutWithUnitInFahrenheit"
-                                                      withValue:[NSNumber numberWithInt:1]];
+    [self sendEventWithCategory:@"user-interaction"
+                     withAction:@"pin"
+                      withLabel:@"calloutWithUnitInFahrenheit"
+                      withValue:@1];
 }
 
 
@@ -163,9 +163,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"user-interaction"
-                                                     withAction:@"pin"
-                                                      withLabel:@"calloutWithUnitInCelsius"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"pin"
+                      withLabel:@"calloutWithUnitInCelsius"
+                      withValue:@1];
 }
 
 
@@ -173,9 +173,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"user-interaction"
-                                                     withAction:@"pin"
-                                                      withLabel:@"calloutWithDistance"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"pin"
+                      withLabel:@"calloutWithDistance"
+                      withValue:@1];
 }
 
 
@@ -183,9 +183,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"user-interaction"
-                                                     withAction:@"pin"
-                                                      withLabel:@"calloutWithDistanceInMiles"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"pin"
+                      withLabel:@"calloutWithDistanceInMiles"
+                      withValue:@1];
 }
 
 
@@ -193,9 +193,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"user-interaction"
-                                                     withAction:@"pin"
-                                                      withLabel:@"calloutWithDistanceInKilometers"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"pin"
+                      withLabel:@"calloutWithDistanceInKilometers"
+                      withValue:@1];
 }
 
 
@@ -203,9 +203,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"user-interaction"
-                                                     withAction:@"pin-distance"
-                                                      withLabel:distance
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"pin-distance"
+                      withLabel:distance
+                      withValue:@1];
 }
 
 
@@ -213,9 +213,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"api"
-                                                     withAction:@"request"
-                                                      withLabel:@"any"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"request"
+                      withLabel:@"any"
+                      withValue:@1];
 }
 
 
@@ -223,9 +223,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"map"
-                                                     withAction:@"sizeInkm²"
-                                                      withLabel:[NSString stringWithFormat:@"%.2fkm²",qm]
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"sizeInkm²"
+                      withLabel:[NSString stringWithFormat:@"%.2fkm²", qm]
+                      withValue:@1];
 }
 
 
@@ -233,9 +233,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"map"
-                                                     withAction:@"zoomLevel"
-                                                      withLabel:[NSString stringWithFormat:@"%.2f",zoomLevel]
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"zoomLevel"
+                      withLabel:[NSString stringWithFormat:@"%.2f", zoomLevel]
+                      withValue:@1];
 }
 
 
@@ -243,9 +243,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"api"
-                                                     withAction:@"request"
-                                                      withLabel:@"forAppSession"
-                                                      withValue:[NSNumber numberWithInt:numberOfApiCalls]];
+                     withAction:@"request"
+                      withLabel:@"forAppSession"
+                      withValue:@(numberOfApiCalls)];
 }
 
 
@@ -285,9 +285,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
     DLogFuncName();
 
     [self sendEventWithCategory:@"user-interaction"
-                                                     withAction:@"locate"
-                                                      withLabel:@"off"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"locate"
+                      withLabel:@"off"
+                      withValue:@1];
 }
 
 
@@ -296,9 +296,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
     DLogFuncName();
 
     [self sendEventWithCategory:@"user-interaction"
-                                                     withAction:@"locate"
-                                                      withLabel:@"on"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"locate"
+                      withLabel:@"on"
+                      withValue:@1];
 }
 
 
@@ -306,9 +306,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"system"
-                                                     withAction:@"warning"
-                                                      withLabel:@"limit"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"warning"
+                      withLabel:@"limit"
+                      withValue:@1];
 }
 
 
@@ -316,9 +316,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"tellAFriend"
-                                                      withLabel:@"send"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"tellAFriend"
+                      withLabel:@"send"
+                      withValue:@1];
 }
 
 
@@ -326,9 +326,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"tellAFriend"
-                                                      withLabel:@"cancelled"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"tellAFriend"
+                      withLabel:@"cancelled"
+                      withValue:@1];
 }
 
 
@@ -336,9 +336,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"tellAFriend"
-                                                      withLabel:@"saved"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"tellAFriend"
+                      withLabel:@"saved"
+                      withValue:@1];
 }
 
 
@@ -346,18 +346,18 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"tellAFriend"
-                                                      withLabel:@"failed"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"tellAFriend"
+                      withLabel:@"failed"
+                      withValue:@1];
 }
 
 - (void)trackEventSystemUnitsFahrenheit
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"units"
-                                                      withLabel:@"fahrenheit"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"units"
+                      withLabel:@"fahrenheit"
+                      withValue:@1];
 }
 
 
@@ -365,9 +365,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"units"
-                                                      withLabel:@"celsius"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"units"
+                      withLabel:@"celsius"
+                      withValue:@1];
 }
 
 
@@ -375,9 +375,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"units"
-                                                      withLabel:@"miles"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"units"
+                      withLabel:@"miles"
+                      withValue:@1];
 }
 
 
@@ -385,9 +385,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"units"
-                                                      withLabel:@"kilometers"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"units"
+                      withLabel:@"kilometers"
+                      withValue:@1];
 }
 
 
@@ -395,9 +395,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"filter"
-                                                      withLabel:@"on"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"filter"
+                      withLabel:@"on"
+                      withValue:@1];
 }
 
 
@@ -405,9 +405,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"filter"
-                                                      withLabel:@"off"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"filter"
+                      withLabel:@"off"
+                      withValue:@1];
 }
 
 
@@ -415,9 +415,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"alert"
-                                                     withAction:@"filter"
-                                                      withLabel:@"cancel"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"filter"
+                      withLabel:@"cancel"
+                      withValue:@1];
 }
 
 
@@ -425,9 +425,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"alert"
-                                                     withAction:@"filter"
-                                                      withLabel:@"onAndClearMap"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"filter"
+                      withLabel:@"onAndClearMap"
+                      withValue:@1];
 }
 
 
@@ -435,9 +435,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"alert"
-                                                     withAction:@"filter"
-                                                      withLabel:@"onAndIgnoreMap"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"filter"
+                      withLabel:@"onAndIgnoreMap"
+                      withValue:@1];
 }
 
 
@@ -447,7 +447,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"settings"
                      withAction:@"filter"
                       withLabel:@"change"
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 
 
@@ -457,7 +457,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"settings"
                      withAction:@"filter"
                       withLabel:@"default"
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 
 
@@ -467,7 +467,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"settings"
                      withAction:@"filter"
                       withLabel:@"custom"
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 
 
@@ -476,8 +476,8 @@ static PSMapAtmoMapAnalytics* instance = nil;
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
                      withAction:@"filter"
-                      withLabel:[NSString stringWithFormat:@"custom-%d", [number intValue] ]
-                      withValue:[NSNumber numberWithInt:1]];
+                      withLabel:[NSString stringWithFormat:@"custom-%d", [number intValue]]
+                      withValue:@1];
 }
 
 
@@ -485,9 +485,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"map"
-                                                      withLabel:@"change"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"map"
+                      withLabel:@"change"
+                      withValue:@1];
 }
 
 
@@ -495,9 +495,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"map"
-                                                      withLabel:@"standard"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"map"
+                      withLabel:@"standard"
+                      withValue:@1];
 }
 
 
@@ -505,9 +505,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"map"
-                                                      withLabel:@"satellite"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"map"
+                      withLabel:@"satellite"
+                      withValue:@1];
 }
 
 
@@ -515,9 +515,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"map"
-                                                      withLabel:@"hybrid"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"map"
+                      withLabel:@"hybrid"
+                      withValue:@1];
 }
 
 
@@ -525,9 +525,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"location"
-                                                      withLabel:@"change"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"location"
+                      withLabel:@"change"
+                      withValue:@1];
 }
 
 
@@ -535,9 +535,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"location"
-                                                      withLabel:@"default"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"location"
+                      withLabel:@"default"
+                      withValue:@1];
 }
 
 
@@ -545,9 +545,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"location"
-                                                      withLabel:@"userLocation"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"location"
+                      withLabel:@"userLocation"
+                      withValue:@1];
 }
 
 
@@ -555,9 +555,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"location"
-                                                      withLabel:@"currentLocation"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"location"
+                      withLabel:@"currentLocation"
+                      withValue:@1];
 }
 
 
@@ -565,9 +565,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"settings"
-                                                     withAction:@"location"
-                                                      withLabel:@"lastLocation"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"location"
+                      withLabel:@"lastLocation"
+                      withValue:@1];
 }
 
 
@@ -576,9 +576,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
     DLogFuncName();
 
     [self sendEventWithCategory:@"map"
-                                                     withAction:@"fullScreen"
-                                                      withLabel:@"enterFullScreen"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"fullScreen"
+                      withLabel:@"enterFullScreen"
+                      withValue:@1];
 }
 
 
@@ -587,9 +587,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
     DLogFuncName();
 
     [self sendEventWithCategory:@"map"
-                                                     withAction:@"fullScreen"
-                                                      withLabel:@"leaveFullScreen"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"fullScreen"
+                      withLabel:@"leaveFullScreen"
+                      withValue:@1];
 }
 
 
@@ -597,9 +597,9 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"map"
-                                                     withAction:@"fullScreen"
-                                                      withLabel:@"showEdges"
-                                                      withValue:[NSNumber numberWithInt:1]];
+                     withAction:@"fullScreen"
+                      withLabel:@"showEdges"
+                      withValue:@1];
 }
 
 
@@ -608,18 +608,18 @@ static PSMapAtmoMapAnalytics* instance = nil;
 {
     DLogFuncName();
     [self sendEventWithCategory:@"system"
-                                                     withAction:@"overallCount"
-                                                      withLabel:@"overallCountAfter60Seconds"
-                                                      withValue:[NSNumber numberWithInt:overallCount]];
+                     withAction:@"overallCount"
+                      withLabel:@"overallCountAfter60Seconds"
+                      withValue:@(overallCount)];
 }
 
 - (void)trackVisibleCounterAfter60Seconds:(int)visibleCount
 {
     DLogFuncName();
     [self sendEventWithCategory:@"system"
-                                                     withAction:@"visibleCount"
-                                                      withLabel:@"visibleCountAfter60Seconds"
-                                                      withValue:[NSNumber numberWithInt:visibleCount]];
+                     withAction:@"visibleCount"
+                      withLabel:@"visibleCountAfter60Seconds"
+                      withValue:@(visibleCount)];
 }
 
 - (void)trackOverallCount:(int)overallCount
@@ -631,107 +631,107 @@ static PSMapAtmoMapAnalytics* instance = nil;
     if(overallCount > 10000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">10000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">10000"
+                          withValue:@1];
     }
     else if(overallCount > 9000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">9000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">9000"
+                          withValue:@1];
     }
     else if(overallCount > 8000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">8000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">8000"
+                          withValue:@1];
     }
     else if(overallCount > 7000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">7000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">7000"
+                          withValue:@1];
     }
     else if(overallCount > 6000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">6000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">6000"
+                          withValue:@1];
     }
     else if(overallCount > 5000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">5000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">5000"
+                          withValue:@1];
     }
     else if(overallCount > 4000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">4000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">4000"
+                          withValue:@1];
     }
     else if(overallCount > 3000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">3000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">3000"
+                          withValue:@1];
     }
     else if(overallCount > 2000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">2000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">2000"
+                          withValue:@1];
     }
     else if(overallCount > 1500)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">1500"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">1500"
+                          withValue:@1];
     }
     else if(overallCount > 1000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">1000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">1000"
+                          withValue:@1];
     }
     else if(overallCount > 500)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">500"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">500"
+                          withValue:@1];
     }
     else if(overallCount > 100)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">100"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">100"
+                          withValue:@1];
     }
     else if(overallCount > 50)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">50"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">50"
+                          withValue:@1];
     }
     else if(overallCount > 10)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"overallCount"
-                                                          withLabel:@">10"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"overallCount"
+                          withLabel:@">10"
+                          withValue:@1];
     }
 }
 
@@ -741,51 +741,51 @@ static PSMapAtmoMapAnalytics* instance = nil;
     if(visibleCount > 2000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"visiblecount"
-                                                          withLabel:@">2000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"visiblecount"
+                          withLabel:@">2000"
+                          withValue:@1];
     }
     else if(visibleCount > 1500)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"visiblecount"
-                                                          withLabel:@">1500"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"visiblecount"
+                          withLabel:@">1500"
+                          withValue:@1];
     }
     else if(visibleCount > 1000)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"visiblecount"
-                                                          withLabel:@">1000"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"visiblecount"
+                          withLabel:@">1000"
+                          withValue:@1];
     }
     else if(visibleCount > 500)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"visiblecount"
-                                                          withLabel:@">500"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"visiblecount"
+                          withLabel:@">500"
+                          withValue:@1];
     }
     else if(visibleCount > 100)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"visiblecount"
-                                                          withLabel:@">100"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"visiblecount"
+                          withLabel:@">100"
+                          withValue:@1];
     }
     else if(visibleCount > 50)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"visiblecount"
-                                                          withLabel:@">50"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"visiblecount"
+                          withLabel:@">50"
+                          withValue:@1];
     }
     else if(visibleCount > 10)
     {
         [self sendEventWithCategory:@"system"
-                                                         withAction:@"visiblecount"
-                                                          withLabel:@">10"
-                                                          withValue:[NSNumber numberWithInt:1]];
+                         withAction:@"visiblecount"
+                          withLabel:@">10"
+                          withValue:@1];
     }
 }
 
@@ -797,7 +797,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"failure"
                      withAction:@"mapviewdelegate"
                       withLabel:@"didFailToLocateUser"
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 
 
@@ -808,7 +808,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"failure"
                      withAction:@"mapviewdelegate"
                       withLabel:@"locationServicesDisabled"
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 
 
@@ -819,7 +819,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"failure"
                      withAction:@"mapviewdelegate"
                       withLabel:@"locationStatusRestricted"
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 
 
@@ -830,7 +830,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"failure"
                      withAction:@"mapviewdelegate"
                       withLabel:@"locationStatusDenied"
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 
 
@@ -841,7 +841,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"failure"
                      withAction:@"mapviewdelegate"
                       withLabel:@"locationStatusUnknown"
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 
 
@@ -852,7 +852,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"failure"
                      withAction:@"mapviewdelegate"
                       withLabel:@"locationStatusAuthorized"
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 
 
@@ -863,6 +863,6 @@ static PSMapAtmoMapAnalytics* instance = nil;
     [self sendEventWithCategory:@"PSMapAtmoLocation"
                      withAction:@"updateLastLocation"
                       withLabel:@""
-                      withValue:[NSNumber numberWithInt:1]];
+                      withValue:@1];
 }
 @end

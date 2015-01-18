@@ -19,6 +19,4 @@
 @property (strong, nonatomic) UIWindow *window;
 #endif
 
-- (NSURL *)applicationDocumentsDirectory;
-
 @end

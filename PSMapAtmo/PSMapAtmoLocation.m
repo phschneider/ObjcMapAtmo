@@ -83,7 +83,7 @@
     
     self = [super init];
     if (self) {
-        self.locationType = [coder decodeIntegerForKey:keyLocationType];
+        self.locationType = (PSMapAtmoLocationType) [coder decodeIntegerForKey:keyLocationType];
         
         NSData *regiondata = [coder decodeObjectForKey:keyMKRegion];
         [regiondata getBytes:&_region length:sizeof(_region)];

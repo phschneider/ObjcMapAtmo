@@ -12,7 +12,7 @@
 #import "PSMapAtmoLocation.h"
 
 
-@interface PSMapAtmoSettingsLocationViewController ()
+@interface PSMapAtmoSettingsLocationViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic) UITableView * tableView;
 @property (nonatomic) NSArray * tableData;
 
@@ -62,10 +62,10 @@
                            @"subtitle" : @"",
                            @"rows" :
                                @[
-                                   @{ @"title" : @"Default (country from iOS-Settings)" , @"selected" : [NSNumber numberWithBool:(location.locationType == PSMapAtmoLocationTypeDefault)], @"selector" : NSStringFromSelector(@selector(setLocation:)) },
-                                   @{ @"title" : @"My location", @"selected" : [NSNumber numberWithBool:(location.locationType == PSMapAtmoLocationTypeUserLocation)] , @"selector" : NSStringFromSelector(@selector(setLocation:))},
-                                   @{ @"title" : @"Current view", @"selected" : [NSNumber numberWithBool:(location.locationType == PSMapAtmoLocationTypeCurrentLocation)] , @"selector" : NSStringFromSelector(@selector(setLocation:))},
-                                   @{ @"title" : @"Open as leaved", @"selected" : [NSNumber numberWithBool:(location.locationType == PSMapAtmoLocationTypeLastLocation)] , @"selector" : NSStringFromSelector(@selector(setLocation:))}
+                                   @{ @"title" : @"Default (country from iOS-Settings)" , @"selected" : @(location.locationType == PSMapAtmoLocationTypeDefault), @"selector" : NSStringFromSelector(@selector(setLocation:)) },
+                                   @{ @"title" : @"My location", @"selected" : @(location.locationType == PSMapAtmoLocationTypeUserLocation), @"selector" : NSStringFromSelector(@selector(setLocation:))},
+                                   @{ @"title" : @"Current view", @"selected" : @(location.locationType == PSMapAtmoLocationTypeCurrentLocation), @"selector" : NSStringFromSelector(@selector(setLocation:))},
+                                   @{ @"title" : @"Open as leaved", @"selected" : @(location.locationType == PSMapAtmoLocationTypeLastLocation), @"selector" : NSStringFromSelector(@selector(setLocation:))}
                                    ]
                            }
                        ];
@@ -78,30 +78,46 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     DLogFuncName();
-    NSDictionary * dict = [self.tableData objectAtIndex:section];
-    return [dict objectForKey:@"title"];
+    if (tableView == self.tableView)
+    {
+        NSDictionary *dict = self.tableData[(NSUInteger) section];
+        return dict[@"title"];
+    }
+    return nil;
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     DLogFuncName();
-    NSDictionary * dict = [self.tableData objectAtIndex:section];
-    return [dict objectForKey:@"subtitle"];
+    if (tableView == self.tableView)
+    {
+        NSDictionary *dict = self.tableData[(NSUInteger) section];
+        return dict[@"subtitle"];
+    }
+    return nil;
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     DLogFuncName();
-    return 1;
+    if (tableView == self.tableView)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     DLogFuncName();
-    return 4;
+    if (tableView == self.tableView)
+    {
+        return 4;
+    }
+    return 1;
 }
 
 
@@ -115,12 +131,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
+    NSDictionary * section = self.tableData[(NSUInteger) indexPath.section];
+    NSDictionary * row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
     
-    cell.textLabel.text = [row objectForKey:@"title"];
-    cell.accessoryType = ([[row objectForKey:@"selected"] boolValue]) ? UITableViewCellAccessoryCheckmark : nil;
-    cell.userInteractionEnabled = (![[row objectForKey:@"selected"] boolValue]);
+    cell.textLabel.text = row[@"title"];
+    cell.accessoryType = (UITableViewCellAccessoryType) (([row[@"selected"] boolValue]) ? UITableViewCellAccessoryCheckmark : nil);
+    cell.userInteractionEnabled = (![row[@"selected"] boolValue]);
     
     return cell;
 }
@@ -129,46 +145,49 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DLogFuncName();
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
-    NSString * selectorName = [row objectForKey:@"selector"];
-    
-    BOOL selectionChanged = (![[row objectForKey:@"selected"] boolValue]);
-    if (selectionChanged)
+    if (tableView == self.tableView)
     {
-        SEL selector = NSSelectorFromString(selectorName);
-        if ([[PSMapAtmoUserDefaults sharedInstance] respondsToSelector:selector])
+        NSDictionary * section = self.tableData[(NSUInteger) indexPath.section];
+        NSDictionary * row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
+        NSString * selectorName = row[@"selector"];
+
+        BOOL selectionChanged = (![row[@"selected"] boolValue]);
+        if (selectionChanged)
         {
-            [self trackAnalyticsEventForSelectorName:selectorName andObject:indexPath];
-
-            PSMapAtmoLocation *location = nil;
-            switch (indexPath.row)
+            SEL selector = NSSelectorFromString(selectorName);
+            if ([[PSMapAtmoUserDefaults sharedInstance] respondsToSelector:selector])
             {
-                case 0:
-                    location = [PSMapAtmoLocation defaultLocation];
+                [self trackAnalyticsEventForSelectorName:selectorName andObject:indexPath];
 
-                    break;
-                case 1:
-                    location = [PSMapAtmoLocation userLocation];
+                PSMapAtmoLocation *location = nil;
+                switch (indexPath.row)
+                {
+                    case 0:
+                        location = [PSMapAtmoLocation defaultLocation];
 
-                    break;
-                case 2:
-                    location = [PSMapAtmoLocation currentLocation];
+                        break;
+                    case 1:
+                        location = [PSMapAtmoLocation userLocation];
 
-                    break;
-                case 3:
-                    location = [PSMapAtmoLocation lastLocation];
+                        break;
+                    case 2:
+                        location = [PSMapAtmoLocation currentLocation];
 
-                    break;
-                default:
-                    break;
+                        break;
+                    case 3:
+                        location = [PSMapAtmoLocation lastLocation];
+
+                        break;
+                    default:
+                        break;
+                }
+
+                [[PSMapAtmoUserDefaults sharedInstance] performSelector:selector withObject:location];
+                [self reload];
             }
 
-            [[PSMapAtmoUserDefaults sharedInstance] performSelector:selector withObject:location];
-            [self reload];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"PSMAPATMO_CHANGE_MAP_TYPE" object:nil];
         }
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"PSMAPATMO_CHANGE_MAP_TYPE" object:nil];
     }
 }
 
@@ -177,8 +196,8 @@
 {
     DLogFuncName();
 
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
+//    NSDictionary * section = self.tableData[(NSUInteger) indexPath.section];
+//    NSDictionary * row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
 
     [[PSMapAtmoMapAnalytics sharedInstance] trackEventSystemLocationChange];
 

@@ -12,16 +12,12 @@
 #import "PSMapAtmoSettingsMapViewController.h"
 #import "PSMapAtmoSettingsLocationViewController.h"
 
-#import "PSMapAtmoAppearance.h"
 #import "PSMapAtmoAppVersion.h"
 
 #warning SOCIAL NOT IOS5
-#import <Accounts/Accounts.h>
-#import <Social/Social.h>
 
 #import "iTellAFriend.h"
 #import "iRate.h"
-// #import "PSNetAtmoSupportViewController.h"
 #import "TDBadgedCell.h"
 #import "PSMapAtmoFilterViewController.h"
 #import "PSMapAtmoMapAnalytics.h"
@@ -110,11 +106,6 @@
                                     @"viewController" : [[PSMapAtmoMapImprintViewController alloc] init]
                                 },
 
-                                //@{
-                                //    @"title" : @"Support",
-                                //    @"viewController" : [[PSNetAtmoSupportViewController alloc] init]
-                                //},
-
                                 @{
                                         @"title" : @"Visit website" ,
                                         @"selector" : @"showMapAtmoWebSite",
@@ -182,15 +173,15 @@
         cell = [[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    NSArray * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [section objectAtIndex:indexPath.row];
-    cell.textLabel.text = [row objectForKey:@"title"];
+    NSArray * section = self.tableData[(NSUInteger) indexPath.section];
+    NSDictionary * row = section[(NSUInteger) indexPath.row];
+    cell.textLabel.text = row[@"title"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
 
-    if ([[row allKeys] containsObject:@"badge"] && ![[row objectForKey:@"badge"] isEqualToString:@""])
+    if ([[row allKeys] containsObject:@"badge"] && ![row[@"badge"] isEqualToString:@""])
     {
-        NSString *badgeTitle = [row objectForKey:@"badge"];
+        NSString *badgeTitle = row[@"badge"];
         cell.badgeString = badgeTitle;
         if ([badgeTitle isEqualToString:@"new"])
         {
@@ -216,7 +207,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     DLogFuncName();
-    return [[self.tableData objectAtIndex:section] count];
+    return [self.tableData[(NSUInteger) section] count];
 }
 
 
@@ -226,15 +217,15 @@
     DLogFuncName();
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
-    NSArray * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [section objectAtIndex:indexPath.row];
+    NSArray * section = self.tableData[(NSUInteger) indexPath.section];
+    NSDictionary * row = section[(NSUInteger) indexPath.row];
     if ([[row allKeys] containsObject:@"viewController"])
     {
-        [self.navigationController pushViewController:[[section objectAtIndex:indexPath.row] objectForKey:@"viewController"] animated:YES];
+        [self.navigationController pushViewController:[section[(NSUInteger) indexPath.row] objectForKey:@"viewController"] animated:YES];
     }
     else if  ([[row allKeys] containsObject:@"selector"])
     {
-        NSString * selector = [row objectForKey:@"selector"];
+        NSString * selector = row[@"selector"];
         if ([self respondsToSelector:NSSelectorFromString(selector)])
         {
             [self performSelector:NSSelectorFromString(selector)];
@@ -246,7 +237,7 @@
     }
     else
     {
-        NSLog(@"No ViewController to present and no selector to perform %@", [row objectForKey:@"title"]);
+        NSLog(@"No ViewController to present and no selector to perform %@", row[@"title"]);
     }
 }
 
@@ -314,7 +305,6 @@
 }
 
 
-
 - (void)showAppRating
 {
     DLogFuncName();
@@ -323,66 +313,5 @@
     [[iRate sharedInstance] openRatingsPageInAppStore];
 }
 
-
-//- (void)showInAppStore
-//{
-//    DLogFuncName();
-//            // View in AppStore
-//            #warning todo analytics
-//            NSURL * appStoreUrl = [NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/%@",PSNETATMO_MAPATMO_APP_ID]];
-//            if ([[UIApplication sharedApplication] canOpenURL:appStoreUrl])
-//            {
-//                [[UIApplication sharedApplication] openURL:appStoreUrl];
-//            }
-//            else
-//            {
-//#warning TODO
-//            }
-//}
-
-
-//- (void)followUsOnTwitter
-//{
-//    DLogFuncName();
-//            ACAccountStore *accountStore = [[ACAccountStore alloc] init];
-//
-//            ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-//
-//            [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
-//                if(granted) {
-//                    // Get the list of Twitter accounts.
-//                    NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
-//
-//                    // For the sake of brevity, we'll assume there is only one Twitter account present.
-//                    // You would ideally ask the user which account they want to tweet from, if there is more than one Twitter account present.
-//                    if ([accountsArray count] > 0) {
-//                        // Grab the initial Twitter account to tweet from.
-//                        ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
-//
-//                        NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
-//                        [tempDict setValue:@"MohammadMasudRa" forKey:@"screen_name"];
-//                        [tempDict setValue:@"true" forKey:@"follow"];
-//                        NSLog(@"*******tempDict %@*******",tempDict);
-//
-//                        //requestForServiceType
-//
-//                        SLRequest *postRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:@"https://api.twitter.com/1/friendships/create.json"] parameters:tempDict];
-//                        [postRequest setAccount:twitterAccount];
-//                        [postRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-//                            NSString *output = [NSString stringWithFormat:@"HTTP response status: %i Error %d", [urlResponse statusCode],error.code];
-//                            NSLog(@"%@error %@", output,error.description);
-//                        }];
-//                    }
-//                }
-//            }];
-//}
-
-
-//- (void)showVersionDetails
-//{
-//    DLogFuncName();
-//    #warning analytics
-//    NSLog(@"iVersion = %@, \n%@", [[iVersion sharedInstance] versionLabelFormat], [[iVersion sharedInstance] versionDetails]);
-//}
 
 @end

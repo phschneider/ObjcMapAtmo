@@ -7,7 +7,6 @@
 //
 
 #import <objc/message.h>
-#import <objc/runtime.h>
 
 #import "NSObject+Runtime.h"
 

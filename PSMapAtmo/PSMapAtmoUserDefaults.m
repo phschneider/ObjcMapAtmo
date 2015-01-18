@@ -5,7 +5,6 @@
 
 
 #import "PSMapAtmoUserDefaults.h"
-#import "PSMapAtmoPublicApi.h"
 #import "PSMapAtmoLocation.h"
 #import "PSMapAtmoFilter.h"
 
@@ -171,7 +170,7 @@ static PSMapAtmoUserDefaults* instance = nil;
 {
     DLogFuncName();
 
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:++self.numberOfFullScreenEnterings] forKey:PSMAPATMO_USERDEFAULTS_FULLSCREEN_ENTERINGS];
+    [[NSUserDefaults standardUserDefaults] setObject:@(++self.numberOfFullScreenEnterings) forKey:PSMAPATMO_USERDEFAULTS_FULLSCREEN_ENTERINGS];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -179,8 +178,8 @@ static PSMapAtmoUserDefaults* instance = nil;
 - (void) setLeavingFullScreenMode
 {
     DLogFuncName();
-    
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:++self.numberOfFullScreenLeavings] forKey:PSMAPATMO_USERDEFAULTS_FULLSCREEN_LEAVINGS];
+
+    [[NSUserDefaults standardUserDefaults] setObject:@(++self.numberOfFullScreenLeavings) forKey:PSMAPATMO_USERDEFAULTS_FULLSCREEN_LEAVINGS];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -190,8 +189,8 @@ static PSMapAtmoUserDefaults* instance = nil;
 {
     DLogFuncName();
 
-    MKMapType mapType = 0;
-    mapType = [[[NSUserDefaults standardUserDefaults] objectForKey:PSMAPATMO_USERDEFAULTS_MAPTYPE] intValue];
+    MKMapType mapType = (MKMapType) 0;
+    mapType = (MKMapType) [[[NSUserDefaults standardUserDefaults] objectForKey:PSMAPATMO_USERDEFAULTS_MAPTYPE] intValue];
     return mapType;
 }
 

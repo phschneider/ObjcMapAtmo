@@ -57,8 +57,8 @@
                                 @"subtitle" : @"",
                                 @"rows" :
                                     @[
-                                        @{ @"title" : @"Fahrenheit" , @"selected" : [NSNumber numberWithBool:useFahrenheit], @"selector" : NSStringFromSelector(@selector(setUseFahrenheitAsTempUnit)) },
-                                        @{ @"title" : @"Celsius", @"selected" : [NSNumber numberWithBool:!useFahrenheit] , @"selector" : NSStringFromSelector(@selector(setUseCelsiusAsTempUnit))}
+                                        @{ @"title" : @"Fahrenheit" , @"selected" : @(useFahrenheit), @"selector" : NSStringFromSelector(@selector(setUseFahrenheitAsTempUnit)) },
+                                        @{ @"title" : @"Celsius", @"selected" : @(!useFahrenheit), @"selector" : NSStringFromSelector(@selector(setUseCelsiusAsTempUnit))}
                                     ]
                             },
 
@@ -67,8 +67,8 @@
                                @"subtitle" : @"Distance will be calculated for each pin, but is only shown when location tracking is enabled. You can enable location tracking by tapping the gps-icon in the lower left corner of the screen.",
                                @"rows" :
                                    @[
-                                       @{ @"title" : @"Miles" , @"selected" : [NSNumber numberWithBool:useMiles], @"selector" : NSStringFromSelector(@selector(setUseMilesAsDistanceUnit))},
-                                       @{ @"title" : @"Kilometers", @"selected" : [NSNumber numberWithBool:!useMiles], @"selector" : NSStringFromSelector(@selector(setUseKilometersAsDistanceUnit))  }
+                                       @{ @"title" : @"Miles" , @"selected" : @(useMiles), @"selector" : NSStringFromSelector(@selector(setUseMilesAsDistanceUnit))},
+                                       @{ @"title" : @"Kilometers", @"selected" : @(!useMiles), @"selector" : NSStringFromSelector(@selector(setUseKilometersAsDistanceUnit))  }
                                     ]
                             }
                            ];
@@ -80,16 +80,16 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     DLogFuncName();
-    NSDictionary * dict = [self.tableData objectAtIndex:section];
-    return [dict objectForKey:@"title"];
+    NSDictionary * dict = self.tableData[(NSUInteger) section];
+    return dict[@"title"];
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     DLogFuncName();
-    NSDictionary * dict = [self.tableData objectAtIndex:section];
-    return [dict objectForKey:@"subtitle"];
+    NSDictionary * dict = self.tableData[(NSUInteger) section];
+    return dict[@"subtitle"];
 }
 
 
@@ -104,13 +104,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
+    NSDictionary * section = self.tableData[(NSUInteger) indexPath.section];
+    NSDictionary * row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = [row objectForKey:@"title"];
-    cell.accessoryType = ([[row objectForKey:@"selected"] boolValue]) ? UITableViewCellAccessoryCheckmark : nil;
-    cell.userInteractionEnabled = (![[row objectForKey:@"selected"] boolValue]);
+    cell.textLabel.text = row[@"title"];
+    cell.accessoryType = (UITableViewCellAccessoryType) (([row[@"selected"] boolValue]) ? UITableViewCellAccessoryCheckmark : nil);
+    cell.userInteractionEnabled = (![row[@"selected"] boolValue]);
     
     return cell;
 }
@@ -126,20 +126,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     DLogFuncName();
-    NSDictionary * dict= [self.tableData objectAtIndex:section];
+    NSDictionary * dict= self.tableData[(NSUInteger) section];
     
-    return [[dict objectForKey:@"rows"] count];
+    return [dict[@"rows"] count];
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DLogFuncName();
-    NSDictionary * section = [self.tableData objectAtIndex:indexPath.section];
-    NSDictionary * row = [[section objectForKey:@"rows"] objectAtIndex:indexPath.row];
-    NSString * selectorName = [row objectForKey:@"selector"];
+    NSDictionary * section = self.tableData[(NSUInteger) indexPath.section];
+    NSDictionary * row = [section[@"rows"] objectAtIndex:(NSUInteger) indexPath.row];
+    NSString * selectorName = row[@"selector"];
 
-    BOOL selectionChanged = (![[row objectForKey:@"selected"] boolValue]);
+    BOOL selectionChanged = (![row[@"selected"] boolValue]);
     if (selectionChanged)
     {
         [self trackAnalyticsEventForSelectorName:selectorName];
