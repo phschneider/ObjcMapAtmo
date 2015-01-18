@@ -22,7 +22,7 @@
 
 @implementation TDBadgeView
 
-@synthesize width=__width, badgeString=__badgeString, parent=__parent, badgeColor=__badgeColor, badgeTextColor=__badgeTextColor, badgeColorHighlighted=__badgeColorHighlighted, showShadow=__showShadow, boldFont=__boldFont, radius=__radius;
+@synthesize width=__width, badgeString=__badgeString, parent=__parent, badgeColor=__badgeColor, badgeTextColor=__badgeTextColor, badgeColorHighlighted=__badgeColorHighlighted, showShadow=__showShadow, boldFont=__boldFont, radius=__radius, badgeTextColorHighlighted = __badgeTextColorHighlighted;
 
 - (id) initWithFrame:(CGRect)frame
 {
@@ -46,25 +46,37 @@
     CGFloat scale = [[UIScreen mainScreen] scale];
 	CGFloat fontsize = self.fontSize;
     UIFont *font = self.boldFont ? [UIFont boldSystemFontOfSize:fontsize] : [UIFont systemFontOfSize:fontsize];
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
-	CGSize numberSize = [self.badgeString sizeWithAttributes:@{ NSFontAttributeName:font }];
-#else
-	CGSize numberSize = [self.badgeString sizeWithFont:font];
-#endif
-    CGFloat radius = (__radius)?__radius:4.0;
-	
+    
+    CGSize numberSize;
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+        numberSize = [self.badgeString sizeWithAttributes:@{ NSFontAttributeName:font }];
+    } else {
+        numberSize = [self.badgeString sizeWithFont:font];
+    }
+    
+    CGFloat radius = (__radius)?__radius:8.5;
+    
     // Set the badge background colours
-	UIColor *colour;
-	if((__parent.selectionStyle != UITableViewCellSelectionStyleNone) && (__parent.highlighted || __parent.selected))
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+        __defaultColor = [UIColor colorWithRed:0 green:0.478 blue:1 alpha:1.0];
+        __defaultHighlightColor = [UIColor whiteColor];
+    } else {
+        __defaultColor = [UIColor colorWithRed:0.530f green:0.600f blue:0.738f alpha:1.000f];
+        __defaultHighlightColor = [UIColor whiteColor];
+        
+    }
+    
+    UIColor *colour;
+    if((__parent.selectionStyle != UITableViewCellSelectionStyleNone) && (__parent.highlighted || __parent.selected))
 		if (__badgeColorHighlighted)
 			colour = __badgeColorHighlighted;
 		else
-			colour = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.000f];
+			colour = __defaultHighlightColor;
         else
             if (__badgeColor)
                 colour = __badgeColor;
             else
-                colour = [UIColor colorWithRed:0.530f green:0.600f blue:0.738f alpha:1.000f];
+                colour = __defaultColor;
 	
     
     // Create the layer for drawing the badge
@@ -80,27 +92,60 @@
 	CGContextSaveGState(context);
 	[__badge renderInContext:context];
 	CGContextRestoreGState(context);
-	
-    // Set the correct badge text colour, otherwise use kCGBlendModeClear to mask it
-	if (__badgeTextColor)
-		CGContextSetFillColorWithColor(context, __badgeTextColor.CGColor);
-	else
-		CGContextSetBlendMode(context, kCGBlendModeClear);
-	
+    
+    
     // Create a frame for the badge text
 	CGRect bounds = CGRectMake((rect.size.width / 2) - (numberSize.width / 2) ,
                                ((rect.size.height / 2) - (numberSize.height / 2)),
                                numberSize.width + 12 , numberSize.height);
     
 	// Draw and clip the badge text from the badge shape
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
-    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
-    [paragraph setLineBreakMode:NSLineBreakByClipping];
-    [__badgeString drawInRect:bounds withAttributes:@{ NSFontAttributeName:font,
-                                                       NSParagraphStyleAttributeName:paragraph}];
-#else
-    [__badgeString drawInRect:bounds withFont:font lineBreakMode:TDLineBreakModeClip];
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+        UIColor *stringColor = nil;
+        if((__parent.highlighted || __parent.selected)) {
+            
+            stringColor = __badgeTextColorHighlighted ? __badgeTextColorHighlighted : UIColor.lightGrayColor;
+        }
+        else {
+            
+            if(__badgeTextColor) {
+                stringColor = __badgeTextColor;
+            } else {
+                stringColor = [UIColor clearColor];
+                CGContextSetBlendMode(context, kCGBlendModeClear);
+            }
+        }
+        
+        NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+        [paragraph setLineBreakMode:NSLineBreakByClipping];
+        [__badgeString drawInRect:bounds withAttributes:@{ NSFontAttributeName:font,
+                                                           NSParagraphStyleAttributeName:paragraph,
+                                                           NSForegroundColorAttributeName:stringColor}];
+#if !__has_feature(objc_arc)
+        [paragraph release];
 #endif
+        
+    } else {
+        
+        if((__parent.highlighted || __parent.selected)) {
+            if (__badgeTextColorHighlighted) {
+                CGContextSetFillColorWithColor(context, __badgeTextColorHighlighted.CGColor);
+            }
+            else {
+                CGContextSetBlendMode(context, kCGBlendModeClear);
+            }
+        }
+        else {
+            if (__badgeTextColor) {
+                CGContextSetFillColorWithColor(context, __badgeTextColor.CGColor);
+            }
+            else {
+                CGContextSetBlendMode(context, kCGBlendModeClear);
+            }
+        }
+        
+        [__badgeString drawInRect:bounds withFont:font lineBreakMode:TDLineBreakModeClip];
+    }
 	
     // Create an image from the new badge (Fast and easy to cache)
 	UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -138,6 +183,7 @@
 	[__badgeColor release];
 	[__badgeTextColor release];
 	[__badgeColorHighlighted release];
+    [__badgeTextColorHighlighted release];
 	
 	[super dealloc];
 #endif
@@ -148,7 +194,7 @@
 
 @implementation TDBadgedCell
 
-@synthesize badgeString=__badgeString, badge=__badge, badgeColor, badgeTextColor, badgeColorHighlighted, showShadow, badgeLeftOffset, badgeRightOffset, resizeableLabels;
+@synthesize badgeString=__badgeString, badge=__badge, badgeColor, badgeTextColor, badgeColorHighlighted, showShadow, badgeLeftOffset, badgeRightOffset, resizeableLabels, badgeTextColorHighlighted;
 
 #pragma mark - Init methods
 
@@ -165,6 +211,18 @@
 {
 	if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]))
 	{
+        self.badgeLeftOffset = 10.f;
+        
+        if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+            if (self.accessoryType != UITableViewCellAccessoryNone) {
+                
+                self.badgeRightOffset = 0.f;
+            } else {
+                
+                self.badgeRightOffset = 12.f;
+            }
+        }
+        
 		[self configureSelf];
 	}
 	return self;
@@ -178,9 +236,6 @@
     
 	self.badge.parent = self;
     
-    self.badgeLeftOffset = 10.f;
-    self.badgeRightOffset = 12.f;
-    
     // by default, resize textLabel & detailTextLabel
     self.resizeableLabels = [NSMutableArray arrayWithCapacity:2];
     if (self.textLabel != nil)
@@ -193,10 +248,12 @@
 
 - (void) setBadgeString:(NSString *)badgeString
 {
-    __badgeString = badgeString;
 #if __has_feature(objc_arc)
+    __badgeString = badgeString;
     __badge.badgeString = [__badgeString copy];
 #else
+    [__badgeString release];
+    __badgeString = [badgeString retain];
     __badge.badgeString = [[__badgeString copy] autorelease];
 #endif
     [__badge setNeedsDisplay];
@@ -219,14 +276,16 @@
 		else
 			[self.badge setHidden:NO];
 		
-		
         // Calculate the size of the bage from the badge string
         UIFont *font = self.badge.boldFont ? [UIFont boldSystemFontOfSize:self.badge.fontSize] : [UIFont systemFontOfSize:self.badge.fontSize];
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
-        CGSize badgeSize = [self.badgeString sizeWithAttributes:@{ NSFontAttributeName:font }];
-#else
-		CGSize badgeSize = [self.badgeString sizeWithFont:font];
-#endif
+        
+        CGSize badgeSize;
+        if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+            badgeSize = [self.badgeString sizeWithAttributes:@{ NSFontAttributeName:font }];
+        } else {
+            badgeSize = [self.badgeString sizeWithFont:font];
+        }
+        
 		CGRect badgeframe = CGRectMake(self.contentView.frame.size.width - (badgeSize.width + 13 + self.badgeRightOffset),
 									   (CGFloat)round((self.contentView.frame.size.height - (badgeSize.height + (50/badgeSize.height))) / 2),
 									   badgeSize.width + 13, badgeSize.height + (50/badgeSize.height));
@@ -251,20 +310,19 @@
             }
         }
 		
-		//set badge highlighted colours or use defaults
+		//set badge colours
 		if(self.badgeColorHighlighted)
 			self.badge.badgeColorHighlighted = self.badgeColorHighlighted;
-		else
-			self.badge.badgeColorHighlighted = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.000f];
-		
-		//set badge colours or impose defaults
+        
+ 		//set badge colours or impose defaults
 		if(self.badgeColor)
 			self.badge.badgeColor = self.badgeColor;
-		else
-			self.badge.badgeColor = [UIColor colorWithRed:0.530f green:0.600f blue:0.738f alpha:1.000f];
 		
 		if(self.badgeTextColor)
 			self.badge.badgeTextColor = self.badgeTextColor;
+        
+        if(self.badgeTextColorHighlighted)
+			self.badge.badgeTextColorHighlighted = self.badgeTextColorHighlighted;
 		
 	}
 	else
@@ -321,6 +379,7 @@
 	[__badge release];
 	[badgeColor release];
 	[badgeTextColor release];
+    [badgeTextColorHighlighted release];
 	[__badgeString release];
 	[badgeColorHighlighted release];
     [resizeableLabels release];

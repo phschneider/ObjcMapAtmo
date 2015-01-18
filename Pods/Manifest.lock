@@ -8,11 +8,11 @@ PODS:
   - NXOAuth2Client (1.2.4)
   - Reachability (3.1.1)
   - SVProgressHUD (1.0)
-  - TDBadgedCell (2.4.1)
+  - TDBadgedCell (2.6)
   - TestFlightSDK (2.2.1-beta)
   - TSMessages (0.9.4):
     - HexColors
-  - UIDevice-Hardware (0.1.3)
+  - UIDevice-Hardware (0.1.5)
 
 DEPENDENCIES:
   - EDSemver (= 0.2.2)
@@ -23,10 +23,10 @@ DEPENDENCIES:
   - NXOAuth2Client (= 1.2.4)
   - Reachability (= 3.1.1)
   - SVProgressHUD (= 1.0)
-  - TDBadgedCell (= 2.4.1)
+  - TDBadgedCell (= 2.6)
   - TestFlightSDK (= 2.2.1-beta)
   - TSMessages (= 0.9.4)
-  - UIDevice-Hardware (= 0.1.3)
+  - UIDevice-Hardware (= 0.1.5)
 
 SPEC CHECKSUMS:
   EDSemver: 71ac489dbd45b728cbbbb3200fa25998d4474dbd
@@ -38,9 +38,9 @@ SPEC CHECKSUMS:
   NXOAuth2Client: fb53355e2d6f81aed5f6d6db19b6c79f284899f7
   Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
-  TDBadgedCell: 2d624567826a51e06f4096a81d536425391c34ab
+  TDBadgedCell: e683b5557d12ea4e28a8d6ac20b6e394abc2c1fe
   TestFlightSDK: 472cf8e9a98b09bda38c7f5f8643b7af0e061830
   TSMessages: 6e85d86caa001e4965db8ae24c5ad19a5887667c
-  UIDevice-Hardware: b1c37dbeee3a5279ac15fbba070b8de556496b67
+  UIDevice-Hardware: df983265bb5c6f3f66d63c29841a1d6649b1c8f4
 
 COCOAPODS: 0.32.1

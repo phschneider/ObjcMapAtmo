@@ -1128,7 +1128,7 @@
 					SystemConfiguration,
 				);
 				PRODUCT_NAME = MapAtmo;
-				PROVISIONING_PROFILE = "ba41c1d3-21e6-4b30-8b8e-031be407cd97";
+				PROVISIONING_PROFILE = "a37302af-9859-4d99-9de5-24da00ea6a3c";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				VALID_ARCHS = "armv7s armv7";

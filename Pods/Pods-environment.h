@@ -52,8 +52,8 @@
 // TDBadgedCell
 #define COCOAPODS_POD_AVAILABLE_TDBadgedCell
 #define COCOAPODS_VERSION_MAJOR_TDBadgedCell 2
-#define COCOAPODS_VERSION_MINOR_TDBadgedCell 4
-#define COCOAPODS_VERSION_PATCH_TDBadgedCell 1
+#define COCOAPODS_VERSION_MINOR_TDBadgedCell 6
+#define COCOAPODS_VERSION_PATCH_TDBadgedCell 0
 
 // TSMessages
 #define COCOAPODS_POD_AVAILABLE_TSMessages
@@ -71,7 +71,7 @@
 #define COCOAPODS_POD_AVAILABLE_UIDevice_Hardware
 #define COCOAPODS_VERSION_MAJOR_UIDevice_Hardware 0
 #define COCOAPODS_VERSION_MINOR_UIDevice_Hardware 1
-#define COCOAPODS_VERSION_PATCH_UIDevice_Hardware 3
+#define COCOAPODS_VERSION_PATCH_UIDevice_Hardware 5
 
 // iRate
 #define COCOAPODS_POD_AVAILABLE_iRate

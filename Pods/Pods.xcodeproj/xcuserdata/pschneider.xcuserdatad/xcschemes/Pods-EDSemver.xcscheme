@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7594404E1D704283871E0D9E"
+               BlueprintIdentifier = "7DC7757D12D4447CB613D48E"
                BuildableName = "libPods-EDSemver.a"
                BlueprintName = "Pods-EDSemver"
                ReferencedContainer = "container:Pods.xcodeproj">
