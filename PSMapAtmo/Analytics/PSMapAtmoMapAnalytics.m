@@ -86,7 +86,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
 
 #ifndef CONFIGURATION_AppStore
     NSString * checkPointString = [NSString stringWithFormat:@"EVENT >> Category=%@ Action=%@ Label=%@ Value=%@",category,action,label,value];
-    DLog(@"CheckPointString => %@");
+    DLog(@"CheckPointString => %@",checkPointString);
     [TestFlight passCheckpoint:checkPointString];
 #endif
 
@@ -104,7 +104,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
 
 #ifndef CONFIGURATION_AppStore
     NSString * checkPointString = [NSString stringWithFormat:@"TIMING >> Category=%@ Value=%f Name=%@ Label=%@",category,time,name,label];
-    DLog(@"CheckPointString => %@");
+    DLog(@"CheckPointString => %@",checkPointString);
     [TestFlight passCheckpoint:checkPointString];
 #endif
 
@@ -123,7 +123,7 @@ static PSMapAtmoMapAnalytics* instance = nil;
 
 #ifndef CONFIGURATION_AppStore
     NSString * checkPointString = [NSString stringWithFormat:@"VIEW >> %@",screen];
-    DLog(@"CheckPointString => %@");
+    DLog(@"CheckPointString => %@",checkPointString);
     [TestFlight passCheckpoint:checkPointString];
 #endif
 
