@@ -125,8 +125,8 @@ static PSMapAtmoMapViewController* instance = nil;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearMap:) name:PSMAPATMO_PUBLIC_CLEAR_ALL object:nil];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeType:) name:@"PSMAPATMO_CHANGE_MAP_TYPE" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:PSMAPATMO_COOKIE_UPDATED_NOTIFICICATION object:nil];
 
-        
         self.longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
         {
@@ -137,7 +137,22 @@ static PSMapAtmoMapViewController* instance = nil;
     return self;
 }
 
+#pragma mark - Notification
+- (void) reload
+{
+    DLogFuncName();
+    
+    // Reload Annotations ...
+#ifndef CONFIGURATION_AppStore
+    dispatch_async(dispatch_get_main_queue(),^{
+        [[[UIAlertView alloc] initWithTitle:@"Reload Annotions" message:@"We've got a new cookie" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    });
+#endif
+    
+    [self.mapView.delegate mapViewDidFinishLoadingMap:self.mapView];
+}
 
+#pragma mark - View
 - (void)viewWillAppear:(BOOL)animated
 {
     DLogFuncName();
@@ -793,6 +808,7 @@ static PSMapAtmoMapViewController* instance = nil;
 #pragma mark - Debug
 - (void)debugViewFrames
 {
+    return;
     DLog(@"View Frame = %@",NSStringFromCGRect(self.view.frame));
     DLog(@"View Bounds = %@",NSStringFromCGRect(self.view.bounds));
     DLog(@"Map Frame = %@",NSStringFromCGRect(self.mapView.frame));

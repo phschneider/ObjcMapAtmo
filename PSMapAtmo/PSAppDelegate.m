@@ -20,6 +20,7 @@
 #import "PSMapAtmoUserDefaults.h"
 #import "PSMapAtmoRatingDelegate.h"
 #import "PSMapAtmoLocation.h"
+#import "PSMapAtmoPublicCookie.h"
 
 #ifdef CONFIGURATION_AppStore
     #import <Crashlytics/Crashlytics.h>
@@ -47,6 +48,7 @@
 + (void)initialize
 {
     DLogFuncName();
+    [PSMapAtmoPublicCookie sharedInstance];
     [PSMapAtmoMapAnalytics sharedInstance];
     [PSMapAtmoRatingDelegate sharedInstance];
     [PSMapAtmoUserDefaults sharedInstance];

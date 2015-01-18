@@ -11,11 +11,15 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
-
-    #define API_ENABLED     YES
     #import "GoogleAnalytics-iOS-SDK/GAI.h"
-
     #import "PSMapAtmoNotifications.h"
+
+    #define API_ENABLED                 YES
+    #define WEATHERMAP_URL_NSSTRING     @"https://www.netatmo.com/weathermap"
+    #define WEATHERMAP_URL_NSURL        [NSURL URLWithString:WEATHERMAP_URL_NSSTRING]
+    #define WEATHERMAP_API_NSSTRING     @"https://www.netatmo.com/weathermap/getPublicMeasures"
+    #define WEATHERMAP_API_NSURL        [NSURL URLWithString:WEATHERMAP_API_NSSTRING]
+    #define NETATMO_COOKIE_NAME          @"netatmocomci_csrf_cookie_na"
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
@@ -42,23 +46,5 @@
     #define DEBUG_REQUEST_REPONSE_Log(fmt, ...)
     #define DEBUG_REQUEST_REPONSE_LogName()
 #endif
-
-#ifdef TARGET_MAPATMO
-    #define TARGET_IS_MAPATMO   true
-#else
-    #define TARGET_IS_MAPATMO   false
-#endif
-
-#ifdef TARGET_DASHATMO
-    #define TARGET_IS_DASHATMO   true
-#else
-    #define TARGET_IS_DASHATMO   false
-#endif
-
-//#ifdef TARGET_MAPATMO
-//    #import "Analytics/Analytics.h"
-//#endif
-
-
 
 #endif

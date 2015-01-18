@@ -6,26 +6,23 @@
 //  Copyright (c) 2013 phschneider.net. All rights reserved.
 //
 
-#define DEFAULTS_USE_COOKIE        YES
-#define DEFAULTS_PUBLIC_COOKIE     @"DEFAULTS_PUBLIC_COOKIE"
-
 #import "PSMapAtmoPublicApi.h"
 #import "PSMapAtmoMapAnalytics.h"
 #import "PSMapAtmoUserDefaults.h"
 #import "PSMapAtmoFilter.h"
+#import "PSMapAtmoPublicCookie.h"
+#import "UIAlertView+NSCookbook.h"
 
 
 @interface PSMapAtmoPublicApi()
 @property (nonatomic) int numberOfRequest;
 @property (nonatomic) PSMapAtmoFilter *filter;
+@property (nonatomic) UIWebView *webView;
 @end
 
 @implementation PSMapAtmoPublicApi
 
-//+ (NSArray*)userAgents
-//{
-//    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
-//}
+
 static PSMapAtmoPublicApi* instance = nil;
 
 + (PSMapAtmoPublicApi*) sharedInstance {
@@ -43,7 +40,7 @@ static PSMapAtmoPublicApi* instance = nil;
 - (id)init
 {
     DLogFuncName();
-    NSAssert(!instance, @"Instance of PSMapAtmoAnalytics already exists");
+    NSAssert(!instance, @"Instance of PSMapAtmoPublicApi already exists");
     self = [super init];
     if (self)
     {
@@ -84,37 +81,6 @@ static PSMapAtmoPublicApi* instance = nil;
 }
 
 
-#pragma mark - Cookie
-- (void) saveCookieFromResponse:(NSURLResponse*)response
-{
-    DLogFuncName();
-    if ([response isKindOfClass:[NSHTTPURLResponse class]])
-    {
-        NSString * cookie = [((NSHTTPURLResponse *) response) allHeaderFields][@"Set-Cookie"];
-        [[NSUserDefaults standardUserDefaults] setObject:cookie  forKey:DEFAULTS_PUBLIC_COOKIE];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-}
-
-
-- (NSString*)cookie
-{
-    DLogFuncName();
-    NSString * cookie = [[NSUserDefaults standardUserDefaults] objectForKey:DEFAULTS_PUBLIC_COOKIE];
-    DLog(@"cookie = |%@|", cookie);
-    return cookie;
-}
-
-
-- (BOOL) hasCookie
-{
-    DLogFuncName();
-    BOOL hasCookie = ([[NSUserDefaults standardUserDefaults] objectForKey:DEFAULTS_PUBLIC_COOKIE] != nil);
-    DLog(@"hasCookie = %@", hasCookie ? @"YES" : @"NO");
-    return hasCookie;
-}
-
-
 #pragma mark - Requests
 - (NSString*)postStringForCurrentFilterSettings
 {
@@ -123,71 +89,57 @@ static PSMapAtmoPublicApi* instance = nil;
 }
 
 
+// Limit:
+// Limit kleiner 3000, 300 funktioniert noch
+// Je höher das Limit desto mehr ergebnisse werden gefunden .... :(
+// Divider:
+// Je kleiner der Divider, desto weniger wird gefunden (divider =1 => nur die mitte der karte wird geladen ..
+// Divider muss kleiner gleich 15 sein!
 - (void) meassuresForSw:(CLLocationCoordinate2D)sw andNe:(CLLocationCoordinate2D)ne
 {
     DLogFuncName();
-    
-    NSString * urlString = @"https://www.netatmo.com/weathermap/getPublicMeasures";
-    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    [request setHTTPMethod:@"POST"];
-    
-    
-//    NSMutableData *postBody = [NSMutableData data];
-    //    NSString *postString = @"limit=100&divider=12&quality=7&lat_ne=52.482780222078226&lon_ne=-2.8125&lat_sw=49.38237278700955&lon_sw=-7.734375";
-    
-    // Quality = 2 -> Temperature ?
 
-    // Je höher das Limit desto mehr ergebnisse werden gefunden .... :(
-    // Limit kleiner 3000, 300 funktioniert noch
-    // Je kleiner der Divider, desto weniger wird gefunden (divider =1 => nur die mitte der karte wird geladen ..
-    // Divider muss kleiner gleich 15 sein!
-    NSString *postString = [NSString stringWithFormat:@"limit=3&divider=12&quality=%@&lat_ne=%f&lon_ne=%f&lat_sw=%f&lon_sw=%f", [self postStringForCurrentFilterSettings], sw.latitude, sw.longitude, ne.latitude,ne.longitude];
-    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    DLog(@"PostString = %@", postString);
-//    for (NSString * localeIdentifier in [NSLocale availableLocaleIdentifiers])
-//    {
-//        NSLocale * locale = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
-//        DLog(@"%@ \t => \t%@",localeIdentifier, [[locale localeIdentifier] stringByReplacingOccurrencesOfString:@"_" withString:@"-"] );
-//    }
-    
+    [[PSMapAtmoPublicCookie sharedInstance] checkAndRequestCookieIfNeeded];
+
     NSString * localeString = [[[NSLocale currentLocale] identifier] stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
     DLog(@"CurrentLocale String = %@ => %@",[[NSLocale currentLocale] identifier], localeString);
-    
-    NSString * netAtmoLocaleString = [NSString stringWithFormat:@"netatmocomlocale=%@; ",localeString];
-    if (DEFAULTS_USE_COOKIE && [self hasCookie])
-    {
-        DLog(@"Setting cookie from userdefaults");
-        [request setValue:[self cookie] forHTTPHeaderField:@"Cookie"];
-    }
-    else
-    {
-        DLog(@"Using Cookie from UserLocale");
-        [request setValue:netAtmoLocaleString forHTTPHeaderField:@"Cookie"];
-    }
 
+    NSString *postString = [NSString stringWithFormat:@"limit=3&divider=12&quality=%@&lat_ne=%f&lon_ne=%f&lat_sw=%f&lon_sw=%f&ci_csrf_netatmo=%@", [self postStringForCurrentFilterSettings], sw.latitude, sw.longitude, ne.latitude,ne.longitude, [[PSMapAtmoPublicCookie sharedInstance] cookieValue]];
+    DLog(@"PostString = %@", postString);
+
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:WEATHERMAP_API_NSURL];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     [request addValue:@"www.netatmo.com" forHTTPHeaderField:@"Host"];
-    [request addValue:@"http://www.netatmo.com/weathermap" forHTTPHeaderField:@"Referer"];
+    [request addValue:WEATHERMAP_URL_NSSTRING forHTTPHeaderField:@"Referer"];
     [request addValue:@"XMLHttpRequest" forHTTPHeaderField:@"X-Requested-With"];
     [request addValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:25.0) Gecko/20100101 Firefox/25.0" forHTTPHeaderField:@"User-Agent"];
-    //    [request setValue:@"netatmocomlocale=de-DE; __utma=162861987.708650259.1386881166.1386881166.1386881166.1; __utmb=162861987.3.10.1386881166; __utmc=162861987; __utmz=162861987.1386881166.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)" forHTTPHeaderField:@"Cookie"];
-    
-    
-    DLog(@"URL: %@", urlString);
+    [request setValue:[[PSMapAtmoPublicCookie sharedInstance] httpHeaderCookie] forHTTPHeaderField:@"Cookie"];
+
     DLog(@"PostBody: %@", [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
     DLog(@"Request = \n%@\n",request);
-    
+
     if ([NSURLConnection canHandleRequest:request])
     {
-        //        usleep(2);
-        self.numberOfRequest++;
-        [[PSMapAtmoMapAnalytics sharedInstance] trackApiCall];
-        [self sendRequest:request];
-        //        usleep(2);
-        //        [self sendRequest:request];
-        //        usleep(2);
-        //        [self sendRequest:request];
+        if ( [[PSMapAtmoPublicCookie sharedInstance] cookieIsValid])
+        {
+            self.numberOfRequest++;
+            [[PSMapAtmoMapAnalytics sharedInstance] trackApiCall];
+            [self sendAsyncNsurlRequest:request];
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Request error" message:@"Unable to handle request" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"retry", nil];
+                    [alertView showWithCompletion:^(UIAlertView *alertView, NSInteger buttonIndex) {
+//                        [[[UIAlertView alloc] initWithTitle:@"Retry" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
+                        [self meassuresForSw:sw andNe:ne];
+                        return;
+                    }];
+            });
+        }
     }
     else
     {
@@ -198,7 +150,7 @@ static PSMapAtmoPublicApi* instance = nil;
 }
 
 
-- (void) sendRequest:(NSURLRequest*)request
+- (void)sendAsyncNsurlRequest:(NSURLRequest*)request
 {
     DLogFuncName();
 #ifdef    OFFLINE_API
@@ -209,15 +161,16 @@ static PSMapAtmoPublicApi* instance = nil;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
      {
-         [self saveCookieFromResponse:response];
-         [[NSNotificationCenter defaultCenter] postNotificationName:PSMAPATMO_API_DATA_RECEIVED object:nil userInfo:@{ @"size" : @([data length])}];
+         [[PSMapAtmoPublicCookie sharedInstance] saveCookieFromResponse:(NSHTTPURLResponse*)response];
+         [[NSNotificationCenter defaultCenter] postNotificationName:PSMAPATMO_API_DATA_RECEIVED object:nil userInfo:@{ @"size" : [NSNumber numberWithInt:[data length]]}];
 
+        DLog(@"Response Data Lenght: %d", [data length]);
          DLog(@"Response Data: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
          DLog(@"Response Error: %@", error);
          
          NSError * jsonError = nil;
          NSArray *dict = nil;
-         if ([data length])
+         if ([data length] > 10)
          {
              dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
          }
@@ -238,6 +191,11 @@ static PSMapAtmoPublicApi* instance = nil;
          else if (jsonError)
          {
              NSLog(@"JsonError = %@", jsonError);
+            #ifdef CONFIGURATION_Debug
+            dispatch_async(dispatch_get_main_queue(), ^{
+                 [[[UIAlertView alloc] initWithTitle:@"JSON error" message:[NSString stringWithFormat:@"%@",[jsonError userInfo]] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+             });
+            #endif
          }
          
 #warning todo - auslagern in errorhandling

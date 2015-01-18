@@ -174,6 +174,8 @@
 		22F088B91883083D00380717 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F088B81883083D00380717 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		22F81CBF1893E8310034FEC2 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F81CBE1893E8310034FEC2 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E5F163081E1EFAFDBFD9722F /* PSMapAtmoAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F160DAD8117DD11C594AC8 /* PSMapAtmoAlertViewDelegate.m */; };
+		E5F1653AF31204BC7ECCBB97 /* UIAlertView+NSCookbook.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F162970A58617149735A20 /* UIAlertView+NSCookbook.m */; };
+		E5F166CC248E41DC3692D644 /* PSMapAtmoPublicCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F1695AB8033FE9952767E8 /* PSMapAtmoPublicCookie.m */; };
 		E5F16D014F5C0EA6E9E45FC3 /* PSMapAtmoRatingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F162053774B40D722C6AF2 /* PSMapAtmoRatingDelegate.m */; };
 		E5F16F3864B5F59AA0C8861A /* PSMapAtmoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F16AE85CDBB436E4ED2AAD /* PSMapAtmoLocation.m */; };
 /* End PBXBuildFile section */
@@ -391,13 +393,17 @@
 		E5F160DAD8117DD11C594AC8 /* PSMapAtmoAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoAlertViewDelegate.m; sourceTree = "<group>"; };
 		E5F1610213D000CEC6D6ADCA /* PSMapAtmoAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoAlertViewDelegate.h; sourceTree = "<group>"; };
 		E5F162053774B40D722C6AF2 /* PSMapAtmoRatingDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoRatingDelegate.m; sourceTree = "<group>"; };
+		E5F162970A58617149735A20 /* UIAlertView+NSCookbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+NSCookbook.m"; sourceTree = "<group>"; };
 		E5F162EE23DBA8F3042BAE75 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E5F167A68081E66EF1474BEB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E5F168C3F1C88245576080D1 /* UIAlertView+NSCookbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+NSCookbook.h"; sourceTree = "<group>"; };
+		E5F1695AB8033FE9952767E8 /* PSMapAtmoPublicCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoPublicCookie.m; sourceTree = "<group>"; };
 		E5F16975558E68ED9303510A /* PSMapAtmoRatingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoRatingDelegate.h; sourceTree = "<group>"; };
 		E5F16AE85CDBB436E4ED2AAD /* PSMapAtmoLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoLocation.m; sourceTree = "<group>"; };
 		E5F16B3106959F79FE45779D /* PSMapAtmoLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoLocation.h; sourceTree = "<group>"; };
 		E5F16DF9805DEBF65B31140E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E5F16F163128E7145F6DFFB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E5F16FE2A32989A5BE4FAE09 /* PSMapAtmoPublicCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoPublicCookie.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +476,8 @@
 				22CC8B3F18B136CD00E61658 /* NSObject+Runtime.m */,
 				22E3D37518C262A900281AB5 /* NSString+MKCoordinateRegion.h */,
 				22E3D37618C262A900281AB5 /* NSString+MKCoordinateRegion.m */,
+				E5F162970A58617149735A20 /* UIAlertView+NSCookbook.m */,
+				E5F168C3F1C88245576080D1 /* UIAlertView+NSCookbook.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -678,6 +686,8 @@
 			children = (
 				22CC8B9C18B136CD00E61658 /* PSMapAtmoPublicApi.h */,
 				22CC8B9D18B136CD00E61658 /* PSMapAtmoPublicApi.m */,
+				E5F1695AB8033FE9952767E8 /* PSMapAtmoPublicCookie.m */,
+				E5F16FE2A32989A5BE4FAE09 /* PSMapAtmoPublicCookie.h */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -1072,6 +1082,8 @@
 				E5F16D014F5C0EA6E9E45FC3 /* PSMapAtmoRatingDelegate.m in Sources */,
 				E5F163081E1EFAFDBFD9722F /* PSMapAtmoAlertViewDelegate.m in Sources */,
 				E5F16F3864B5F59AA0C8861A /* PSMapAtmoLocation.m in Sources */,
+				E5F166CC248E41DC3692D644 /* PSMapAtmoPublicCookie.m in Sources */,
+				E5F1653AF31204BC7ECCBB97 /* UIAlertView+NSCookbook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
