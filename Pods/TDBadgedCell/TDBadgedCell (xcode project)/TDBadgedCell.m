@@ -128,20 +128,20 @@
 	
 }
 
-//- (void) dealloc
-//{
-//	__parent = nil;
-//	
-//#if !__has_feature(objc_arc)
-//	
-//	[__badgeString release];
-//	[__badgeColor release];
-//	[__badgeTextColor release];
-//	[__badgeColorHighlighted release];
-//	
-//	[super dealloc];
-//#endif
-//}
+- (void) dealloc
+{
+	__parent = nil;
+	
+#if !__has_feature(objc_arc)
+	
+	[__badgeString release];
+	[__badgeColor release];
+	[__badgeTextColor release];
+	[__badgeColorHighlighted release];
+	
+	[super dealloc];
+#endif
+}
 
 @end
 

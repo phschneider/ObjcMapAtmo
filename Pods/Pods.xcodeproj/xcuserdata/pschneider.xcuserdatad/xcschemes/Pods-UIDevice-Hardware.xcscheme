@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F1C7D24F850462C8C8070F7"
+               BlueprintIdentifier = "CF3EAC78E76449EEBC3D2BF4"
                BuildableName = "libPods-UIDevice-Hardware.a"
                BlueprintName = "Pods-UIDevice-Hardware"
                ReferencedContainer = "container:Pods.xcodeproj">

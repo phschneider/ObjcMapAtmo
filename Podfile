@@ -7,7 +7,7 @@ pod 'TSMessages', '0.9.4'
 pod 'TDBadgedCell', '2.4.1'
 pod 'iRate', '1.9.2'
 pod 'iTellAFriend', '1.4.1'
-pod 'EDSemver', '0.2.1'
+pod 'EDSemver', '0.2.2'
 
 #pod 'Analytics'
 #pod 'iVersion'

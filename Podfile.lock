@@ -1,5 +1,5 @@
 PODS:
-  - EDSemver (0.2.1)
+  - EDSemver (0.2.2)
   - Fingertips (0.3.0)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
   - HexColors (2.2.1)
@@ -15,32 +15,32 @@ PODS:
   - UIDevice-Hardware (0.1.3)
 
 DEPENDENCIES:
-  - EDSemver
-  - Fingertips
+  - EDSemver (= 0.2.2)
+  - Fingertips (= 0.3.0)
   - GoogleAnalytics-iOS-SDK (= 2.0beta4)
-  - iRate
+  - iRate (= 1.9.2)
   - iTellAFriend (= 1.4.1)
-  - NXOAuth2Client
-  - Reachability
-  - SVProgressHUD
-  - TDBadgedCell
-  - TestFlightSDK
-  - TSMessages
-  - UIDevice-Hardware (~> 0.1.3)
+  - NXOAuth2Client (= 1.2.4)
+  - Reachability (= 3.1.1)
+  - SVProgressHUD (= 1.0)
+  - TDBadgedCell (= 2.4.1)
+  - TestFlightSDK (= 2.2.1-beta)
+  - TSMessages (= 0.9.4)
+  - UIDevice-Hardware (= 0.1.3)
 
 SPEC CHECKSUMS:
-  EDSemver: 810f2fcba0d10b1982aaae470b73c284aad96a64
-  Fingertips: ba4141dcd79c0474bb51167f039de3473f72a2ca
-  GoogleAnalytics-iOS-SDK: acf0f1ac4dcac408d17e7766454918b7e9e2b03a
-  HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
-  iRate: 7c4bc22ab4a8752185d84bed7a98dc111c8212a5
-  iTellAFriend: 8a4f890bc911ca63010d439bdb3c7fff79b09483
-  NXOAuth2Client: 4666d0d73ba7689181ef4597e1b1beda3978c724
-  Reachability: be4883bb93f31e38266ae3365e5600a317aae735
-  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
-  TDBadgedCell: 16b3256427b4bfc61e7822f0c3eebc6b71cad60d
-  TestFlightSDK: 4249c2f70e621bcfbdebf019073169c8fe36be13
-  TSMessages: 5ab92604b02e49a755d2cc2baf114d2248a90977
-  UIDevice-Hardware: 32832a484ef6d7cf5be9c8cc48d307c82c8e4713
+  EDSemver: 71ac489dbd45b728cbbbb3200fa25998d4474dbd
+  Fingertips: 09d223a390349b317a51d4c941d778bdb661c4e1
+  GoogleAnalytics-iOS-SDK: 7b20550d822fa9c86331ccda734bdf8c7ff6f752
+  HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
+  iRate: be346e9097ab63cb6e73e9448803f85385ca4f5e
+  iTellAFriend: f212ce3fce614a79c546643f69636c5d9843f1b1
+  NXOAuth2Client: fb53355e2d6f81aed5f6d6db19b6c79f284899f7
+  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
+  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
+  TDBadgedCell: 2d624567826a51e06f4096a81d536425391c34ab
+  TestFlightSDK: 472cf8e9a98b09bda38c7f5f8643b7af0e061830
+  TSMessages: 6e85d86caa001e4965db8ae24c5ad19a5887667c
+  UIDevice-Hardware: b1c37dbeee3a5279ac15fbba070b8de556496b67
 
-COCOAPODS: 0.25.0
+COCOAPODS: 0.32.1
