@@ -4,6 +4,7 @@
 //
 
 #import "PSMapAtmoPublicCookie.h"
+#import "PSMapAtmoMapAnalytics.h"
 
 
 @interface PSMapAtmoPublicCookie() <UIWebViewDelegate>
@@ -50,6 +51,7 @@ static PSMapAtmoPublicCookie* instance = nil;
     DLogFuncName();
 //    [self requestWebViewCookie];
     [self requestNsurlCookie];
+    [[PSMapAtmoMapAnalytics sharedInstance] trackEventCookieRequested];
 }
 
 
@@ -154,6 +156,7 @@ curl -X POST -H "X-Requested-With: XMLHttpRequest"
             [[NSNotificationCenter defaultCenter] postNotificationName:PSMAPATMO_COOKIE_UPDATED_NOTIFICICATION object:nil];
         }
         [[NSHTTPCookieStorage sharedHTTPCookieStorage]  setCookies: cookies forURL:WEATHERMAP_URL_NSURL mainDocumentURL: nil ];
+        [[PSMapAtmoMapAnalytics sharedInstance] trackEventCookieRequested];
     }
 }
 
@@ -180,7 +183,12 @@ curl -X POST -H "X-Requested-With: XMLHttpRequest"
 {
     DLogFuncName();
 
-    return ([self netAtmoCookie] != nil);
+    NSHTTPCookie *cookie = [self netAtmoCookie];
+    if (!cookie)
+    {
+        [[PSMapAtmoMapAnalytics sharedInstance] trackEventCookieMissed];
+    }
+    return (cookie != nil);
 }
 
 
@@ -198,6 +206,7 @@ curl -X POST -H "X-Requested-With: XMLHttpRequest"
         {
             NSLog((@"[FUNCNAME] %@ %s [Line %d] "), THREAD_LOG, __PRETTY_FUNCTION__, __LINE__);
             NSLog(@"[COOKIE] now is later than cookieDate => invalid");
+            [[PSMapAtmoMapAnalytics sharedInstance] trackEventCookieInvalid];
             return NO;
         }
         else if ([now compare:cookieDate] == NSOrderedAscending)
@@ -210,10 +219,11 @@ curl -X POST -H "X-Requested-With: XMLHttpRequest"
         {
             NSLog((@"[FUNCNAME] %@ %s [Line %d] "), THREAD_LOG, __PRETTY_FUNCTION__, __LINE__);
             NSLog(@"[COOKIE] dates are the same => invalid");
+            [[PSMapAtmoMapAnalytics sharedInstance] trackEventCookieInvalid];
             return NO;
         }
     }
-    NSLog(@"Invalid");
+    [[PSMapAtmoMapAnalytics sharedInstance] trackEventCookieInvalid];
     return  NO;
 }
 

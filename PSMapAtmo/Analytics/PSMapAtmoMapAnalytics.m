@@ -865,4 +865,49 @@ static PSMapAtmoMapAnalytics* instance = nil;
                       withLabel:@""
                       withValue:@1];
 }
+
+
+- (void)trackEventCookieMissed
+{
+    DLogFuncName();
+
+    [self sendEventWithCategory:@"Cookie"
+                     withAction:@"missed"
+                      withLabel:@""
+                      withValue:@1];
+}
+
+
+- (void)trackEventCookieInvalid
+{
+    DLogFuncName();
+
+    [self sendEventWithCategory:@"Cookie"
+                     withAction:@"invalid"
+                      withLabel:@""
+                      withValue:@1];
+}
+
+
+- (void)trackEventCookieRequested
+{
+    DLogFuncName();
+
+    [self sendEventWithCategory:@"Cookie"
+                     withAction:@"requested"
+                      withLabel:@""
+                      withValue:@1];
+}
+
+
+- (void)trackEventCookieReceived
+{
+    DLogFuncName();
+
+    [self sendEventWithCategory:@"Cookie"
+                     withAction:@"received"
+                      withLabel:@""
+                      withValue:@1];
+}
+
 @end

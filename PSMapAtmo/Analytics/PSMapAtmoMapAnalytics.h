@@ -118,6 +118,10 @@
 
 - (void)trackEventUpdateLastLocation;
 
+- (void)trackEventCookieMissed;
+- (void)trackEventCookieInvalid;
+- (void)trackEventCookieRequested;
+- (void)trackEventCookieReceived;
 - (void)trackEventSystemFilterChange;
 
 - (void)trackEventSystemFilterUseDefaultFilter;
