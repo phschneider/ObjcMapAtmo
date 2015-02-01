@@ -7,6 +7,7 @@
 #import "PSMapAtmoUserDefaults.h"
 #import "PSMapAtmoLocation.h"
 #import "PSMapAtmoFilter.h"
+#import "PSMapAtmoAnnotationSettings.h"
 
 #define PSMAPATMO_USERDEFAULTS_TEMP_UNIT_CELSIUS            @"PSMAPATMO_USERDEFAULTS_TEMP_UNIT_CELSIUS"
 #define PSMAPATMO_USERDEFAULTS_TEMP_UNIT_FAHRENHEIT         @"PSMAPATMO_USERDEFAULTS_TEMP_UNIT_FAHRENHEIT"
@@ -18,6 +19,7 @@
 #define PSMAPATMO_USERDEFAULTS_DISTANCE_UNIT                @"PSMAPATMO_USERDEFAULTS_DISTANCE_UNIT"
 
 #define PSMAPATMO_USERDEFAULTS_FILTER                       @"PSMAPATMO_USERDEFAULTS_FILTER"
+#define PSMAPATMO_USERDEFAULTS_ANNOTATION_SETTINGS          @"PSMAPATMO_USERDEFAULTS_ANNOTATION_SETTINGS"
 
 #define PSMAPATMO_USERDEFAULTS_FULLSCREEN_LEAVINGS          @"PSMAPATMO_USERDEFAULTS_FULLSCREEN_LEAVINGS"
 #define PSMAPATMO_USERDEFAULTS_FULLSCREEN_ENTERINGS         @"PSMAPATMO_USERDEFAULTS_FULLSCREEN_ENTERINGS"
@@ -65,6 +67,12 @@ static PSMapAtmoUserDefaults* instance = nil;
         if (!filter)
         {
             [self setFilter:[PSMapAtmoFilter defaultFilter]];
+        }
+
+        PSMapAtmoAnnotationSettings *annotationSettings = [self annotationSettings];
+        if (!annotationSettings)
+        {
+            [self setAnnotationSettings:[PSMapAtmoAnnotationSettings defaultAnnotationSettings]];
         }
 
         PSMapAtmoLocation *location = [self location];
@@ -153,6 +161,30 @@ static PSMapAtmoUserDefaults* instance = nil;
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:PSMAPATMO_API_UPDATE_FILTER object:nil];
+}
+
+
+#pragma mark - AnnotationSettings
+- (PSMapAtmoAnnotationSettings *)annotationSettings
+{
+    DLogFuncName();
+    NSData *settingsData = [[NSUserDefaults standardUserDefaults] objectForKey:PSMAPATMO_USERDEFAULTS_ANNOTATION_SETTINGS];
+    PSMapAtmoAnnotationSettings *settings= [NSKeyedUnarchiver unarchiveObjectWithData:settingsData];
+
+    return settings;
+}
+
+
+- (void) setAnnotationSettings:(PSMapAtmoAnnotationSettings*)settings
+{
+    DLogFuncName();
+
+    NSData *settingsData = [NSKeyedArchiver archivedDataWithRootObject:settings];
+    [[NSUserDefaults standardUserDefaults] setObject:settingsData
+                                              forKey:PSMAPATMO_USERDEFAULTS_ANNOTATION_SETTINGS];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:PSMAPATMO_PUBLIC_MAP_CHANGED_ANNOTATION_SETTINGS object:nil];
 }
 
 

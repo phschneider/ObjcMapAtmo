@@ -10,6 +10,8 @@
 	<string>MapAtmo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>4402079679B2E58E95F142D8EC9686BD19CBEBAD</key>
+		<string>https://bitbucket.org/phschneider/objcmapatmo.git</string>
 		<key>4697513C-E85D-4AC4-ACC8-1894363FDB5E</key>
 		<string>https://bitbucket.org/phschneider/objcmapatmo.git</string>
 	</dict>
@@ -17,15 +19,17 @@
 	<string>MapAtmo.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4697513C-E85D-4AC4-ACC8-1894363FDB5E</key>
+		<key>4402079679B2E58E95F142D8EC9686BD19CBEBAD</key>
 		<string>..</string>
+		<key>4697513C-E85D-4AC4-ACC8-1894363FDB5E</key>
+		<string>../../--ObjcMapAtmo+develop</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://bitbucket.org/phschneider/objcmapatmo.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4697513C-E85D-4AC4-ACC8-1894363FDB5E</string>
+	<string>4402079679B2E58E95F142D8EC9686BD19CBEBAD</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>4697513C-E85D-4AC4-ACC8-1894363FDB5E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>--ObjcMapAtmo+develop</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4402079679B2E58E95F142D8EC9686BD19CBEBAD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ObjcMapAtmo+custom-annotation</string>
 		</dict>
 	</array>
 </dict>

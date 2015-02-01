@@ -102,6 +102,13 @@ static PSMapAtmoLocalStorage * instance = nil;
 }
 
 
+- (NSDictionary *)allDevices
+{
+    DLogFuncName();
+    return [[self storage] copy];
+}
+
+
 #warning - lesen des caches macht das ganze langsam ...
 - (int) storageSize
 {

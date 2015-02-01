@@ -15,5 +15,6 @@
 
 +(PSMapAtmoMapViewController*) sharedInstance;
 
+- (void)infoButtonTouched:(id)sender;
 - (MKCoordinateRegion)currentRegion;
 @end

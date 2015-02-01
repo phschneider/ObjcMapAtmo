@@ -24,8 +24,10 @@
 #import "EDSemver.h"
 
 #ifndef CONFIGURATION_AppStore
-    #import "PSMapAtmoBetaViewController.h"
+    #import "PSMapAtmoBetaFeedbackViewController.h"
     #import "PSMapAtmoDebugViewController.h"
+    #import "PSMapAtmoBetaFeedbackViewController.h"
+    #import "PSMapAtmoBetaViewController.h"
 #endif
 
 @interface PSMapAtmoSettingsViewController ()
@@ -130,14 +132,14 @@
                             @[
     #ifdef CONFIGURATION_Beta
                                 @{
-                                    @"title" : @"Beta (feedback)",
+                                    @"title" : @"Beta",
                                     @"viewController" : [[PSMapAtmoBetaViewController alloc] init],
                                     @"badge" : (showNewBadgeForVersionOneDotOne) ? @"new" : @""
                                     }
     #else
                                 @{
                                      @"title" : @"Debug",
-                                     @"viewController" : [[PSMapAtmoDebugViewController alloc] init],
+                                     @"viewController" : [[PSMapAtmoBetaViewController alloc] init],
                                       @"badge" : (showNewBadgeForVersionOneDotOne) ? @"new" : @""
                                 }
     #endif

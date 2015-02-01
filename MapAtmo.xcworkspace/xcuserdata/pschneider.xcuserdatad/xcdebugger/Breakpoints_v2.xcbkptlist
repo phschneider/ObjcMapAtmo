@@ -29,13 +29,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PSMapAtmo/PSMapAtmoPublicCookie.m"
-            timestampString = "443293244.258736"
+            filePath = "PSMapAtmo/PSMapAtmoMapViewDelegate.m"
+            timestampString = "444508988.290267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-requestCookie"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "-mapView:viewForAnnotation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -45,13 +45,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PSMapAtmo/PSMapAtmoPublicCookie.m"
-            timestampString = "443293381.981315"
+            filePath = "PSMapAtmo/PSMapAtmoMapViewDelegate.m"
+            timestampString = "444509002.408946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-requestWebViewCookie"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "-mapView:viewForAnnotation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -61,13 +61,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PSMapAtmo/PSMapAtmoPublicCookie.m"
-            timestampString = "443294125.701435"
+            filePath = "PSMapAtmo/PSMapAtmoMapViewDelegate.m"
+            timestampString = "444515247.681147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "-checkAndRequestCookieIfNeeded"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-mapView:viewForAnnotation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

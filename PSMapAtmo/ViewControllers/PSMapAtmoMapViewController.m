@@ -114,8 +114,8 @@ static PSMapAtmoMapViewController* instance = nil;
         self.lastCheck = [[NSDate date] timeIntervalSince1970];
 
         CFAbsoluteTimeGetCurrent();
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDevice:) name:PSMAPATMO_PUBLIC_DEVICE_ADDED_NOTIFICATION object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDeviceFromNotification:) name:PSMAPATMO_PUBLIC_DEVICE_ADDED_NOTIFICATION object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedData:) name:PSMAPATMO_API_DATA_RECEIVED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mapChanged:) name:PSMAPATMO_PUBLIC_MAP_CHANGED_NOTIFICATION object:nil];
 
@@ -126,6 +126,8 @@ static PSMapAtmoMapViewController* instance = nil;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeType:) name:@"PSMAPATMO_CHANGE_MAP_TYPE" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:PSMAPATMO_COOKIE_UPDATED_NOTIFICICATION object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadStoredAnnoations) name:PSMAPATMO_PUBLIC_MAP_CHANGED_ANNOTATION_SETTINGS object:nil];
 
         self.longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
@@ -151,6 +153,21 @@ static PSMapAtmoMapViewController* instance = nil;
     
     [self.mapView.delegate mapViewDidFinishLoadingMap:self.mapView];
 }
+
+
+-(void) reloadStoredAnnoations
+{
+    DLogFuncName();
+    dispatch_async(dispatch_get_main_queue(),^{
+        [self clearMap:nil];
+        for (PSMapAtmoPublicDeviceDict *device in [[[PSMapAtmoLocalStorage sharedInstance] allDevices] allValues])
+        {
+            
+            [self addDevice:device];
+        }
+    });
+}
+
 
 #pragma mark - View
 - (void)viewWillAppear:(BOOL)animated
@@ -966,13 +983,20 @@ static PSMapAtmoMapViewController* instance = nil;
 
 
 
-- (void) addDevice:(NSNotification*)notification
+- (void)addDeviceFromNotification:(NSNotification*)notification
 {
     DLogFuncName();
     PSMapAtmoPublicDeviceDict * device = notification.userInfo[@"device"];
+    [self addDevice:device];
+}
+
+
+- (void)addDevice:(PSMapAtmoPublicDeviceDict *)device
+{
+    DLogFuncName();
     if (device)
     {
-        dispatch_sync(dispatch_get_main_queue(),^{
+        dispatch_async(dispatch_get_main_queue(),^{
             [self.mapView addAnnotation:device];
             [self updateToolBarCountItem];
         });

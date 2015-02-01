@@ -186,8 +186,8 @@
         {
             meassureString = [NSString stringWithFormat:@" %.1f°C",temperature];
         }
+        return [NSString stringWithFormat:@"%i",  (int) (temperature + 0.5)];
     }
-    
     
 //    humidityString = [NSString stringWithFormat:@" %.1f%%",humidity];
 //    pressureString = [NSString stringWithFormat:@" %.1mb",pressure];

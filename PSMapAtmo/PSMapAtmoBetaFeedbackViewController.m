@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 phschneider.net. All rights reserved.
 //
 
-#import "PSMapAtmoBetaViewController.h"
+#import "PSMapAtmoBetaFeedbackViewController.h"
 #import "PSMapAtmoFeedbackCell.h"
 #import "PSMapAtmoFeedbackTextViewCell.h"
 #import "PSMapAtmoFeedbackTextFieldCell.h"
@@ -19,7 +19,7 @@
 #endif
 
 
-@interface PSMapAtmoBetaViewController ()
+@interface PSMapAtmoBetaFeedbackViewController ()
 
 @property (nonatomic) NSMutableArray *cellArray;
 @property (nonatomic) PSMapAtmoFeedbackCell *editingCell;
@@ -30,7 +30,7 @@
 @property (nonatomic, strong)  UIButton * sendButton;
 @end
 
-@implementation PSMapAtmoBetaViewController
+@implementation PSMapAtmoBetaFeedbackViewController
 
 - (id) init
 {

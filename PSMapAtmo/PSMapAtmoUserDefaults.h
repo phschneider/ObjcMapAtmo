@@ -9,6 +9,7 @@
 
 @class PSMapAtmoLocation;
 @class PSMapAtmoFilter;
+@class PSMapAtmoAnnotationSettings;
 
 
 @interface PSMapAtmoUserDefaults : NSObject
@@ -30,6 +31,10 @@
 - (PSMapAtmoFilter *)filter;
 
 - (void)setFilter:(PSMapAtmoFilter *)filter;
+
+- (PSMapAtmoAnnotationSettings *)annotationSettings;
+
+- (void)setAnnotationSettings:(PSMapAtmoAnnotationSettings *)settings;
 
 - (BOOL)firstUseOfFullScreenMode;
 

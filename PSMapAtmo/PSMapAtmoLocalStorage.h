@@ -19,6 +19,7 @@
 - (BOOL) hasPublicDeviceWithID:(NSString*)deviceID;
 - (void) addPublicDevice:(PSMapAtmoPublicDeviceDict*)publicDevice;
 - (int) numberOfPublicDevices;
+- (NSDictionary *)allDevices;
 - (int) storageSize;
 
 @end

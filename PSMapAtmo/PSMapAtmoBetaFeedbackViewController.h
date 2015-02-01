@@ -8,6 +8,6 @@
 
 #import "PSMapAtmoModalViewController.h"
 
-@interface PSMapAtmoBetaViewController : PSMapAtmoModalViewController <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, UITextFieldDelegate>
+@interface PSMapAtmoBetaFeedbackViewController : PSMapAtmoModalViewController <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, UITextFieldDelegate>
 
 @end

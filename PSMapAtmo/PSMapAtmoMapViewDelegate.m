@@ -18,6 +18,8 @@
 #import "PSMapAtmoPublicDeviceDict.h"
 #import "PSMapAtmoMapAnalytics.h"
 #import "PSMapAtmoUserDefaults.h"
+#import "PSMapAtmoAnnotationSettings.h"
+#import "UIImage+Color.h"
 
 @interface PSMapAtmoMapViewDelegate()
 @property (nonatomic) float mapZoomLevel;
@@ -156,11 +158,244 @@
         return nil;
     }
     
-    MKPinAnnotationView *view=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"parkingloc"];
-    view.canShowCallout = YES;
-    [view setPinColor:MKPinAnnotationColorRed];
+    PSMapAtmoAnnotationSettings *settings = [[PSMapAtmoUserDefaults sharedInstance] annotationSettings];
+    if (![settings showsCustomImage] && ![settings showsValueInAnnotation])
+    {
+        MKPinAnnotationView *view=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"parkingloc"];
+        view.canShowCallout = YES;
+        [view setPinColor:MKPinAnnotationColorRed];
+        return view;
+    }
+    else
+    {
+        UIImage * annotationImage = nil;
+        MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@""];
+        annotationView.canShowCallout = YES;
+        
+        if ([settings showsCustomImage])
+        {
+            annotationImage = [UIImage imageNamed:[settings imageNameWithSize]];
+            annotationView.image = annotationImage;
+        }
+        
+        if ([settings showsValueInAnnotation])
+        {
+            UILabel *label = [[UILabel alloc] initWithFrame:annotationView.frame];
+            
+            CGRect frame = CGRectZero;
+            BOOL adjustFrameFromImage = ([settings changeBackgroundSizeAutomatically] && [settings showsCustomImage]);
+            if (adjustFrameFromImage)
+            {
+                frame.size = CGSizeMake(annotationImage.size.width/2,annotationImage.size.width/2);
+                frame.origin.y = ceil(annotationImage.size.width/10);
+            }
+            else
+            {
+                frame.size = CGSizeMake([settings.backgroundSize floatValue],[settings.backgroundSize floatValue]);
+//                else
+//                {
+//                    frame.origin.y = ceil([settings.backgroundSize floatValue]/0.5);
+//                }
+            }
 
-    return view;
+            label.frame = frame;
+            label.textAlignment = NSTextAlignmentCenter;
+            label.text = annotation.title;
+            label.backgroundColor = [UIColor blackColor];
+            label.adjustsFontSizeToFitWidth = YES;
+            label.font = [UIFont systemFontOfSize:[[settings fontSize] floatValue]];
+            label.clipsToBounds = YES;
+            label.textColor = [UIColor whiteColor];
+            label.layer.cornerRadius = frame.size.width/2;
+            
+            if ([settings showsCustomImage])
+            {
+                CGPoint center = label.center;
+                center.x = ceil(annotationImage.size.width/2);
+                label.center = center;
+            }
+            
+            if (!adjustFrameFromImage && [settings showsCustomImage])
+            {
+                CGPoint center = label.center;
+                center.y = ceil(annotationImage.size.height/3);
+                label.center = center;
+                
+//                frame.origin.y = ceil(annotationImage.size.width/10)+(([settings.backgroundSize floatValue]/30)*-1);
+            }
+            
+            [annotationView addSubview:label];
+        }
+    
+        return annotationView;
+    }
+    
+    
+    
+    
+//    int style = 5;
+//    switch (style)
+//    {
+//        case 0:{
+//            UIImage * annotationImage = [UIImage imageNamed:@"1387054453_Map-Marker-Marker-Outside-Pink-Smaller"];
+//            annotationView.image = annotationImage;
+//
+//            UILabel *label = [[UILabel alloc] initWithFrame:annotationView.frame];
+//            CGRect frame = CGRectZero;
+//            frame.size =  annotationImage.size;
+//            label.frame = frame;
+//            label.textAlignment = NSTextAlignmentCenter;
+//            label.text = annotation.title;
+//            label.backgroundColor = [UIColor whiteColor];
+//            label.adjustsFontSizeToFitWidth = YES;
+//            label.font = [UIFont systemFontOfSize:12.0];
+//            label.layer.cornerRadius = 15.0;
+//            label.clipsToBounds = YES;
+//            [annotationView addSubview:label];
+//        }
+//        break;
+//        case 1:{
+//            UIImage * annotationImage = [UIImage imageNamed:@"1387054453_Map-Marker-Marker-Outside-Pink-Smaller"];
+//            annotationView.image = annotationImage;
+//            
+//            UILabel *label = [[UILabel alloc] initWithFrame:annotationView.frame];
+//            CGRect frame = CGRectZero;
+//            frame.size =  annotationImage.size;
+//            frame.origin.y = -4;
+//            label.frame = frame;
+//            label.textAlignment = NSTextAlignmentCenter;
+//            label.text = annotation.title;
+//            label.backgroundColor = [UIColor clearColor];
+//            label.adjustsFontSizeToFitWidth = YES;
+//            label.font = [UIFont systemFontOfSize:10.0];
+//            label.layer.cornerRadius = 15.0;
+//            label.clipsToBounds = YES;
+//            label.textColor = [UIColor whiteColor];
+//            [annotationView addSubview:label];
+//
+//        }
+//        case 2:{
+//
+//            UIImage * annotationImage = [UIImage imageNamed:@"1387054453_Map-Marker-Marker-Outside-Pink-Small"];
+//            annotationView.image = annotationImage;
+//            
+//            UILabel *label = [[UILabel alloc] initWithFrame:annotationView.frame];
+//            CGRect frame = CGRectZero;
+//            frame.size =  annotationImage.size;
+//            frame.origin.y = -6;
+//            label.frame = frame;
+//            label.textAlignment = NSTextAlignmentCenter;
+//            label.text = annotation.title;
+//            label.backgroundColor = [UIColor clearColor];
+//            label.adjustsFontSizeToFitWidth = YES;
+//            label.font = [UIFont systemFontOfSize:6.0];
+//            label.layer.cornerRadius = 15.0;
+//            label.clipsToBounds = YES;
+//            label.textColor = [UIColor whiteColor];
+//            [annotationView addSubview:label];
+//            
+//        }
+//        case 3:{
+//            
+//            UIImage * annotationImage = [UIImage imageNamed:@"1387054453_Map-Marker-Marker-Outside-Pink-Small"];
+//            annotationView.image = annotationImage;
+//            
+//            UILabel *label = [[UILabel alloc] initWithFrame:annotationView.frame];
+//            CGRect frame = CGRectZero;
+//            frame.size =  annotationImage.size;
+//            frame.origin.y = -4;
+//            label.frame = frame;
+//            label.textAlignment = NSTextAlignmentCenter;
+//            label.text = annotation.title;
+//            label.backgroundColor = [UIColor clearColor];
+//            label.adjustsFontSizeToFitWidth = YES;
+//            label.font = [UIFont systemFontOfSize:10.0];
+//            label.layer.cornerRadius = 15.0;
+//            label.clipsToBounds = YES;
+//            label.textColor = [UIColor whiteColor];
+//            [annotationView addSubview:label];
+//            
+//        }break;
+//        case 4:{
+//            // Sehr gut, vielleicht etwas zu klein
+//            int size = 15;
+//            UIImage * annotationImage = [UIImage imageNamed:@"1387054453_Map-Marker-Marker-Outside-Pink-Small"];
+//            annotationView.image = annotationImage;
+//            
+//            UILabel *label = [[UILabel alloc] initWithFrame:annotationView.frame];
+//            CGRect frame = CGRectZero;
+//            frame.size =  annotationImage.size;
+//            frame.size = CGSizeMake(size, size);
+//            frame.origin.y = 3;
+//            label.frame = frame;
+//            CGPoint center = label.center;
+//            center.x = ceil(annotationImage.size.width/2);
+//            label.center = center;
+//            label.textAlignment = NSTextAlignmentCenter;
+//            label.text = annotation.title;
+//            label.backgroundColor = [UIColor blackColor];
+//            label.adjustsFontSizeToFitWidth = YES;
+//            label.font = [UIFont systemFontOfSize:6.0];
+//            label.layer.cornerRadius = size/2;
+//            label.clipsToBounds = YES;
+//            label.textColor = [UIColor whiteColor];
+//            [annotationView addSubview:label];
+//        }break;
+//        case 5:{
+//            // Sehr gut, vielleicht etwas zu klein
+//            int size = 15;
+//            UIImage * annotationImage = [UIImage imageNamed:@"1387054453_Map-Marker-Marker-Outside-Pink-Small"];
+//            annotationView.image = annotationImage;
+//            
+//            UILabel *label = [[UILabel alloc] initWithFrame:annotationView.frame];
+//            CGRect frame = CGRectZero;
+//            frame.size =  annotationImage.size;
+//            frame.size = CGSizeMake(size, size);
+//            frame.origin.y = 3;
+//            label.frame = frame;
+//            CGPoint center = label.center;
+//            center.x = ceil(annotationImage.size.width/2);
+//            label.center = center;
+//            label.textAlignment = NSTextAlignmentCenter;
+//            label.text = annotation.title;
+//            label.backgroundColor = [UIColor blackColor];
+//            label.adjustsFontSizeToFitWidth = YES;
+//            label.font = [UIFont systemFontOfSize:10.0];
+//            label.layer.cornerRadius = size/2;
+//            label.clipsToBounds = YES;
+//            label.textColor = [UIColor whiteColor];
+//            [annotationView addSubview:label];
+//        }
+//  
+//            default:
+//        {
+//            
+//        }break;
+//    }
+    
+//    UIImage *frame = [UIImage imageNamed:imageName];
+////    UIImage *image = theImageInFrameInner;
+//
+//    UIGraphicsBeginImageContext(CGSizeMake(pin.size.width, pin.size.height));
+//
+//    [frame drawInRect:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+//    [image drawInRect:CGRectMake(2, 2, 60, 60)]; // the frame your inner image
+//    //maybe you should draw the left bottom icon here,
+//
+//
+//    //then set back the new image, done
+//    annotationView.image = UIGraphicsGetImageFromCurrentImageContext();
+//
+//    UIGraphicsEndImageContext();
+
+//    UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    [rightButton addTarget:self action:@selector(writeSomething:) forControlEvents:UIControlEventTouchUpInside];
+//    [rightButton setTitle:annotation.title forState:UIControlStateNormal];
+//
+//    annotationView.rightCalloutAccessoryView = rightButton;
+//    annotationView.canShowCallout = YES;
+//    annotationView.draggable = NO;
+//    return annotationView;
 }
 
 

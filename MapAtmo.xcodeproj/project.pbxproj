@@ -21,8 +21,129 @@
 		227692EF1A6BED490012851A /* Debug-Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8BE318B136CE00E61658 /* Debug-Default-Landscape@2x.png */; };
 		2276D1B718F87F3E0086966B /* PSMapAtmoFeedbackTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2276D1B618F87F3E0086966B /* PSMapAtmoFeedbackTextFieldCell.m */; };
 		2276D1BA18F882960086966B /* PSMapAtmoFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2276D1B918F882960086966B /* PSMapAtmoFeedbackCell.m */; };
+		227E1C231A7305D900A93BCD /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 227E1C221A7305D900A93BCD /* UIImage+Color.m */; };
 		229BB7831879D61B00770924 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229BB7821879D61B00770924 /* Crashlytics.framework */; };
 		22ABB5EE18D60DCF0008922B /* PSMapAtmoFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ABB5ED18D60DCF0008922B /* PSMapAtmoFilter.m */; };
+		22C5D22B1A7EA24B007F3858 /* marker-red-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1B31A7EA24B007F3858 /* marker-red-10.png */; };
+		22C5D22C1A7EA24B007F3858 /* marker-red-10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1B41A7EA24B007F3858 /* marker-red-10@2x.png */; };
+		22C5D22D1A7EA24B007F3858 /* marker-red-12.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1B51A7EA24B007F3858 /* marker-red-12.png */; };
+		22C5D22E1A7EA24B007F3858 /* marker-red-12@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1B61A7EA24B007F3858 /* marker-red-12@2x.png */; };
+		22C5D22F1A7EA24B007F3858 /* marker-red-14.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1B71A7EA24B007F3858 /* marker-red-14.png */; };
+		22C5D2301A7EA24B007F3858 /* marker-red-14@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1B81A7EA24B007F3858 /* marker-red-14@2x.png */; };
+		22C5D2311A7EA24B007F3858 /* marker-red-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1B91A7EA24B007F3858 /* marker-red-16.png */; };
+		22C5D2321A7EA24B007F3858 /* marker-red-16@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1BA1A7EA24B007F3858 /* marker-red-16@2x.png */; };
+		22C5D2331A7EA24B007F3858 /* marker-red-18.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1BB1A7EA24B007F3858 /* marker-red-18.png */; };
+		22C5D2341A7EA24B007F3858 /* marker-red-18@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1BC1A7EA24B007F3858 /* marker-red-18@2x.png */; };
+		22C5D2351A7EA24B007F3858 /* marker-red-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1BD1A7EA24B007F3858 /* marker-red-20.png */; };
+		22C5D2361A7EA24B007F3858 /* marker-red-20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1BE1A7EA24B007F3858 /* marker-red-20@2x.png */; };
+		22C5D2371A7EA24B007F3858 /* marker-red-22.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1BF1A7EA24B007F3858 /* marker-red-22.png */; };
+		22C5D2381A7EA24B007F3858 /* marker-red-22@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C01A7EA24B007F3858 /* marker-red-22@2x.png */; };
+		22C5D2391A7EA24B007F3858 /* marker-red-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C11A7EA24B007F3858 /* marker-red-24.png */; };
+		22C5D23A1A7EA24B007F3858 /* marker-red-24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C21A7EA24B007F3858 /* marker-red-24@2x.png */; };
+		22C5D23B1A7EA24B007F3858 /* marker-red-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C31A7EA24B007F3858 /* marker-red-26.png */; };
+		22C5D23C1A7EA24B007F3858 /* marker-red-26@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C41A7EA24B007F3858 /* marker-red-26@2x.png */; };
+		22C5D23D1A7EA24B007F3858 /* marker-red-28.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C51A7EA24B007F3858 /* marker-red-28.png */; };
+		22C5D23E1A7EA24B007F3858 /* marker-red-28@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C61A7EA24B007F3858 /* marker-red-28@2x.png */; };
+		22C5D23F1A7EA24B007F3858 /* marker-red-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C71A7EA24B007F3858 /* marker-red-30.png */; };
+		22C5D2401A7EA24B007F3858 /* marker-red-30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C81A7EA24B007F3858 /* marker-red-30@2x.png */; };
+		22C5D2411A7EA24B007F3858 /* marker-red-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1C91A7EA24B007F3858 /* marker-red-32.png */; };
+		22C5D2421A7EA24B007F3858 /* marker-red-32@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1CA1A7EA24B007F3858 /* marker-red-32@2x.png */; };
+		22C5D2431A7EA24B007F3858 /* marker-red-34.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1CB1A7EA24B007F3858 /* marker-red-34.png */; };
+		22C5D2441A7EA24B007F3858 /* marker-red-34@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1CC1A7EA24B007F3858 /* marker-red-34@2x.png */; };
+		22C5D2451A7EA24B007F3858 /* marker-red-36.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1CD1A7EA24B007F3858 /* marker-red-36.png */; };
+		22C5D2461A7EA24B007F3858 /* marker-red-36@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1CE1A7EA24B007F3858 /* marker-red-36@2x.png */; };
+		22C5D2471A7EA24B007F3858 /* marker-red-38.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1CF1A7EA24B007F3858 /* marker-red-38.png */; };
+		22C5D2481A7EA24B007F3858 /* marker-red-38@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D01A7EA24B007F3858 /* marker-red-38@2x.png */; };
+		22C5D2491A7EA24B007F3858 /* marker-red-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D11A7EA24B007F3858 /* marker-red-40.png */; };
+		22C5D24A1A7EA24B007F3858 /* marker-red-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D21A7EA24B007F3858 /* marker-red-40@2x.png */; };
+		22C5D24B1A7EA24B007F3858 /* marker-red-42.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D31A7EA24B007F3858 /* marker-red-42.png */; };
+		22C5D24C1A7EA24B007F3858 /* marker-red-42@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D41A7EA24B007F3858 /* marker-red-42@2x.png */; };
+		22C5D24D1A7EA24B007F3858 /* marker-red-44.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D51A7EA24B007F3858 /* marker-red-44.png */; };
+		22C5D24E1A7EA24B007F3858 /* marker-red-44@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D61A7EA24B007F3858 /* marker-red-44@2x.png */; };
+		22C5D24F1A7EA24B007F3858 /* marker-red-46.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D71A7EA24B007F3858 /* marker-red-46.png */; };
+		22C5D2501A7EA24B007F3858 /* marker-red-46@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D81A7EA24B007F3858 /* marker-red-46@2x.png */; };
+		22C5D2511A7EA24B007F3858 /* marker-red-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1D91A7EA24B007F3858 /* marker-red-48.png */; };
+		22C5D2521A7EA24B007F3858 /* marker-red-48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1DA1A7EA24B007F3858 /* marker-red-48@2x.png */; };
+		22C5D2531A7EA24B007F3858 /* marker-red-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1DB1A7EA24B007F3858 /* marker-red-50.png */; };
+		22C5D2541A7EA24B007F3858 /* marker-red-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1DC1A7EA24B007F3858 /* marker-red-50@2x.png */; };
+		22C5D2551A7EA24B007F3858 /* marker-red-52.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1DD1A7EA24B007F3858 /* marker-red-52.png */; };
+		22C5D2561A7EA24B007F3858 /* marker-red-52@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1DE1A7EA24B007F3858 /* marker-red-52@2x.png */; };
+		22C5D2571A7EA24B007F3858 /* marker-red-54.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1DF1A7EA24B007F3858 /* marker-red-54.png */; };
+		22C5D2581A7EA24B007F3858 /* marker-red-54@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E01A7EA24B007F3858 /* marker-red-54@2x.png */; };
+		22C5D2591A7EA24B007F3858 /* marker-red-56.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E11A7EA24B007F3858 /* marker-red-56.png */; };
+		22C5D25A1A7EA24B007F3858 /* marker-red-56@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E21A7EA24B007F3858 /* marker-red-56@2x.png */; };
+		22C5D25B1A7EA24B007F3858 /* marker-red-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E31A7EA24B007F3858 /* marker-red-58.png */; };
+		22C5D25C1A7EA24B007F3858 /* marker-red-58@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E41A7EA24B007F3858 /* marker-red-58@2x.png */; };
+		22C5D25D1A7EA24B007F3858 /* marker-red-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E51A7EA24B007F3858 /* marker-red-60.png */; };
+		22C5D25E1A7EA24B007F3858 /* marker-red-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E61A7EA24B007F3858 /* marker-red-60@2x.png */; };
+		22C5D25F1A7EA24B007F3858 /* marker-red-62.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E71A7EA24B007F3858 /* marker-red-62.png */; };
+		22C5D2601A7EA24B007F3858 /* marker-red-62@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E81A7EA24B007F3858 /* marker-red-62@2x.png */; };
+		22C5D2611A7EA24B007F3858 /* marker-red-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1E91A7EA24B007F3858 /* marker-red-64.png */; };
+		22C5D2621A7EA24B007F3858 /* marker-red-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1EA1A7EA24B007F3858 /* marker-red-64@2x.png */; };
+		22C5D2631A7EA24B007F3858 /* marker-red-66.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1EB1A7EA24B007F3858 /* marker-red-66.png */; };
+		22C5D2641A7EA24B007F3858 /* marker-red-66@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1EC1A7EA24B007F3858 /* marker-red-66@2x.png */; };
+		22C5D2651A7EA24B007F3858 /* marker-red-68.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1ED1A7EA24B007F3858 /* marker-red-68.png */; };
+		22C5D2661A7EA24B007F3858 /* marker-red-68@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1EE1A7EA24B007F3858 /* marker-red-68@2x.png */; };
+		22C5D2671A7EA24B007F3858 /* marker-red-70.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1EF1A7EA24B007F3858 /* marker-red-70.png */; };
+		22C5D2681A7EA24B007F3858 /* marker-red-70@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F01A7EA24B007F3858 /* marker-red-70@2x.png */; };
+		22C5D2691A7EA24B007F3858 /* marker-red-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F11A7EA24B007F3858 /* marker-red-72.png */; };
+		22C5D26A1A7EA24B007F3858 /* marker-red-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F21A7EA24B007F3858 /* marker-red-72@2x.png */; };
+		22C5D26B1A7EA24B007F3858 /* marker-red-74.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F31A7EA24B007F3858 /* marker-red-74.png */; };
+		22C5D26C1A7EA24B007F3858 /* marker-red-74@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F41A7EA24B007F3858 /* marker-red-74@2x.png */; };
+		22C5D26D1A7EA24B007F3858 /* marker-red-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F51A7EA24B007F3858 /* marker-red-76.png */; };
+		22C5D26E1A7EA24B007F3858 /* marker-red-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F61A7EA24B007F3858 /* marker-red-76@2x.png */; };
+		22C5D26F1A7EA24B007F3858 /* marker-red-78.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F71A7EA24B007F3858 /* marker-red-78.png */; };
+		22C5D2701A7EA24B007F3858 /* marker-red-78@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F81A7EA24B007F3858 /* marker-red-78@2x.png */; };
+		22C5D2711A7EA24B007F3858 /* marker-red-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1F91A7EA24B007F3858 /* marker-red-80.png */; };
+		22C5D2721A7EA24B007F3858 /* marker-red-80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1FA1A7EA24B007F3858 /* marker-red-80@2x.png */; };
+		22C5D2731A7EA24B007F3858 /* marker-red-82.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1FB1A7EA24B007F3858 /* marker-red-82.png */; };
+		22C5D2741A7EA24B007F3858 /* marker-red-82@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1FC1A7EA24B007F3858 /* marker-red-82@2x.png */; };
+		22C5D2751A7EA24B007F3858 /* marker-red-84.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1FD1A7EA24B007F3858 /* marker-red-84.png */; };
+		22C5D2761A7EA24B007F3858 /* marker-red-84@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1FE1A7EA24B007F3858 /* marker-red-84@2x.png */; };
+		22C5D2771A7EA24B007F3858 /* marker-red-86.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D1FF1A7EA24B007F3858 /* marker-red-86.png */; };
+		22C5D2781A7EA24B007F3858 /* marker-red-86@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2001A7EA24B007F3858 /* marker-red-86@2x.png */; };
+		22C5D2791A7EA24B007F3858 /* marker-red-88.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2011A7EA24B007F3858 /* marker-red-88.png */; };
+		22C5D27A1A7EA24B007F3858 /* marker-red-88@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2021A7EA24B007F3858 /* marker-red-88@2x.png */; };
+		22C5D27B1A7EA24B007F3858 /* marker-red-90.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2031A7EA24B007F3858 /* marker-red-90.png */; };
+		22C5D27C1A7EA24B007F3858 /* marker-red-90@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2041A7EA24B007F3858 /* marker-red-90@2x.png */; };
+		22C5D27D1A7EA24B007F3858 /* marker-red-92.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2051A7EA24B007F3858 /* marker-red-92.png */; };
+		22C5D27E1A7EA24B007F3858 /* marker-red-92@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2061A7EA24B007F3858 /* marker-red-92@2x.png */; };
+		22C5D27F1A7EA24B007F3858 /* marker-red-94.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2071A7EA24B007F3858 /* marker-red-94.png */; };
+		22C5D2801A7EA24B007F3858 /* marker-red-94@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2081A7EA24B007F3858 /* marker-red-94@2x.png */; };
+		22C5D2811A7EA24B007F3858 /* marker-red-96.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2091A7EA24B007F3858 /* marker-red-96.png */; };
+		22C5D2821A7EA24B007F3858 /* marker-red-96@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D20A1A7EA24B007F3858 /* marker-red-96@2x.png */; };
+		22C5D2831A7EA24B007F3858 /* marker-red-98.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D20B1A7EA24B007F3858 /* marker-red-98.png */; };
+		22C5D2841A7EA24B007F3858 /* marker-red-98@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D20C1A7EA24B007F3858 /* marker-red-98@2x.png */; };
+		22C5D2851A7EA24B007F3858 /* marker-red-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D20D1A7EA24B007F3858 /* marker-red-100.png */; };
+		22C5D2861A7EA24B007F3858 /* marker-red-100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D20E1A7EA24B007F3858 /* marker-red-100@2x.png */; };
+		22C5D2871A7EA24B007F3858 /* marker-red-102.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D20F1A7EA24B007F3858 /* marker-red-102.png */; };
+		22C5D2881A7EA24B007F3858 /* marker-red-102@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2101A7EA24B007F3858 /* marker-red-102@2x.png */; };
+		22C5D2891A7EA24B007F3858 /* marker-red-104.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2111A7EA24B007F3858 /* marker-red-104.png */; };
+		22C5D28A1A7EA24B007F3858 /* marker-red-104@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2121A7EA24B007F3858 /* marker-red-104@2x.png */; };
+		22C5D28B1A7EA24B007F3858 /* marker-red-106.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2131A7EA24B007F3858 /* marker-red-106.png */; };
+		22C5D28C1A7EA24B007F3858 /* marker-red-106@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2141A7EA24B007F3858 /* marker-red-106@2x.png */; };
+		22C5D28D1A7EA24B007F3858 /* marker-red-108.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2151A7EA24B007F3858 /* marker-red-108.png */; };
+		22C5D28E1A7EA24B007F3858 /* marker-red-108@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2161A7EA24B007F3858 /* marker-red-108@2x.png */; };
+		22C5D28F1A7EA24B007F3858 /* marker-red-110.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2171A7EA24B007F3858 /* marker-red-110.png */; };
+		22C5D2901A7EA24B007F3858 /* marker-red-110@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2181A7EA24B007F3858 /* marker-red-110@2x.png */; };
+		22C5D2911A7EA24B007F3858 /* marker-red-112.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2191A7EA24B007F3858 /* marker-red-112.png */; };
+		22C5D2921A7EA24B007F3858 /* marker-red-112@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D21A1A7EA24B007F3858 /* marker-red-112@2x.png */; };
+		22C5D2931A7EA24B007F3858 /* marker-red-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D21B1A7EA24B007F3858 /* marker-red-114.png */; };
+		22C5D2941A7EA24B007F3858 /* marker-red-114@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D21C1A7EA24B007F3858 /* marker-red-114@2x.png */; };
+		22C5D2951A7EA24B007F3858 /* marker-red-116.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D21D1A7EA24B007F3858 /* marker-red-116.png */; };
+		22C5D2961A7EA24B007F3858 /* marker-red-116@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D21E1A7EA24B007F3858 /* marker-red-116@2x.png */; };
+		22C5D2971A7EA24B007F3858 /* marker-red-118.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D21F1A7EA24B007F3858 /* marker-red-118.png */; };
+		22C5D2981A7EA24B007F3858 /* marker-red-118@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2201A7EA24B007F3858 /* marker-red-118@2x.png */; };
+		22C5D2991A7EA24B007F3858 /* marker-red-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2211A7EA24B007F3858 /* marker-red-120.png */; };
+		22C5D29A1A7EA24B007F3858 /* marker-red-120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2221A7EA24B007F3858 /* marker-red-120@2x.png */; };
+		22C5D29B1A7EA24B007F3858 /* marker-red-122.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2231A7EA24B007F3858 /* marker-red-122.png */; };
+		22C5D29C1A7EA24B007F3858 /* marker-red-122@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2241A7EA24B007F3858 /* marker-red-122@2x.png */; };
+		22C5D29D1A7EA24B007F3858 /* marker-red-124.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2251A7EA24B007F3858 /* marker-red-124.png */; };
+		22C5D29E1A7EA24B007F3858 /* marker-red-124@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2261A7EA24B007F3858 /* marker-red-124@2x.png */; };
+		22C5D29F1A7EA24B007F3858 /* marker-red-126.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2271A7EA24B007F3858 /* marker-red-126.png */; };
+		22C5D2A01A7EA24B007F3858 /* marker-red-126@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2281A7EA24B007F3858 /* marker-red-126@2x.png */; };
+		22C5D2A11A7EA24B007F3858 /* marker-red-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D2291A7EA24B007F3858 /* marker-red-128.png */; };
+		22C5D2A21A7EA24B007F3858 /* marker-red-128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C5D22A1A7EA24B007F3858 /* marker-red-128@2x.png */; };
 		22CC8C3418B136CE00E61658 /* PSMapAtmoAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B3818B136CD00E61658 /* PSMapAtmoAnalytics.m */; };
 		22CC8C3518B136CE00E61658 /* PSMapAtmoMapAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B3A18B136CD00E61658 /* PSMapAtmoMapAnalytics.m */; };
 		22CC8C3618B136CE00E61658 /* NSMutableURLRequest+CurlDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B3D18B136CD00E61658 /* NSMutableURLRequest+CurlDescription.m */; };
@@ -31,7 +152,7 @@
 		22CC8C4318B136CE00E61658 /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B5A18B136CD00E61658 /* PSAppDelegate.m */; };
 		22CC8C4818B136CE00E61658 /* PSMapAtmoAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6518B136CD00E61658 /* PSMapAtmoAppearance.m */; };
 		22CC8C4918B136CE00E61658 /* PSMapAtmoAppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6718B136CD00E61658 /* PSMapAtmoAppVersion.m */; };
-		22CC8C4A18B136CE00E61658 /* PSMapAtmoBetaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6918B136CD00E61658 /* PSMapAtmoBetaViewController.m */; };
+		22CC8C4A18B136CE00E61658 /* PSMapAtmoBetaFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6918B136CD00E61658 /* PSMapAtmoBetaFeedbackViewController.m */; };
 		22CC8C4B18B136CE00E61658 /* PSMapAtmoConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6B18B136CD00E61658 /* PSMapAtmoConverter.m */; };
 		22CC8C4C18B136CE00E61658 /* PSMapAtmoDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6D18B136CD00E61658 /* PSMapAtmoDateFormatter.m */; };
 		22CC8C4D18B136CE00E61658 /* PSMapAtmoDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC8B6F18B136CD00E61658 /* PSMapAtmoDebugViewController.m */; };
@@ -138,10 +259,8 @@
 		22CC8CD218B136CE00E61658 /* 1387054418_Map-Marker-Ball-Pink.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C1E18B136CE00E61658 /* 1387054418_Map-Marker-Ball-Pink.png */; };
 		22CC8CD318B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C1F18B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Small@2x.png */; };
 		22CC8CD418B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Smaller@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C2018B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Smaller@2x.png */; };
-		22CC8CD518B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C2118B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink@2x.png */; };
 		22CC8CD618B136CE00E61658 /* 1387054466_Map-Marker-Marker-Inside-Chartreuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C2218B136CE00E61658 /* 1387054466_Map-Marker-Marker-Inside-Chartreuse.png */; };
 		22CC8CD718B136CE00E61658 /* 1387054467_Map-Marker-Marker-Outside-Chartreuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C2318B136CE00E61658 /* 1387054467_Map-Marker-Marker-Outside-Chartreuse.png */; };
-		22CC8CD818B136CE00E61658 /* 1387054475_Map-Marker-Marker-Outside-Azure.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C2418B136CE00E61658 /* 1387054475_Map-Marker-Marker-Outside-Azure.png */; };
 		22CC8CD918B136CE00E61658 /* 1387054481_Map-Marker-Marker-Inside-Azure.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C2518B136CE00E61658 /* 1387054481_Map-Marker-Marker-Inside-Azure.png */; };
 		22CC8CDA18B136CE00E61658 /* 1387054483_Map-Marker-Ball-Azure.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C2618B136CE00E61658 /* 1387054483_Map-Marker-Ball-Azure.png */; };
 		22CC8CDB18B136CE00E61658 /* 1387054497_Map-Marker-Ball-Right-Pink.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CC8C2718B136CE00E61658 /* 1387054497_Map-Marker-Ball-Right-Pink.png */; };
@@ -174,8 +293,11 @@
 		22F088B91883083D00380717 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F088B81883083D00380717 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		22F81CBF1893E8310034FEC2 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F81CBE1893E8310034FEC2 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E5F163081E1EFAFDBFD9722F /* PSMapAtmoAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F160DAD8117DD11C594AC8 /* PSMapAtmoAlertViewDelegate.m */; };
+		E5F1652133F616530350CC7C /* PSMapAtmoBetaAnnotationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F1638797E611A97D3654C8 /* PSMapAtmoBetaAnnotationsViewController.m */; };
 		E5F1653AF31204BC7ECCBB97 /* UIAlertView+NSCookbook.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F162970A58617149735A20 /* UIAlertView+NSCookbook.m */; };
 		E5F166CC248E41DC3692D644 /* PSMapAtmoPublicCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F1695AB8033FE9952767E8 /* PSMapAtmoPublicCookie.m */; };
+		E5F16838D999D24C37D73A52 /* PSMapAtmoAnnotationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F1648BB7B45D9F29BDE66E /* PSMapAtmoAnnotationSettings.m */; };
+		E5F16C09F3E496CE491FD636 /* PSMapAtmoBetaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F1636227A9316CCBC46E23 /* PSMapAtmoBetaViewController.m */; };
 		E5F16D014F5C0EA6E9E45FC3 /* PSMapAtmoRatingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F162053774B40D722C6AF2 /* PSMapAtmoRatingDelegate.m */; };
 		E5F16F3864B5F59AA0C8861A /* PSMapAtmoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F16AE85CDBB436E4ED2AAD /* PSMapAtmoLocation.m */; };
 /* End PBXBuildFile section */
@@ -195,10 +317,132 @@
 		2276D1B618F87F3E0086966B /* PSMapAtmoFeedbackTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoFeedbackTextFieldCell.m; sourceTree = "<group>"; };
 		2276D1B818F882960086966B /* PSMapAtmoFeedbackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoFeedbackCell.h; sourceTree = "<group>"; };
 		2276D1B918F882960086966B /* PSMapAtmoFeedbackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoFeedbackCell.m; sourceTree = "<group>"; };
+		227E1C211A7305D900A93BCD /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Color.h"; path = "PSMapAtmo/Categories/UIImage+Color.h"; sourceTree = "<group>"; };
+		227E1C221A7305D900A93BCD /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Color.m"; path = "PSMapAtmo/Categories/UIImage+Color.m"; sourceTree = "<group>"; };
 		229BB7821879D61B00770924 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		22ABB5EC18D60DCF0008922B /* PSMapAtmoFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoFilter.h; sourceTree = "<group>"; };
 		22ABB5ED18D60DCF0008922B /* PSMapAtmoFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoFilter.m; sourceTree = "<group>"; };
 		22BC7880185A5CFC008F0020 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		22C5D1B31A7EA24B007F3858 /* marker-red-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-10.png"; sourceTree = "<group>"; };
+		22C5D1B41A7EA24B007F3858 /* marker-red-10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-10@2x.png"; sourceTree = "<group>"; };
+		22C5D1B51A7EA24B007F3858 /* marker-red-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-12.png"; sourceTree = "<group>"; };
+		22C5D1B61A7EA24B007F3858 /* marker-red-12@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-12@2x.png"; sourceTree = "<group>"; };
+		22C5D1B71A7EA24B007F3858 /* marker-red-14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-14.png"; sourceTree = "<group>"; };
+		22C5D1B81A7EA24B007F3858 /* marker-red-14@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-14@2x.png"; sourceTree = "<group>"; };
+		22C5D1B91A7EA24B007F3858 /* marker-red-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-16.png"; sourceTree = "<group>"; };
+		22C5D1BA1A7EA24B007F3858 /* marker-red-16@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-16@2x.png"; sourceTree = "<group>"; };
+		22C5D1BB1A7EA24B007F3858 /* marker-red-18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-18.png"; sourceTree = "<group>"; };
+		22C5D1BC1A7EA24B007F3858 /* marker-red-18@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-18@2x.png"; sourceTree = "<group>"; };
+		22C5D1BD1A7EA24B007F3858 /* marker-red-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-20.png"; sourceTree = "<group>"; };
+		22C5D1BE1A7EA24B007F3858 /* marker-red-20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-20@2x.png"; sourceTree = "<group>"; };
+		22C5D1BF1A7EA24B007F3858 /* marker-red-22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-22.png"; sourceTree = "<group>"; };
+		22C5D1C01A7EA24B007F3858 /* marker-red-22@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-22@2x.png"; sourceTree = "<group>"; };
+		22C5D1C11A7EA24B007F3858 /* marker-red-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-24.png"; sourceTree = "<group>"; };
+		22C5D1C21A7EA24B007F3858 /* marker-red-24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-24@2x.png"; sourceTree = "<group>"; };
+		22C5D1C31A7EA24B007F3858 /* marker-red-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-26.png"; sourceTree = "<group>"; };
+		22C5D1C41A7EA24B007F3858 /* marker-red-26@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-26@2x.png"; sourceTree = "<group>"; };
+		22C5D1C51A7EA24B007F3858 /* marker-red-28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-28.png"; sourceTree = "<group>"; };
+		22C5D1C61A7EA24B007F3858 /* marker-red-28@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-28@2x.png"; sourceTree = "<group>"; };
+		22C5D1C71A7EA24B007F3858 /* marker-red-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-30.png"; sourceTree = "<group>"; };
+		22C5D1C81A7EA24B007F3858 /* marker-red-30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-30@2x.png"; sourceTree = "<group>"; };
+		22C5D1C91A7EA24B007F3858 /* marker-red-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-32.png"; sourceTree = "<group>"; };
+		22C5D1CA1A7EA24B007F3858 /* marker-red-32@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-32@2x.png"; sourceTree = "<group>"; };
+		22C5D1CB1A7EA24B007F3858 /* marker-red-34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-34.png"; sourceTree = "<group>"; };
+		22C5D1CC1A7EA24B007F3858 /* marker-red-34@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-34@2x.png"; sourceTree = "<group>"; };
+		22C5D1CD1A7EA24B007F3858 /* marker-red-36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-36.png"; sourceTree = "<group>"; };
+		22C5D1CE1A7EA24B007F3858 /* marker-red-36@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-36@2x.png"; sourceTree = "<group>"; };
+		22C5D1CF1A7EA24B007F3858 /* marker-red-38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-38.png"; sourceTree = "<group>"; };
+		22C5D1D01A7EA24B007F3858 /* marker-red-38@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-38@2x.png"; sourceTree = "<group>"; };
+		22C5D1D11A7EA24B007F3858 /* marker-red-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-40.png"; sourceTree = "<group>"; };
+		22C5D1D21A7EA24B007F3858 /* marker-red-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-40@2x.png"; sourceTree = "<group>"; };
+		22C5D1D31A7EA24B007F3858 /* marker-red-42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-42.png"; sourceTree = "<group>"; };
+		22C5D1D41A7EA24B007F3858 /* marker-red-42@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-42@2x.png"; sourceTree = "<group>"; };
+		22C5D1D51A7EA24B007F3858 /* marker-red-44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-44.png"; sourceTree = "<group>"; };
+		22C5D1D61A7EA24B007F3858 /* marker-red-44@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-44@2x.png"; sourceTree = "<group>"; };
+		22C5D1D71A7EA24B007F3858 /* marker-red-46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-46.png"; sourceTree = "<group>"; };
+		22C5D1D81A7EA24B007F3858 /* marker-red-46@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-46@2x.png"; sourceTree = "<group>"; };
+		22C5D1D91A7EA24B007F3858 /* marker-red-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-48.png"; sourceTree = "<group>"; };
+		22C5D1DA1A7EA24B007F3858 /* marker-red-48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-48@2x.png"; sourceTree = "<group>"; };
+		22C5D1DB1A7EA24B007F3858 /* marker-red-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-50.png"; sourceTree = "<group>"; };
+		22C5D1DC1A7EA24B007F3858 /* marker-red-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-50@2x.png"; sourceTree = "<group>"; };
+		22C5D1DD1A7EA24B007F3858 /* marker-red-52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-52.png"; sourceTree = "<group>"; };
+		22C5D1DE1A7EA24B007F3858 /* marker-red-52@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-52@2x.png"; sourceTree = "<group>"; };
+		22C5D1DF1A7EA24B007F3858 /* marker-red-54.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-54.png"; sourceTree = "<group>"; };
+		22C5D1E01A7EA24B007F3858 /* marker-red-54@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-54@2x.png"; sourceTree = "<group>"; };
+		22C5D1E11A7EA24B007F3858 /* marker-red-56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-56.png"; sourceTree = "<group>"; };
+		22C5D1E21A7EA24B007F3858 /* marker-red-56@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-56@2x.png"; sourceTree = "<group>"; };
+		22C5D1E31A7EA24B007F3858 /* marker-red-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-58.png"; sourceTree = "<group>"; };
+		22C5D1E41A7EA24B007F3858 /* marker-red-58@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-58@2x.png"; sourceTree = "<group>"; };
+		22C5D1E51A7EA24B007F3858 /* marker-red-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-60.png"; sourceTree = "<group>"; };
+		22C5D1E61A7EA24B007F3858 /* marker-red-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-60@2x.png"; sourceTree = "<group>"; };
+		22C5D1E71A7EA24B007F3858 /* marker-red-62.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-62.png"; sourceTree = "<group>"; };
+		22C5D1E81A7EA24B007F3858 /* marker-red-62@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-62@2x.png"; sourceTree = "<group>"; };
+		22C5D1E91A7EA24B007F3858 /* marker-red-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-64.png"; sourceTree = "<group>"; };
+		22C5D1EA1A7EA24B007F3858 /* marker-red-64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-64@2x.png"; sourceTree = "<group>"; };
+		22C5D1EB1A7EA24B007F3858 /* marker-red-66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-66.png"; sourceTree = "<group>"; };
+		22C5D1EC1A7EA24B007F3858 /* marker-red-66@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-66@2x.png"; sourceTree = "<group>"; };
+		22C5D1ED1A7EA24B007F3858 /* marker-red-68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-68.png"; sourceTree = "<group>"; };
+		22C5D1EE1A7EA24B007F3858 /* marker-red-68@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-68@2x.png"; sourceTree = "<group>"; };
+		22C5D1EF1A7EA24B007F3858 /* marker-red-70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-70.png"; sourceTree = "<group>"; };
+		22C5D1F01A7EA24B007F3858 /* marker-red-70@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-70@2x.png"; sourceTree = "<group>"; };
+		22C5D1F11A7EA24B007F3858 /* marker-red-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-72.png"; sourceTree = "<group>"; };
+		22C5D1F21A7EA24B007F3858 /* marker-red-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-72@2x.png"; sourceTree = "<group>"; };
+		22C5D1F31A7EA24B007F3858 /* marker-red-74.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-74.png"; sourceTree = "<group>"; };
+		22C5D1F41A7EA24B007F3858 /* marker-red-74@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-74@2x.png"; sourceTree = "<group>"; };
+		22C5D1F51A7EA24B007F3858 /* marker-red-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-76.png"; sourceTree = "<group>"; };
+		22C5D1F61A7EA24B007F3858 /* marker-red-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-76@2x.png"; sourceTree = "<group>"; };
+		22C5D1F71A7EA24B007F3858 /* marker-red-78.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-78.png"; sourceTree = "<group>"; };
+		22C5D1F81A7EA24B007F3858 /* marker-red-78@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-78@2x.png"; sourceTree = "<group>"; };
+		22C5D1F91A7EA24B007F3858 /* marker-red-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-80.png"; sourceTree = "<group>"; };
+		22C5D1FA1A7EA24B007F3858 /* marker-red-80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-80@2x.png"; sourceTree = "<group>"; };
+		22C5D1FB1A7EA24B007F3858 /* marker-red-82.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-82.png"; sourceTree = "<group>"; };
+		22C5D1FC1A7EA24B007F3858 /* marker-red-82@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-82@2x.png"; sourceTree = "<group>"; };
+		22C5D1FD1A7EA24B007F3858 /* marker-red-84.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-84.png"; sourceTree = "<group>"; };
+		22C5D1FE1A7EA24B007F3858 /* marker-red-84@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-84@2x.png"; sourceTree = "<group>"; };
+		22C5D1FF1A7EA24B007F3858 /* marker-red-86.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-86.png"; sourceTree = "<group>"; };
+		22C5D2001A7EA24B007F3858 /* marker-red-86@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-86@2x.png"; sourceTree = "<group>"; };
+		22C5D2011A7EA24B007F3858 /* marker-red-88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-88.png"; sourceTree = "<group>"; };
+		22C5D2021A7EA24B007F3858 /* marker-red-88@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-88@2x.png"; sourceTree = "<group>"; };
+		22C5D2031A7EA24B007F3858 /* marker-red-90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-90.png"; sourceTree = "<group>"; };
+		22C5D2041A7EA24B007F3858 /* marker-red-90@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-90@2x.png"; sourceTree = "<group>"; };
+		22C5D2051A7EA24B007F3858 /* marker-red-92.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-92.png"; sourceTree = "<group>"; };
+		22C5D2061A7EA24B007F3858 /* marker-red-92@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-92@2x.png"; sourceTree = "<group>"; };
+		22C5D2071A7EA24B007F3858 /* marker-red-94.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-94.png"; sourceTree = "<group>"; };
+		22C5D2081A7EA24B007F3858 /* marker-red-94@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-94@2x.png"; sourceTree = "<group>"; };
+		22C5D2091A7EA24B007F3858 /* marker-red-96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-96.png"; sourceTree = "<group>"; };
+		22C5D20A1A7EA24B007F3858 /* marker-red-96@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-96@2x.png"; sourceTree = "<group>"; };
+		22C5D20B1A7EA24B007F3858 /* marker-red-98.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-98.png"; sourceTree = "<group>"; };
+		22C5D20C1A7EA24B007F3858 /* marker-red-98@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-98@2x.png"; sourceTree = "<group>"; };
+		22C5D20D1A7EA24B007F3858 /* marker-red-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-100.png"; sourceTree = "<group>"; };
+		22C5D20E1A7EA24B007F3858 /* marker-red-100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-100@2x.png"; sourceTree = "<group>"; };
+		22C5D20F1A7EA24B007F3858 /* marker-red-102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-102.png"; sourceTree = "<group>"; };
+		22C5D2101A7EA24B007F3858 /* marker-red-102@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-102@2x.png"; sourceTree = "<group>"; };
+		22C5D2111A7EA24B007F3858 /* marker-red-104.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-104.png"; sourceTree = "<group>"; };
+		22C5D2121A7EA24B007F3858 /* marker-red-104@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-104@2x.png"; sourceTree = "<group>"; };
+		22C5D2131A7EA24B007F3858 /* marker-red-106.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-106.png"; sourceTree = "<group>"; };
+		22C5D2141A7EA24B007F3858 /* marker-red-106@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-106@2x.png"; sourceTree = "<group>"; };
+		22C5D2151A7EA24B007F3858 /* marker-red-108.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-108.png"; sourceTree = "<group>"; };
+		22C5D2161A7EA24B007F3858 /* marker-red-108@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-108@2x.png"; sourceTree = "<group>"; };
+		22C5D2171A7EA24B007F3858 /* marker-red-110.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-110.png"; sourceTree = "<group>"; };
+		22C5D2181A7EA24B007F3858 /* marker-red-110@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-110@2x.png"; sourceTree = "<group>"; };
+		22C5D2191A7EA24B007F3858 /* marker-red-112.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-112.png"; sourceTree = "<group>"; };
+		22C5D21A1A7EA24B007F3858 /* marker-red-112@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-112@2x.png"; sourceTree = "<group>"; };
+		22C5D21B1A7EA24B007F3858 /* marker-red-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-114.png"; sourceTree = "<group>"; };
+		22C5D21C1A7EA24B007F3858 /* marker-red-114@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-114@2x.png"; sourceTree = "<group>"; };
+		22C5D21D1A7EA24B007F3858 /* marker-red-116.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-116.png"; sourceTree = "<group>"; };
+		22C5D21E1A7EA24B007F3858 /* marker-red-116@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-116@2x.png"; sourceTree = "<group>"; };
+		22C5D21F1A7EA24B007F3858 /* marker-red-118.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-118.png"; sourceTree = "<group>"; };
+		22C5D2201A7EA24B007F3858 /* marker-red-118@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-118@2x.png"; sourceTree = "<group>"; };
+		22C5D2211A7EA24B007F3858 /* marker-red-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-120.png"; sourceTree = "<group>"; };
+		22C5D2221A7EA24B007F3858 /* marker-red-120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-120@2x.png"; sourceTree = "<group>"; };
+		22C5D2231A7EA24B007F3858 /* marker-red-122.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-122.png"; sourceTree = "<group>"; };
+		22C5D2241A7EA24B007F3858 /* marker-red-122@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-122@2x.png"; sourceTree = "<group>"; };
+		22C5D2251A7EA24B007F3858 /* marker-red-124.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-124.png"; sourceTree = "<group>"; };
+		22C5D2261A7EA24B007F3858 /* marker-red-124@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-124@2x.png"; sourceTree = "<group>"; };
+		22C5D2271A7EA24B007F3858 /* marker-red-126.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-126.png"; sourceTree = "<group>"; };
+		22C5D2281A7EA24B007F3858 /* marker-red-126@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-126@2x.png"; sourceTree = "<group>"; };
+		22C5D2291A7EA24B007F3858 /* marker-red-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-128.png"; sourceTree = "<group>"; };
+		22C5D22A1A7EA24B007F3858 /* marker-red-128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-128@2x.png"; sourceTree = "<group>"; };
 		22CC8B3718B136CD00E61658 /* PSMapAtmoAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoAnalytics.h; sourceTree = "<group>"; };
 		22CC8B3818B136CD00E61658 /* PSMapAtmoAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoAnalytics.m; sourceTree = "<group>"; };
 		22CC8B3918B136CD00E61658 /* PSMapAtmoMapAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoMapAnalytics.h; sourceTree = "<group>"; };
@@ -217,8 +461,8 @@
 		22CC8B6518B136CD00E61658 /* PSMapAtmoAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoAppearance.m; sourceTree = "<group>"; };
 		22CC8B6618B136CD00E61658 /* PSMapAtmoAppVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoAppVersion.h; sourceTree = "<group>"; };
 		22CC8B6718B136CD00E61658 /* PSMapAtmoAppVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoAppVersion.m; sourceTree = "<group>"; };
-		22CC8B6818B136CD00E61658 /* PSMapAtmoBetaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMapAtmoBetaViewController.h; path = ../PSMapAtmoBetaViewController.h; sourceTree = "<group>"; };
-		22CC8B6918B136CD00E61658 /* PSMapAtmoBetaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSMapAtmoBetaViewController.m; path = ../PSMapAtmoBetaViewController.m; sourceTree = "<group>"; };
+		22CC8B6818B136CD00E61658 /* PSMapAtmoBetaFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMapAtmoBetaFeedbackViewController.h; path = ../PSMapAtmoBetaFeedbackViewController.h; sourceTree = "<group>"; };
+		22CC8B6918B136CD00E61658 /* PSMapAtmoBetaFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSMapAtmoBetaFeedbackViewController.m; path = ../PSMapAtmoBetaFeedbackViewController.m; sourceTree = "<group>"; };
 		22CC8B6A18B136CD00E61658 /* PSMapAtmoConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoConverter.h; sourceTree = "<group>"; };
 		22CC8B6B18B136CD00E61658 /* PSMapAtmoConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoConverter.m; sourceTree = "<group>"; };
 		22CC8B6C18B136CD00E61658 /* PSMapAtmoDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoDateFormatter.h; sourceTree = "<group>"; };
@@ -342,10 +586,8 @@
 		22CC8C1E18B136CE00E61658 /* 1387054418_Map-Marker-Ball-Pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054418_Map-Marker-Ball-Pink.png"; sourceTree = "<group>"; };
 		22CC8C1F18B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054453_Map-Marker-Marker-Outside-Pink-Small@2x.png"; sourceTree = "<group>"; };
 		22CC8C2018B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Smaller@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054453_Map-Marker-Marker-Outside-Pink-Smaller@2x.png"; sourceTree = "<group>"; };
-		22CC8C2118B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054453_Map-Marker-Marker-Outside-Pink@2x.png"; sourceTree = "<group>"; };
 		22CC8C2218B136CE00E61658 /* 1387054466_Map-Marker-Marker-Inside-Chartreuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054466_Map-Marker-Marker-Inside-Chartreuse.png"; sourceTree = "<group>"; };
 		22CC8C2318B136CE00E61658 /* 1387054467_Map-Marker-Marker-Outside-Chartreuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054467_Map-Marker-Marker-Outside-Chartreuse.png"; sourceTree = "<group>"; };
-		22CC8C2418B136CE00E61658 /* 1387054475_Map-Marker-Marker-Outside-Azure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054475_Map-Marker-Marker-Outside-Azure.png"; sourceTree = "<group>"; };
 		22CC8C2518B136CE00E61658 /* 1387054481_Map-Marker-Marker-Inside-Azure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054481_Map-Marker-Marker-Inside-Azure.png"; sourceTree = "<group>"; };
 		22CC8C2618B136CE00E61658 /* 1387054483_Map-Marker-Ball-Azure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054483_Map-Marker-Ball-Azure.png"; sourceTree = "<group>"; };
 		22CC8C2718B136CE00E61658 /* 1387054497_Map-Marker-Ball-Right-Pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1387054497_Map-Marker-Ball-Right-Pink.png"; sourceTree = "<group>"; };
@@ -390,14 +632,20 @@
 		22F088B81883083D00380717 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		22F81CBE1893E8310034FEC2 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		7C982F87DB214900A3CE3C08 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5F160082436BD94B479EE3E /* PSMapAtmoBetaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoBetaViewController.h; sourceTree = "<group>"; };
 		E5F160DAD8117DD11C594AC8 /* PSMapAtmoAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoAlertViewDelegate.m; sourceTree = "<group>"; };
 		E5F1610213D000CEC6D6ADCA /* PSMapAtmoAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoAlertViewDelegate.h; sourceTree = "<group>"; };
+		E5F1616EAD05842F68606C38 /* PSMapAtmoAnnotationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoAnnotationSettings.h; sourceTree = "<group>"; };
 		E5F162053774B40D722C6AF2 /* PSMapAtmoRatingDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoRatingDelegate.m; sourceTree = "<group>"; };
 		E5F162970A58617149735A20 /* UIAlertView+NSCookbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+NSCookbook.m"; sourceTree = "<group>"; };
 		E5F162EE23DBA8F3042BAE75 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E5F1636227A9316CCBC46E23 /* PSMapAtmoBetaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoBetaViewController.m; sourceTree = "<group>"; };
+		E5F1638797E611A97D3654C8 /* PSMapAtmoBetaAnnotationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoBetaAnnotationsViewController.m; sourceTree = "<group>"; };
+		E5F1648BB7B45D9F29BDE66E /* PSMapAtmoAnnotationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoAnnotationSettings.m; sourceTree = "<group>"; };
 		E5F167A68081E66EF1474BEB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E5F168C3F1C88245576080D1 /* UIAlertView+NSCookbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+NSCookbook.h"; sourceTree = "<group>"; };
 		E5F1695AB8033FE9952767E8 /* PSMapAtmoPublicCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoPublicCookie.m; sourceTree = "<group>"; };
+		E5F1695C10117107B6FA411B /* PSMapAtmoBetaAnnotationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoBetaAnnotationsViewController.h; sourceTree = "<group>"; };
 		E5F16975558E68ED9303510A /* PSMapAtmoRatingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoRatingDelegate.h; sourceTree = "<group>"; };
 		E5F16AE85CDBB436E4ED2AAD /* PSMapAtmoLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMapAtmoLocation.m; sourceTree = "<group>"; };
 		E5F16B3106959F79FE45779D /* PSMapAtmoLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMapAtmoLocation.h; sourceTree = "<group>"; };
@@ -584,6 +832,126 @@
 		22CC8BF518B136CE00E61658 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22C5D1B31A7EA24B007F3858 /* marker-red-10.png */,
+				22C5D1B41A7EA24B007F3858 /* marker-red-10@2x.png */,
+				22C5D1B51A7EA24B007F3858 /* marker-red-12.png */,
+				22C5D1B61A7EA24B007F3858 /* marker-red-12@2x.png */,
+				22C5D1B71A7EA24B007F3858 /* marker-red-14.png */,
+				22C5D1B81A7EA24B007F3858 /* marker-red-14@2x.png */,
+				22C5D1B91A7EA24B007F3858 /* marker-red-16.png */,
+				22C5D1BA1A7EA24B007F3858 /* marker-red-16@2x.png */,
+				22C5D1BB1A7EA24B007F3858 /* marker-red-18.png */,
+				22C5D1BC1A7EA24B007F3858 /* marker-red-18@2x.png */,
+				22C5D1BD1A7EA24B007F3858 /* marker-red-20.png */,
+				22C5D1BE1A7EA24B007F3858 /* marker-red-20@2x.png */,
+				22C5D1BF1A7EA24B007F3858 /* marker-red-22.png */,
+				22C5D1C01A7EA24B007F3858 /* marker-red-22@2x.png */,
+				22C5D1C11A7EA24B007F3858 /* marker-red-24.png */,
+				22C5D1C21A7EA24B007F3858 /* marker-red-24@2x.png */,
+				22C5D1C31A7EA24B007F3858 /* marker-red-26.png */,
+				22C5D1C41A7EA24B007F3858 /* marker-red-26@2x.png */,
+				22C5D1C51A7EA24B007F3858 /* marker-red-28.png */,
+				22C5D1C61A7EA24B007F3858 /* marker-red-28@2x.png */,
+				22C5D1C71A7EA24B007F3858 /* marker-red-30.png */,
+				22C5D1C81A7EA24B007F3858 /* marker-red-30@2x.png */,
+				22C5D1C91A7EA24B007F3858 /* marker-red-32.png */,
+				22C5D1CA1A7EA24B007F3858 /* marker-red-32@2x.png */,
+				22C5D1CB1A7EA24B007F3858 /* marker-red-34.png */,
+				22C5D1CC1A7EA24B007F3858 /* marker-red-34@2x.png */,
+				22C5D1CD1A7EA24B007F3858 /* marker-red-36.png */,
+				22C5D1CE1A7EA24B007F3858 /* marker-red-36@2x.png */,
+				22C5D1CF1A7EA24B007F3858 /* marker-red-38.png */,
+				22C5D1D01A7EA24B007F3858 /* marker-red-38@2x.png */,
+				22C5D1D11A7EA24B007F3858 /* marker-red-40.png */,
+				22C5D1D21A7EA24B007F3858 /* marker-red-40@2x.png */,
+				22C5D1D31A7EA24B007F3858 /* marker-red-42.png */,
+				22C5D1D41A7EA24B007F3858 /* marker-red-42@2x.png */,
+				22C5D1D51A7EA24B007F3858 /* marker-red-44.png */,
+				22C5D1D61A7EA24B007F3858 /* marker-red-44@2x.png */,
+				22C5D1D71A7EA24B007F3858 /* marker-red-46.png */,
+				22C5D1D81A7EA24B007F3858 /* marker-red-46@2x.png */,
+				22C5D1D91A7EA24B007F3858 /* marker-red-48.png */,
+				22C5D1DA1A7EA24B007F3858 /* marker-red-48@2x.png */,
+				22C5D1DB1A7EA24B007F3858 /* marker-red-50.png */,
+				22C5D1DC1A7EA24B007F3858 /* marker-red-50@2x.png */,
+				22C5D1DD1A7EA24B007F3858 /* marker-red-52.png */,
+				22C5D1DE1A7EA24B007F3858 /* marker-red-52@2x.png */,
+				22C5D1DF1A7EA24B007F3858 /* marker-red-54.png */,
+				22C5D1E01A7EA24B007F3858 /* marker-red-54@2x.png */,
+				22C5D1E11A7EA24B007F3858 /* marker-red-56.png */,
+				22C5D1E21A7EA24B007F3858 /* marker-red-56@2x.png */,
+				22C5D1E31A7EA24B007F3858 /* marker-red-58.png */,
+				22C5D1E41A7EA24B007F3858 /* marker-red-58@2x.png */,
+				22C5D1E51A7EA24B007F3858 /* marker-red-60.png */,
+				22C5D1E61A7EA24B007F3858 /* marker-red-60@2x.png */,
+				22C5D1E71A7EA24B007F3858 /* marker-red-62.png */,
+				22C5D1E81A7EA24B007F3858 /* marker-red-62@2x.png */,
+				22C5D1E91A7EA24B007F3858 /* marker-red-64.png */,
+				22C5D1EA1A7EA24B007F3858 /* marker-red-64@2x.png */,
+				22C5D1EB1A7EA24B007F3858 /* marker-red-66.png */,
+				22C5D1EC1A7EA24B007F3858 /* marker-red-66@2x.png */,
+				22C5D1ED1A7EA24B007F3858 /* marker-red-68.png */,
+				22C5D1EE1A7EA24B007F3858 /* marker-red-68@2x.png */,
+				22C5D1EF1A7EA24B007F3858 /* marker-red-70.png */,
+				22C5D1F01A7EA24B007F3858 /* marker-red-70@2x.png */,
+				22C5D1F11A7EA24B007F3858 /* marker-red-72.png */,
+				22C5D1F21A7EA24B007F3858 /* marker-red-72@2x.png */,
+				22C5D1F31A7EA24B007F3858 /* marker-red-74.png */,
+				22C5D1F41A7EA24B007F3858 /* marker-red-74@2x.png */,
+				22C5D1F51A7EA24B007F3858 /* marker-red-76.png */,
+				22C5D1F61A7EA24B007F3858 /* marker-red-76@2x.png */,
+				22C5D1F71A7EA24B007F3858 /* marker-red-78.png */,
+				22C5D1F81A7EA24B007F3858 /* marker-red-78@2x.png */,
+				22C5D1F91A7EA24B007F3858 /* marker-red-80.png */,
+				22C5D1FA1A7EA24B007F3858 /* marker-red-80@2x.png */,
+				22C5D1FB1A7EA24B007F3858 /* marker-red-82.png */,
+				22C5D1FC1A7EA24B007F3858 /* marker-red-82@2x.png */,
+				22C5D1FD1A7EA24B007F3858 /* marker-red-84.png */,
+				22C5D1FE1A7EA24B007F3858 /* marker-red-84@2x.png */,
+				22C5D1FF1A7EA24B007F3858 /* marker-red-86.png */,
+				22C5D2001A7EA24B007F3858 /* marker-red-86@2x.png */,
+				22C5D2011A7EA24B007F3858 /* marker-red-88.png */,
+				22C5D2021A7EA24B007F3858 /* marker-red-88@2x.png */,
+				22C5D2031A7EA24B007F3858 /* marker-red-90.png */,
+				22C5D2041A7EA24B007F3858 /* marker-red-90@2x.png */,
+				22C5D2051A7EA24B007F3858 /* marker-red-92.png */,
+				22C5D2061A7EA24B007F3858 /* marker-red-92@2x.png */,
+				22C5D2071A7EA24B007F3858 /* marker-red-94.png */,
+				22C5D2081A7EA24B007F3858 /* marker-red-94@2x.png */,
+				22C5D2091A7EA24B007F3858 /* marker-red-96.png */,
+				22C5D20A1A7EA24B007F3858 /* marker-red-96@2x.png */,
+				22C5D20B1A7EA24B007F3858 /* marker-red-98.png */,
+				22C5D20C1A7EA24B007F3858 /* marker-red-98@2x.png */,
+				22C5D20D1A7EA24B007F3858 /* marker-red-100.png */,
+				22C5D20E1A7EA24B007F3858 /* marker-red-100@2x.png */,
+				22C5D20F1A7EA24B007F3858 /* marker-red-102.png */,
+				22C5D2101A7EA24B007F3858 /* marker-red-102@2x.png */,
+				22C5D2111A7EA24B007F3858 /* marker-red-104.png */,
+				22C5D2121A7EA24B007F3858 /* marker-red-104@2x.png */,
+				22C5D2131A7EA24B007F3858 /* marker-red-106.png */,
+				22C5D2141A7EA24B007F3858 /* marker-red-106@2x.png */,
+				22C5D2151A7EA24B007F3858 /* marker-red-108.png */,
+				22C5D2161A7EA24B007F3858 /* marker-red-108@2x.png */,
+				22C5D2171A7EA24B007F3858 /* marker-red-110.png */,
+				22C5D2181A7EA24B007F3858 /* marker-red-110@2x.png */,
+				22C5D2191A7EA24B007F3858 /* marker-red-112.png */,
+				22C5D21A1A7EA24B007F3858 /* marker-red-112@2x.png */,
+				22C5D21B1A7EA24B007F3858 /* marker-red-114.png */,
+				22C5D21C1A7EA24B007F3858 /* marker-red-114@2x.png */,
+				22C5D21D1A7EA24B007F3858 /* marker-red-116.png */,
+				22C5D21E1A7EA24B007F3858 /* marker-red-116@2x.png */,
+				22C5D21F1A7EA24B007F3858 /* marker-red-118.png */,
+				22C5D2201A7EA24B007F3858 /* marker-red-118@2x.png */,
+				22C5D2211A7EA24B007F3858 /* marker-red-120.png */,
+				22C5D2221A7EA24B007F3858 /* marker-red-120@2x.png */,
+				22C5D2231A7EA24B007F3858 /* marker-red-122.png */,
+				22C5D2241A7EA24B007F3858 /* marker-red-122@2x.png */,
+				22C5D2251A7EA24B007F3858 /* marker-red-124.png */,
+				22C5D2261A7EA24B007F3858 /* marker-red-124@2x.png */,
+				22C5D2271A7EA24B007F3858 /* marker-red-126.png */,
+				22C5D2281A7EA24B007F3858 /* marker-red-126@2x.png */,
+				22C5D2291A7EA24B007F3858 /* marker-red-128.png */,
+				22C5D22A1A7EA24B007F3858 /* marker-red-128@2x.png */,
 				22CC8BF618B136CE00E61658 /* 3DMask.png */,
 				22CC8BF718B136CE00E61658 /* 3DMask@2x.png */,
 				22CC8BF818B136CE00E61658 /* blue-193-location-arrow.png */,
@@ -633,10 +1001,8 @@
 				22CC8C1E18B136CE00E61658 /* 1387054418_Map-Marker-Ball-Pink.png */,
 				22CC8C1F18B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Small@2x.png */,
 				22CC8C2018B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Smaller@2x.png */,
-				22CC8C2118B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink@2x.png */,
 				22CC8C2218B136CE00E61658 /* 1387054466_Map-Marker-Marker-Inside-Chartreuse.png */,
 				22CC8C2318B136CE00E61658 /* 1387054467_Map-Marker-Marker-Outside-Chartreuse.png */,
-				22CC8C2418B136CE00E61658 /* 1387054475_Map-Marker-Marker-Outside-Azure.png */,
 				22CC8C2518B136CE00E61658 /* 1387054481_Map-Marker-Marker-Inside-Azure.png */,
 				22CC8C2618B136CE00E61658 /* 1387054483_Map-Marker-Ball-Azure.png */,
 				22CC8C2718B136CE00E61658 /* 1387054497_Map-Marker-Ball-Right-Pink.png */,
@@ -725,14 +1091,18 @@
 				22CC8D1418B1698700E61658 /* PSMapAtmoSettingsMapViewController.m */,
 				2242D59218B2B71500C693C9 /* PSMapAtmoSettingsLocationViewController.h */,
 				2242D59318B2B71500C693C9 /* PSMapAtmoSettingsLocationViewController.m */,
-				22CC8B6818B136CD00E61658 /* PSMapAtmoBetaViewController.h */,
-				22CC8B6918B136CD00E61658 /* PSMapAtmoBetaViewController.m */,
+				22CC8B6818B136CD00E61658 /* PSMapAtmoBetaFeedbackViewController.h */,
+				22CC8B6918B136CD00E61658 /* PSMapAtmoBetaFeedbackViewController.m */,
 				22CC8B6E18B136CD00E61658 /* PSMapAtmoDebugViewController.h */,
 				22CC8B6F18B136CD00E61658 /* PSMapAtmoDebugViewController.m */,
 				E5F16975558E68ED9303510A /* PSMapAtmoRatingDelegate.h */,
 				E5F162053774B40D722C6AF2 /* PSMapAtmoRatingDelegate.m */,
 				E5F1610213D000CEC6D6ADCA /* PSMapAtmoAlertViewDelegate.h */,
 				E5F160DAD8117DD11C594AC8 /* PSMapAtmoAlertViewDelegate.m */,
+				E5F1695C10117107B6FA411B /* PSMapAtmoBetaAnnotationsViewController.h */,
+				E5F1638797E611A97D3654C8 /* PSMapAtmoBetaAnnotationsViewController.m */,
+				E5F160082436BD94B479EE3E /* PSMapAtmoBetaViewController.h */,
+				E5F1636227A9316CCBC46E23 /* PSMapAtmoBetaViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -767,6 +1137,8 @@
 				22CC8BB118B136CD00E61658 /* PSMapAtmoUserDefaults.m */,
 				E5F16B3106959F79FE45779D /* PSMapAtmoLocation.h */,
 				E5F16AE85CDBB436E4ED2AAD /* PSMapAtmoLocation.m */,
+				E5F1648BB7B45D9F29BDE66E /* PSMapAtmoAnnotationSettings.m */,
+				E5F1616EAD05842F68606C38 /* PSMapAtmoAnnotationSettings.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -774,6 +1146,8 @@
 		E5F165CAD8B256445B38E816 = {
 			isa = PBXGroup;
 			children = (
+				227E1C211A7305D900A93BCD /* UIImage+Color.h */,
+				227E1C221A7305D900A93BCD /* UIImage+Color.m */,
 				22CC8D1118B166E300E61658 /* Crashlytics.framework */,
 				2217A4E41891CEF5005973E5 /* Settings.bundle */,
 				223AFA40185E64F200B888A1 /* libGoogleAnalytics_debug.a */,
@@ -869,70 +1243,140 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C5D2641A7EA24B007F3858 /* marker-red-66@2x.png in Resources */,
 				22CC8C9A18B136CE00E61658 /* Debug-Icon-60.png in Resources */,
+				22C5D2341A7EA24B007F3858 /* marker-red-18@2x.png in Resources */,
+				22C5D23E1A7EA24B007F3858 /* marker-red-28@2x.png in Resources */,
 				22CC8C9018B136CE00E61658 /* Beta-Icon-Small-50@2x.png in Resources */,
 				22CC8CC118B136CE00E61658 /* red-193-location-arrow@2x.png in Resources */,
 				22CC8C7718B136CE00E61658 /* Icon-72@2x.png in Resources */,
 				22CC8CDD18B136CE00E61658 /* 1387054649_Map-Marker-Push-Pin--Right-Chartreuse.png in Resources */,
+				22C5D2A11A7EA24B007F3858 /* marker-red-128.png in Resources */,
 				22CC8CDA18B136CE00E61658 /* 1387054483_Map-Marker-Ball-Azure.png in Resources */,
+				22C5D24A1A7EA24B007F3858 /* marker-red-40@2x.png in Resources */,
 				22CC8CE718B136CE00E61658 /* 1387054760_Map-Marker-Drawing-Pin-Left-Pink.png in Resources */,
 				22CC8CDC18B136CE00E61658 /* 1387054645_Map-Marker-Marker-Inside-Pink.png in Resources */,
+				22C5D29E1A7EA24B007F3858 /* marker-red-124@2x.png in Resources */,
+				22C5D25B1A7EA24B007F3858 /* marker-red-58.png in Resources */,
+				22C5D2991A7EA24B007F3858 /* marker-red-120.png in Resources */,
+				22C5D2801A7EA24B007F3858 /* marker-red-94@2x.png in Resources */,
+				22C5D22D1A7EA24B007F3858 /* marker-red-12.png in Resources */,
 				22CC8CC918B136CE00E61658 /* TrackingLocationOffMaskLandscape@2x.png in Resources */,
 				22CC8C7918B136CE00E61658 /* Icon-76@2x.png in Resources */,
 				22CC8CB018B136CE00E61658 /* gray-1067-enter-fullscreen@2x.png in Resources */,
 				22CC8C9D18B136CE00E61658 /* Debug-Icon-72@2x.png in Resources */,
+				22C5D25D1A7EA24B007F3858 /* marker-red-60.png in Resources */,
 				22CC8CA618B136CE00E61658 /* Debug-Icon.png in Resources */,
 				22CC8CB618B136CE00E61658 /* gray-338-enter-fullscreen@2x.png in Resources */,
 				22CC8C9418B136CE00E61658 /* Beta-Icon@2x.png in Resources */,
+				22C5D27A1A7EA24B007F3858 /* marker-red-88@2x.png in Resources */,
 				22CC8C8918B136CE00E61658 /* Beta-Icon-72.png in Resources */,
 				22CC8CBF18B136CE00E61658 /* Midnight-1536x2048.jpg in Resources */,
+				22C5D28E1A7EA24B007F3858 /* marker-red-108@2x.png in Resources */,
 				22CC8C7A18B136CE00E61658 /* Icon-Small-40.png in Resources */,
+				22C5D23C1A7EA24B007F3858 /* marker-red-26@2x.png in Resources */,
+				22C5D26F1A7EA24B007F3858 /* marker-red-78.png in Resources */,
 				22CC8CAF18B136CE00E61658 /* gray-1067-enter-fullscreen.png in Resources */,
+				22C5D2331A7EA24B007F3858 /* marker-red-18.png in Resources */,
 				22CC8C9F18B136CE00E61658 /* Debug-Icon-76@2x.png in Resources */,
+				22C5D24D1A7EA24B007F3858 /* marker-red-44.png in Resources */,
+				22C5D24B1A7EA24B007F3858 /* marker-red-42.png in Resources */,
 				22CC8CE018B136CE00E61658 /* 1387054680_Map-Marker-Push-Pin--Left-Chartreuse.png in Resources */,
 				22CC8CA918B136CE00E61658 /* Debug-iTunesArtwork@2x in Resources */,
+				22C5D2461A7EA24B007F3858 /* marker-red-36@2x.png in Resources */,
 				22CC8C9618B136CE00E61658 /* Beta-iTunesArtwork@2x in Resources */,
 				22CC8CC318B136CE00E61658 /* TrackingLocationMask@2x.png in Resources */,
 				22CC8C7F18B136CE00E61658 /* Icon-Small@2x.png in Resources */,
+				22C5D28C1A7EA24B007F3858 /* marker-red-106@2x.png in Resources */,
 				22CC8CBB18B136CE00E61658 /* InfoButton.png in Resources */,
+				22C5D2841A7EA24B007F3858 /* marker-red-98@2x.png in Resources */,
 				22CC8C8018B136CE00E61658 /* Icon.png in Resources */,
 				22CC8CCE18B136CE00E61658 /* white-338-enter-fullscreen.png in Resources */,
+				22C5D2881A7EA24B007F3858 /* marker-red-102@2x.png in Resources */,
 				22CC8CDF18B136CE00E61658 /* 1387054675_Map-Marker-Push-Pin--Left-Azure.png in Resources */,
+				22C5D2351A7EA24B007F3858 /* marker-red-20.png in Resources */,
 				22CC8C7818B136CE00E61658 /* Icon-76.png in Resources */,
 				2217A4E51891CEF5005973E5 /* Settings.bundle in Resources */,
 				22CC8CC718B136CE00E61658 /* TrackingLocationOffMask@2x.png in Resources */,
 				22CC8C8D18B136CE00E61658 /* Beta-Icon-Small-40.png in Resources */,
+				22C5D2961A7EA24B007F3858 /* marker-red-116@2x.png in Resources */,
+				22C5D2931A7EA24B007F3858 /* marker-red-114.png in Resources */,
+				22C5D2711A7EA24B007F3858 /* marker-red-80.png in Resources */,
 				22CC8CB518B136CE00E61658 /* gray-338-enter-fullscreen.png in Resources */,
 				22CC8CA818B136CE00E61658 /* Debug-iTunesArtwork in Resources */,
 				22CC8CDB18B136CE00E61658 /* 1387054497_Map-Marker-Ball-Right-Pink.png in Resources */,
+				22C5D29F1A7EA24B007F3858 /* marker-red-126.png in Resources */,
 				22CC8CB718B136CE00E61658 /* gray-42-info.png in Resources */,
+				22C5D2651A7EA24B007F3858 /* marker-red-68.png in Resources */,
+				22C5D22B1A7EA24B007F3858 /* marker-red-10.png in Resources */,
 				22CC8C8518B136CE00E61658 /* Beta-Default-Landscape.png in Resources */,
+				22C5D2581A7EA24B007F3858 /* marker-red-54@2x.png in Resources */,
+				22C5D2791A7EA24B007F3858 /* marker-red-88.png in Resources */,
 				22CC8CD718B136CE00E61658 /* 1387054467_Map-Marker-Marker-Outside-Chartreuse.png in Resources */,
+				22C5D2431A7EA24B007F3858 /* marker-red-34.png in Resources */,
+				22C5D26B1A7EA24B007F3858 /* marker-red-74.png in Resources */,
 				22CC8CA218B136CE00E61658 /* Debug-Icon-Small-50.png in Resources */,
+				22C5D2921A7EA24B007F3858 /* marker-red-112@2x.png in Resources */,
 				22CC8C7B18B136CE00E61658 /* Icon-Small-40@2x.png in Resources */,
+				22C5D27E1A7EA24B007F3858 /* marker-red-92@2x.png in Resources */,
 				22CC8CD918B136CE00E61658 /* 1387054481_Map-Marker-Marker-Inside-Azure.png in Resources */,
 				227692EF1A6BED490012851A /* Debug-Default-Landscape@2x.png in Resources */,
-				22CC8CD518B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink@2x.png in Resources */,
 				22CC8C8B18B136CE00E61658 /* Beta-Icon-76.png in Resources */,
+				22C5D26D1A7EA24B007F3858 /* marker-red-76.png in Resources */,
+				22C5D2311A7EA24B007F3858 /* marker-red-16.png in Resources */,
+				22C5D29A1A7EA24B007F3858 /* marker-red-120@2x.png in Resources */,
+				22C5D2591A7EA24B007F3858 /* marker-red-56.png in Resources */,
+				22C5D2A01A7EA24B007F3858 /* marker-red-126@2x.png in Resources */,
+				22C5D2731A7EA24B007F3858 /* marker-red-82.png in Resources */,
 				22CC8CD018B136CE00E61658 /* white-339-exit-fullscreen.png in Resources */,
+				22C5D2821A7EA24B007F3858 /* marker-red-96@2x.png in Resources */,
+				22C5D24E1A7EA24B007F3858 /* marker-red-44@2x.png in Resources */,
+				22C5D2371A7EA24B007F3858 /* marker-red-22.png in Resources */,
+				22C5D24C1A7EA24B007F3858 /* marker-red-42@2x.png in Resources */,
+				22C5D2911A7EA24B007F3858 /* marker-red-112.png in Resources */,
+				22C5D2761A7EA24B007F3858 /* marker-red-84@2x.png in Resources */,
+				22C5D23D1A7EA24B007F3858 /* marker-red-28.png in Resources */,
+				22C5D2551A7EA24B007F3858 /* marker-red-52.png in Resources */,
+				22C5D27B1A7EA24B007F3858 /* marker-red-90.png in Resources */,
 				22CC8CC418B136CE00E61658 /* TrackingLocationMaskLandscape.png in Resources */,
 				22CC8CB318B136CE00E61658 /* gray-193-location-arrow.png in Resources */,
+				22C5D2871A7EA24B007F3858 /* marker-red-102.png in Resources */,
+				22C5D26A1A7EA24B007F3858 /* marker-red-72@2x.png in Resources */,
+				22C5D25F1A7EA24B007F3858 /* marker-red-62.png in Resources */,
 				22CC8CB218B136CE00E61658 /* gray-1068-exit-fullscreen@2x.png in Resources */,
 				22CC8CD118B136CE00E61658 /* white-339-exit-fullscreen@2x.png in Resources */,
+				22C5D2401A7EA24B007F3858 /* marker-red-30@2x.png in Resources */,
+				22C5D23A1A7EA24B007F3858 /* marker-red-24@2x.png in Resources */,
+				22C5D28D1A7EA24B007F3858 /* marker-red-108.png in Resources */,
+				22C5D23B1A7EA24B007F3858 /* marker-red-26.png in Resources */,
 				22CC8C7518B136CE00E61658 /* Icon-60@2x.png in Resources */,
+				22C5D2361A7EA24B007F3858 /* marker-red-20@2x.png in Resources */,
+				22C5D2681A7EA24B007F3858 /* marker-red-70@2x.png in Resources */,
 				22CC8CAB18B136CE00E61658 /* 3DMask.png in Resources */,
-				22CC8CD818B136CE00E61658 /* 1387054475_Map-Marker-Marker-Outside-Azure.png in Resources */,
+				22C5D28B1A7EA24B007F3858 /* marker-red-106.png in Resources */,
 				22CC8CAE18B136CE00E61658 /* blue-193-location-arrow@2x.png in Resources */,
+				22C5D2971A7EA24B007F3858 /* marker-red-118.png in Resources */,
 				22CC8C7318B136CE00E61658 /* Default-Landscape@2x.png in Resources */,
+				22C5D22E1A7EA24B007F3858 /* marker-red-12@2x.png in Resources */,
 				22CC8CBE18B136CE00E61658 /* ListCurrentLoc@2x.png in Resources */,
 				22CC8CE618B136CE00E61658 /* 1387054754_Map-Marker-Push-Pin--Left-Pink.png in Resources */,
 				22CC8C7E18B136CE00E61658 /* Icon-Small.png in Resources */,
+				22C5D24F1A7EA24B007F3858 /* marker-red-46.png in Resources */,
+				22C5D2771A7EA24B007F3858 /* marker-red-86.png in Resources */,
 				22CC8CB118B136CE00E61658 /* gray-1068-exit-fullscreen.png in Resources */,
+				22C5D2511A7EA24B007F3858 /* marker-red-48.png in Resources */,
+				22C5D2471A7EA24B007F3858 /* marker-red-38.png in Resources */,
+				22C5D2701A7EA24B007F3858 /* marker-red-78@2x.png in Resources */,
 				22CC8CA318B136CE00E61658 /* Debug-Icon-Small-50@2x.png in Resources */,
+				22C5D25E1A7EA24B007F3858 /* marker-red-60@2x.png in Resources */,
+				22C5D27C1A7EA24B007F3858 /* marker-red-90@2x.png in Resources */,
 				22CC8CC518B136CE00E61658 /* TrackingLocationMaskLandscape@2x.png in Resources */,
+				22C5D29B1A7EA24B007F3858 /* marker-red-122.png in Resources */,
 				22CC8CCC18B136CE00E61658 /* white-193-location-arrow.png in Resources */,
 				22CC8CD218B136CE00E61658 /* 1387054418_Map-Marker-Ball-Pink.png in Resources */,
+				22C5D27F1A7EA24B007F3858 /* marker-red-94.png in Resources */,
 				22CC8C8F18B136CE00E61658 /* Beta-Icon-Small-50.png in Resources */,
+				22C5D2951A7EA24B007F3858 /* marker-red-116.png in Resources */,
 				22CC8CAD18B136CE00E61658 /* blue-193-location-arrow.png in Resources */,
 				22CC8CD618B136CE00E61658 /* 1387054466_Map-Marker-Marker-Inside-Chartreuse.png in Resources */,
 				22CC8C9118B136CE00E61658 /* Beta-Icon-Small.png in Resources */,
@@ -942,48 +1386,96 @@
 				22CC8CAC18B136CE00E61658 /* 3DMask@2x.png in Resources */,
 				22CC8C8818B136CE00E61658 /* Beta-Icon-60@2x.png in Resources */,
 				22CC8CBC18B136CE00E61658 /* InfoButton@2x.png in Resources */,
+				22C5D2391A7EA24B007F3858 /* marker-red-24.png in Resources */,
 				22CC8C7418B136CE00E61658 /* Icon-60.png in Resources */,
 				22CC8CD418B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Smaller@2x.png in Resources */,
+				22C5D2781A7EA24B007F3858 /* marker-red-86@2x.png in Resources */,
+				22C5D2491A7EA24B007F3858 /* marker-red-40.png in Resources */,
 				22CC8C8E18B136CE00E61658 /* Beta-Icon-Small-40@2x.png in Resources */,
+				22C5D22F1A7EA24B007F3858 /* marker-red-14.png in Resources */,
+				22C5D2751A7EA24B007F3858 /* marker-red-84.png in Resources */,
 				22CC8C9C18B136CE00E61658 /* Debug-Icon-72.png in Resources */,
+				22C5D2901A7EA24B007F3858 /* marker-red-110@2x.png in Resources */,
+				22C5D2621A7EA24B007F3858 /* marker-red-64@2x.png in Resources */,
 				22CC8CA018B136CE00E61658 /* Debug-Icon-Small-40.png in Resources */,
 				22CC8CB418B136CE00E61658 /* gray-193-location-arrow@2x.png in Resources */,
 				22CC8C7D18B136CE00E61658 /* Icon-Small-50@2x.png in Resources */,
+				22C5D2891A7EA24B007F3858 /* marker-red-104.png in Resources */,
 				22CC8CE518B136CE00E61658 /* 1387054729_Map-Marker-Drawing-Pin-Right-Pink.png in Resources */,
 				22CC8C8218B136CE00E61658 /* iTunesArtwork in Resources */,
+				22C5D2A21A7EA24B007F3858 /* marker-red-128@2x.png in Resources */,
+				22C5D27D1A7EA24B007F3858 /* marker-red-92.png in Resources */,
+				22C5D2941A7EA24B007F3858 /* marker-red-114@2x.png in Resources */,
+				22C5D2741A7EA24B007F3858 /* marker-red-82@2x.png in Resources */,
+				22C5D2561A7EA24B007F3858 /* marker-red-52@2x.png in Resources */,
 				22CC8C9218B136CE00E61658 /* Beta-Icon-Small@2x.png in Resources */,
+				22C5D2301A7EA24B007F3858 /* marker-red-14@2x.png in Resources */,
+				22C5D29C1A7EA24B007F3858 /* marker-red-122@2x.png in Resources */,
 				22CC8C9518B136CE00E61658 /* Beta-iTunesArtwork in Resources */,
+				22C5D2661A7EA24B007F3858 /* marker-red-68@2x.png in Resources */,
 				22CC8CBA18B136CE00E61658 /* gray-947-target-reticle@2x.png in Resources */,
+				22C5D2601A7EA24B007F3858 /* marker-red-62@2x.png in Resources */,
+				22C5D2981A7EA24B007F3858 /* marker-red-118@2x.png in Resources */,
+				22C5D29D1A7EA24B007F3858 /* marker-red-124.png in Resources */,
 				22CC8CCA18B136CE00E61658 /* TrackingOff.png in Resources */,
 				22CC8CE418B136CE00E61658 /* 1387054724_Map-Marker-Drawing-Pin-Right-Azure.png in Resources */,
 				22CC8CA518B136CE00E61658 /* Debug-Icon-Small@2x.png in Resources */,
 				227692EE1A6BED490012851A /* Debug-Default-Landscape.png in Resources */,
 				22CC8CCD18B136CE00E61658 /* white-193-location-arrow@2x.png in Resources */,
+				22C5D2441A7EA24B007F3858 /* marker-red-34@2x.png in Resources */,
+				22C5D22C1A7EA24B007F3858 /* marker-red-10@2x.png in Resources */,
 				22CC8CE118B136CE00E61658 /* 1387054690_Map-Marker-Push-Pin--Right-Azure.png in Resources */,
+				22C5D2691A7EA24B007F3858 /* marker-red-72.png in Resources */,
 				22CC8CCF18B136CE00E61658 /* white-338-enter-fullscreen@2x.png in Resources */,
 				22CC8CD318B136CE00E61658 /* 1387054453_Map-Marker-Marker-Outside-Pink-Small@2x.png in Resources */,
+				22C5D2831A7EA24B007F3858 /* marker-red-98.png in Resources */,
 				22CC8CB818B136CE00E61658 /* gray-42-info@2x.png in Resources */,
+				22C5D2501A7EA24B007F3858 /* marker-red-46@2x.png in Resources */,
+				22C5D2411A7EA24B007F3858 /* marker-red-32.png in Resources */,
+				22C5D2611A7EA24B007F3858 /* marker-red-64.png in Resources */,
+				22C5D2541A7EA24B007F3858 /* marker-red-50@2x.png in Resources */,
 				22CC8C8C18B136CE00E61658 /* Beta-Icon-76@2x.png in Resources */,
+				22C5D25A1A7EA24B007F3858 /* marker-red-56@2x.png in Resources */,
 				22CC8CA418B136CE00E61658 /* Debug-Icon-Small.png in Resources */,
+				22C5D2321A7EA24B007F3858 /* marker-red-16@2x.png in Resources */,
 				22CC8CC018B136CE00E61658 /* red-193-location-arrow.png in Resources */,
+				22C5D2861A7EA24B007F3858 /* marker-red-100@2x.png in Resources */,
+				22C5D2381A7EA24B007F3858 /* marker-red-22@2x.png in Resources */,
 				22CC8CC618B136CE00E61658 /* TrackingLocationOffMask.png in Resources */,
+				22C5D26C1A7EA24B007F3858 /* marker-red-74@2x.png in Resources */,
 				22CC8C9B18B136CE00E61658 /* Debug-Icon-60@2x.png in Resources */,
 				22CC8C8118B136CE00E61658 /* Icon@2x.png in Resources */,
 				22CC8CDE18B136CE00E61658 /* 1387054653_Map-Marker-Push-Pin--Right-Pink.png in Resources */,
 				22CC8C7C18B136CE00E61658 /* Icon-Small-50.png in Resources */,
 				22CC8C8718B136CE00E61658 /* Beta-Icon-60.png in Resources */,
+				22C5D2631A7EA24B007F3858 /* marker-red-66.png in Resources */,
+				22C5D2451A7EA24B007F3858 /* marker-red-36.png in Resources */,
 				22CC8C9318B136CE00E61658 /* Beta-Icon.png in Resources */,
+				22C5D23F1A7EA24B007F3858 /* marker-red-30.png in Resources */,
 				22CC8C7218B136CE00E61658 /* Default-Landscape.png in Resources */,
+				22C5D2671A7EA24B007F3858 /* marker-red-70.png in Resources */,
+				22C5D2481A7EA24B007F3858 /* marker-red-38@2x.png in Resources */,
+				22C5D28F1A7EA24B007F3858 /* marker-red-110.png in Resources */,
 				22CC8CC218B136CE00E61658 /* TrackingLocationMask.png in Resources */,
+				22C5D2531A7EA24B007F3858 /* marker-red-50.png in Resources */,
+				22C5D2521A7EA24B007F3858 /* marker-red-48@2x.png in Resources */,
 				22CC8CE318B136CE00E61658 /* 1387054714_Map-Marker-Drawing-Pin-Right-Azure.png in Resources */,
 				22CC8C7618B136CE00E61658 /* Icon-72.png in Resources */,
+				22C5D2421A7EA24B007F3858 /* marker-red-32@2x.png in Resources */,
+				22C5D26E1A7EA24B007F3858 /* marker-red-76@2x.png in Resources */,
 				22CC8C8618B136CE00E61658 /* Beta-Default-Landscape@2x.png in Resources */,
+				22C5D2721A7EA24B007F3858 /* marker-red-80@2x.png in Resources */,
+				22C5D2811A7EA24B007F3858 /* marker-red-96.png in Resources */,
 				22CC8C9E18B136CE00E61658 /* Debug-Icon-76.png in Resources */,
 				22CC8CA718B136CE00E61658 /* Debug-Icon@2x.png in Resources */,
+				22C5D25C1A7EA24B007F3858 /* marker-red-58@2x.png in Resources */,
 				22CC8C8318B136CE00E61658 /* iTunesArtwork@2x in Resources */,
 				22CC8CB918B136CE00E61658 /* gray-947-target-reticle.png in Resources */,
+				22C5D28A1A7EA24B007F3858 /* marker-red-104@2x.png in Resources */,
+				22C5D2571A7EA24B007F3858 /* marker-red-54.png in Resources */,
 				22CC8CC818B136CE00E61658 /* TrackingLocationOffMaskLandscape.png in Resources */,
 				22CC8CA118B136CE00E61658 /* Debug-Icon-Small-40@2x.png in Resources */,
+				22C5D2851A7EA24B007F3858 /* marker-red-100.png in Resources */,
 				22CC8CCB18B136CE00E61658 /* TrackingOff@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1070,7 +1562,7 @@
 				22CC8C6618B136CE00E61658 /* PSMapAtmoPublicDeviceDict.m in Sources */,
 				22CC8C4218B136CE00E61658 /* main.m in Sources */,
 				22CC8C4B18B136CE00E61658 /* PSMapAtmoConverter.m in Sources */,
-				22CC8C4A18B136CE00E61658 /* PSMapAtmoBetaViewController.m in Sources */,
+				22CC8C4A18B136CE00E61658 /* PSMapAtmoBetaFeedbackViewController.m in Sources */,
 				22CC8C3418B136CE00E61658 /* PSMapAtmoAnalytics.m in Sources */,
 				22CC8C3518B136CE00E61658 /* PSMapAtmoMapAnalytics.m in Sources */,
 				2276D1B718F87F3E0086966B /* PSMapAtmoFeedbackTextFieldCell.m in Sources */,
@@ -1082,8 +1574,12 @@
 				E5F16D014F5C0EA6E9E45FC3 /* PSMapAtmoRatingDelegate.m in Sources */,
 				E5F163081E1EFAFDBFD9722F /* PSMapAtmoAlertViewDelegate.m in Sources */,
 				E5F16F3864B5F59AA0C8861A /* PSMapAtmoLocation.m in Sources */,
+				227E1C231A7305D900A93BCD /* UIImage+Color.m in Sources */,
 				E5F166CC248E41DC3692D644 /* PSMapAtmoPublicCookie.m in Sources */,
 				E5F1653AF31204BC7ECCBB97 /* UIAlertView+NSCookbook.m in Sources */,
+				E5F1652133F616530350CC7C /* PSMapAtmoBetaAnnotationsViewController.m in Sources */,
+				E5F16C09F3E496CE491FD636 /* PSMapAtmoBetaViewController.m in Sources */,
+				E5F16838D999D24C37D73A52 /* PSMapAtmoAnnotationSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
