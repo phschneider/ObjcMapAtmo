@@ -137,6 +137,13 @@
 
     DLogFuncName();
     float temperature = [self temperature];
+
+    #warning auslagern
+    if (temperature <= VALUE_NOT_FOUND)
+    {
+        return @"na";
+    }
+    
     if ([[PSMapAtmoUserDefaults sharedInstance] useFahrenheit])
     {
         return [NSString stringWithFormat:@"%i",  (int) ([[PSMapAtmoConverter sharedInstance] convertCelsiusToFahrenheit:temperature] + 0.5)];
@@ -154,6 +161,7 @@
     DLogFuncName();
 //    [PSNetAtmoPublicDeviceDict resolveAdressForDevice:self];
 
+    DLog(@"Self = %@", self.dict);
     NSString * distanceString = @"";
     if (self.userLocation)
     {
@@ -186,7 +194,8 @@
 //    NSString * humidityString = nil;
 //    NSString * pressureString = nil;
     
-    if (temperature == VALUE_NOT_FOUND)
+    #warning auslagern
+    if (temperature <= VALUE_NOT_FOUND)
     {
 //        dispatch_async(dispatch_get_main_queue(),^{
 //            [[[UIAlertView alloc] initWithTitle:@"No Value!" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
@@ -355,5 +364,10 @@
     return value;
 }
 
+- (NSString*)description
+{
+    DLogFuncName();
+    return [NSString stringWithFormat:@"<%@ %p>%@",[self class], self, self.dict];
+}
 
 @end
