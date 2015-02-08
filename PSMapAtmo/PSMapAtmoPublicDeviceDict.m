@@ -130,10 +130,28 @@
 }
 
 
+//kann auf der karte direkt angezeigt werden
+//wird gerundet
+- (NSString*)displayTitle
+{
+
+    DLogFuncName();
+    float temperature = [self temperature];
+    if ([[PSMapAtmoUserDefaults sharedInstance] useFahrenheit])
+    {
+        return [NSString stringWithFormat:@"%i",  (int) ([[PSMapAtmoConverter sharedInstance] convertCelsiusToFahrenheit:temperature] + 0.5)];
+    }
+    else
+    {
+        return [NSString stringWithFormat:@"%i",  (int) (temperature + 0.5)];
+    }
+}
+
+
 // Für Annotation
 - (NSString*)title
 {
-//    DLogFuncName();
+    DLogFuncName();
 //    [PSNetAtmoPublicDeviceDict resolveAdressForDevice:self];
 
     NSString * distanceString = @"";
@@ -186,7 +204,6 @@
         {
             meassureString = [NSString stringWithFormat:@" %.1f°C",temperature];
         }
-        return [NSString stringWithFormat:@"%i",  (int) (temperature + 0.5)];
     }
     
 //    humidityString = [NSString stringWithFormat:@" %.1f%%",humidity];

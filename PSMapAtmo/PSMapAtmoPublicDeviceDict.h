@@ -20,4 +20,5 @@
 
 - (CLLocationCoordinate2D)coordinate;
 
+- (NSString *)displayTitle;
 @end

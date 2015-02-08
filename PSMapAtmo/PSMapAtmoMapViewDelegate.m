@@ -200,7 +200,14 @@
 
             label.frame = frame;
             label.textAlignment = NSTextAlignmentCenter;
-            label.text = annotation.title;
+            if ([annotation isKindOfClass:[PSMapAtmoPublicDeviceDict class] ])
+            {
+                label.text = [(PSMapAtmoPublicDeviceDict *) annotation displayTitle];
+            }
+            else
+            {
+                label.text = annotation.title;
+            }
             label.backgroundColor = [UIColor blackColor];
             label.adjustsFontSizeToFitWidth = YES;
             label.font = [UIFont systemFontOfSize:[[settings fontSize] floatValue]];
