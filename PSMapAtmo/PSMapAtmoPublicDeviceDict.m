@@ -134,7 +134,6 @@
 //wird gerundet
 - (NSString*)displayTitle
 {
-
     DLogFuncName();
     float temperature = [self temperature];
 
@@ -143,15 +142,38 @@
     {
         return @"na";
     }
+    int temp = [self roundedTemperature:temperature];
+    return [NSString stringWithFormat:@"%i",  temp];
+}
+
+
+- (int)roundedTemperature:(float)temperature
+{
+    DLogFuncName();
+
+    float temp = 0.0;
+    
     
     if ([[PSMapAtmoUserDefaults sharedInstance] useFahrenheit])
     {
-        return [NSString stringWithFormat:@"%i",  (int) ([[PSMapAtmoConverter sharedInstance] convertCelsiusToFahrenheit:temperature] + 0.5)];
+        temp = [[PSMapAtmoConverter sharedInstance] convertCelsiusToFahrenheit:temperature];
     }
     else
     {
-        return [NSString stringWithFormat:@"%i",  (int) (temperature + 0.5)];
+        temp = temperature;
     }
+    
+    if (temp < 0)
+    {
+        temp -= 0.5;
+    }
+    else
+    {
+        temp += 0.5;
+    }
+    
+//    NSLog(@"Temp = %f, (%i <=> %f)", temperature,(int)temp,  temp);
+    return (int)temp;
 }
 
 
