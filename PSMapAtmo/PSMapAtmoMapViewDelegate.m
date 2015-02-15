@@ -224,13 +224,18 @@
             
             if (!adjustFrameFromImage && [settings showsCustomImage])
             {
+                // Zentriere das Label in der Grafik
                 CGPoint center = label.center;
                 center.y = ceil(annotationImage.size.height/3);
                 label.center = center;
-                
-//                frame.origin.y = ceil(annotationImage.size.width/10)+(([settings.backgroundSize floatValue]/30)*-1);
             }
-            
+            else
+            {
+                // Centriere das Label in der Annotation
+                label.center = annotationView.center;
+                label.center = CGPointMake(label.center.x, label.center.y + 5);
+            }
+
             [annotationView addSubview:label];
         }
     
