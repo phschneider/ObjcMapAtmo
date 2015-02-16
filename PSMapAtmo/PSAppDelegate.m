@@ -48,12 +48,11 @@
 + (void)initialize
 {
     DLogFuncName();
-    [PSMapAtmoPublicCookie sharedInstance];
     [PSMapAtmoMapAnalytics sharedInstance];
     [PSMapAtmoRatingDelegate sharedInstance];
     [PSMapAtmoUserDefaults sharedInstance];
     [PSMapAtmoAppVersion sharedInstance];
-    
+
     [[iRate sharedInstance] setDelegate:[PSMapAtmoRatingDelegate sharedInstance]];
     [[iRate sharedInstance] setAppStoreID:783111887];
     [[iRate sharedInstance] setUsesPerWeekForPrompt:5.0];
@@ -84,6 +83,8 @@
     // iOS5 Warning - NO Social Framework
     // iOS5 Warning - NO Ad Framework
 
+    //UIWebView in PSMapAtmoPublicCookie darf erst initialisiert werden, wenn die App da ist!
+    [PSMapAtmoPublicCookie sharedInstance];
 
     UIViewController * rootViewController = nil;
 
